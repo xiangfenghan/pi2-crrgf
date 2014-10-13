@@ -19,6 +19,7 @@
         </style>
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/xiangfeng.css">
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
@@ -53,10 +54,56 @@
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
-      <div class="container">
-        <h1>Hello, world!</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        <p><a class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
+      <div class="container" id="xiangfeng">
+          <div class="titre">
+              <h1>Enchère > RainbowFire</h1>
+          </div>
+          <div class="mainConteneur clearfix">
+              <div class="conteneur clearfix">
+                  <div class="contenuConteneur">
+                      <form action="#">
+                          <label>Rainbow Fire | Fénix Han 2004 -- 25 X 21"</label>
+                          <div class="rang clearfix">
+                              <span>Temps restant: </span>
+                              <span class="tempRestant"></span>
+                              <!--<span class="currentTime"></span>-->
+                          </div>
+                          <div class="zonePrixEnchere clearfix">
+                              <div class="rang clearfix">
+                                  <span>Mise actuelle: </span>
+                                  <span>120 $CAD</span>
+                                  <span><a href="historiqueOffres.html">[10 offres]</a></span>
+                              </div>
+                              <div class="rang clearfix">
+                                  <span><input type="text" name="prixEnchere" value="125"></span>
+                                  <span><input type="submit" value="Placer un offre" class="btn btnOffre" id="placerOffre"></span>
+                              </div>
+                              <div class="rang clearfix">
+                                  <span>Entrer 125.00$ ou plus</span>
+                              </div>
+                              <div class="rang clearfix divAchatMaintenant">
+                                  <span>450 $CAD</span>
+                                  <span><a href="#" class="btnA" id="acheterMantenant">Acheter maintenant</a></span>
+                              </div>
+                          </div>
+                      </form>
+                      <div class="description">
+                          <div>Description</div>
+                          <div>
+                              <p>C'est la description....</p>
+                              <p>C'est la description....</p>
+                              <p>C'est la description....</p>
+                              <p>C'est la description....</p>
+                          </div>
+                      </div>
+                  </div>
+                  <aside class="detailProduit">
+                      <div class="picProduit">
+                          <img src="../images/peinture/c2.JPG" alt="c2.jpg">
+                      </div>
+                  </aside>
+              </div>
+          </div>
       </div>
     </div>
 
