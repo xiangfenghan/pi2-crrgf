@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e693d71-4154-43e0-8890-c65837a22f17" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/detailEnchere.html" afterPath="$PROJECT_DIR$/pages/detailEnchere.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/xiangfeng.css" afterPath="$PROJECT_DIR$/css/xiangfeng.css" />
     </list>
     <ignored path="pi2-crrgf.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,16 +30,43 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="29" selection-start="2510" selection-end="2510" vertical-scroll-proportion="-5.0" vertical-offset="735" max-vertical-offset="2385">
+            <state line="21" column="0" selection-start="869" selection-end="869" vertical-scroll-proportion="-13.125" vertical-offset="0" max-vertical-offset="1680">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="xiangfeng.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="detailEnchere.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/detailEnchere.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="127" column="16" selection-start="5448" selection-end="5448" vertical-scroll-proportion="-22.25" vertical-offset="1371" max-vertical-offset="2190">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="historiqueOffres.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pages/historiqueOffres.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="113" column="16" selection-start="4927" selection-end="4927" vertical-scroll-proportion="0.6520147" vertical-offset="1161" max-vertical-offset="1980">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="script.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/script.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="40" selection-start="426" selection-end="426" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="885">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="xiangfeng.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/xiangfeng.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="392" column="19" selection-start="8233" selection-end="8233" vertical-scroll-proportion="0.21708184" vertical-offset="5697" max-vertical-offset="6540">
+            <state line="210" column="18" selection-start="4010" selection-end="4010" vertical-scroll-proportion="-61.764706" vertical-offset="0" max-vertical-offset="3660">
               <folding />
             </state>
           </provider>
@@ -62,7 +91,10 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/js/script.js" />
         <option value="$PROJECT_DIR$/css/xiangfeng.css" />
+        <option value="$PROJECT_DIR$/pages/detailEnchere.html" />
+        <option value="$PROJECT_DIR$/pages/historiqueOffres.html" />
       </list>
     </option>
   </component>
@@ -114,6 +146,48 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="pi2-crrgf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pi2-crrgf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pi2-crrgf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pi2-crrgf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pi2-crrgf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pi2-crrgf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pi2-crrgf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -209,13 +283,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="29" selection-start="2510" selection-end="2510" vertical-scroll-proportion="-5.0" vertical-offset="735" max-vertical-offset="2385">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="0" selection-start="188" selection-end="188" vertical-scroll-proportion="0.10514019" vertical-offset="0" max-vertical-offset="856">
@@ -223,9 +290,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="0" selection-start="869" selection-end="869" vertical-scroll-proportion="-13.125" vertical-offset="0" max-vertical-offset="1680">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="40" selection-start="426" selection-end="426" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="885">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/css/xiangfeng.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="392" column="19" selection-start="8233" selection-end="8233" vertical-scroll-proportion="0.21708184" vertical-offset="5697" max-vertical-offset="6540">
+        <state line="210" column="18" selection-start="4010" selection-end="4010" vertical-scroll-proportion="-61.764706" vertical-offset="0" max-vertical-offset="3660">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/detailEnchere.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="127" column="16" selection-start="5448" selection-end="5448" vertical-scroll-proportion="-22.25" vertical-offset="1371" max-vertical-offset="2190">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/historiqueOffres.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="113" column="16" selection-start="4927" selection-end="4927" vertical-scroll-proportion="0.6520147" vertical-offset="1161" max-vertical-offset="1980">
           <folding />
         </state>
       </provider>
