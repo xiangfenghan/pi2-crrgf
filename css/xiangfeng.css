@@ -84,6 +84,7 @@
 #xiangfeng .conteneur > form > label:not(:first-child)
 {
     border-top: 1px black solid;
+    color: white;
 }
 #xiangfeng .conteneur > form input[type='number'],
 #xiangfeng .conteneur > form select,
@@ -99,6 +100,11 @@
 #xiangfeng .conteneur > form input[type='text']
 {
     height: 25px;
+    margin-left: 15px;
+}
+#xiangfeng .conteneur > form .titreInput
+{
+    width: 80%;
 }
 #xiangfeng .conteneur > form input[type='checkbox']
 {
@@ -114,7 +120,6 @@
 }
 #xiangfeng #txtCondition
 {
-    width: 220px;
     line-height: 25px;
     margin: 0 0 0 5px;
 }
