@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e693d71-4154-43e0-8890-c65837a22f17" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/detailEnchere.html" afterPath="$PROJECT_DIR$/pages/detailEnchere.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/xiangfeng.css" afterPath="$PROJECT_DIR$/css/xiangfeng.css" />
-    </list>
+    <list default="true" id="9e693d71-4154-43e0-8890-c65837a22f17" name="Default" comment="" />
     <ignored path="pi2-crrgf.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -45,10 +41,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="historiqueOffres.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="historiqueOffres.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/historiqueOffres.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="113" column="16" selection-start="4927" selection-end="4927" vertical-scroll-proportion="0.6520147" vertical-offset="1161" max-vertical-offset="1980">
+            <state line="99" column="14" selection-start="0" selection-end="5441" vertical-scroll-proportion="-17.25" vertical-offset="1071" max-vertical-offset="1980">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mesEncheres.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pages/mesEncheres.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="69" column="14" selection-start="3035" selection-end="3035" vertical-scroll-proportion="0.15750916" vertical-offset="906" max-vertical-offset="1740">
               <folding />
             </state>
           </provider>
@@ -95,6 +100,7 @@
         <option value="$PROJECT_DIR$/css/xiangfeng.css" />
         <option value="$PROJECT_DIR$/pages/detailEnchere.html" />
         <option value="$PROJECT_DIR$/pages/historiqueOffres.html" />
+        <option value="$PROJECT_DIR$/pages/mesEncheres.html" />
       </list>
     </option>
   </component>
@@ -320,7 +326,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/historiqueOffres.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="113" column="16" selection-start="4927" selection-end="4927" vertical-scroll-proportion="0.6520147" vertical-offset="1161" max-vertical-offset="1980">
+        <state line="99" column="14" selection-start="0" selection-end="5441" vertical-scroll-proportion="-17.25" vertical-offset="1071" max-vertical-offset="1980">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/mesEncheres.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="14" selection-start="3035" selection-end="3035" vertical-scroll-proportion="0.15750916" vertical-offset="906" max-vertical-offset="1740">
           <folding />
         </state>
       </provider>
