@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e693d71-4154-43e0-8890-c65837a22f17" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/createEnchere.html" afterPath="$PROJECT_DIR$/pages/createEnchere.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/detailEnchere.html" afterPath="$PROJECT_DIR$/pages/detailEnchere.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/historiqueOffres.html" afterPath="$PROJECT_DIR$/pages/historiqueOffres.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/mesEncheres.html" afterPath="$PROJECT_DIR$/pages/mesEncheres.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/modEnchere.html" afterPath="$PROJECT_DIR$/pages/modEnchere.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="pi2-crrgf.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,9 +41,15 @@
       <file leaf-file-name="detailEnchere.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pages/detailEnchere.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="168" column="0" selection-start="7442" selection-end="7442" vertical-scroll-proportion="0.5625966" vertical-offset="2156" max-vertical-offset="3060">
+            <state line="183" column="22" selection-start="7912" selection-end="7912" vertical-scroll-proportion="0.4404946" vertical-offset="2460" max-vertical-offset="4440">
               <folding>
-                <element signature="tag#article#0;tag#footer#0;tag#body#0;tag#html#0" expanded="false" />
+                <element signature="tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#main#1;tag#body#0;tag#html#0" expanded="false" />
+                <element signature="tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#main#1;tag#body#0;tag#html#0" expanded="false" />
+                <element signature="tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#main#1;tag#body#0;tag#html#0" expanded="false" />
+                <element signature="tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#main#1;tag#body#0;tag#html#0" expanded="false" />
+                <element signature="tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#main#1;tag#body#0;tag#html#0" expanded="false" />
+                <element signature="tag#article#1;tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#main#1;tag#body#0;tag#html#0" expanded="false" />
+                <element signature="tag#article#1;tag#article#0;tag#article#0;tag#article#0;tag#main#1;tag#body#0;tag#html#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -91,7 +94,7 @@
       <file leaf-file-name="xiangfeng.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/xiangfeng.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="144" column="15" selection-start="2829" selection-end="2829" vertical-scroll-proportion="-5.901961" vertical-offset="1859" max-vertical-offset="3735">
+            <state line="129" column="16" selection-start="2559" selection-end="2559" vertical-scroll-proportion="-2.9607842" vertical-offset="1784" max-vertical-offset="3735">
               <folding />
             </state>
           </provider>
@@ -117,11 +120,11 @@
       <list>
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/script.js" />
-        <option value="$PROJECT_DIR$/css/xiangfeng.css" />
         <option value="$PROJECT_DIR$/pages/historiqueOffres.html" />
         <option value="$PROJECT_DIR$/pages/modEnchere.html" />
         <option value="$PROJECT_DIR$/pages/mesEncheres.html" />
         <option value="$PROJECT_DIR$/pages/createEnchere.html" />
+        <option value="$PROJECT_DIR$/css/xiangfeng.css" />
         <option value="$PROJECT_DIR$/pages/detailEnchere.html" />
       </list>
     </option>
@@ -339,7 +342,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="101" column="32" selection-start="4563" selection-end="4563" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2205">
           <folding>
-            <element signature="tag#article#0;tag#footer#0;tag#body#0;tag#html#0" expanded="false" />
+            <element signature="tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#main#1;tag#body#0;tag#html#0" expanded="false" />
+            <element signature="tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#main#1;tag#body#0;tag#html#0" expanded="false" />
+            <element signature="tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#main#1;tag#body#0;tag#html#0" expanded="false" />
+            <element signature="tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#main#1;tag#body#0;tag#html#0" expanded="false" />
+            <element signature="tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#main#1;tag#body#0;tag#html#0" expanded="false" />
+            <element signature="tag#article#1;tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#main#1;tag#body#0;tag#html#0" expanded="false" />
+            <element signature="tag#article#1;tag#article#0;tag#article#0;tag#article#0;tag#main#1;tag#body#0;tag#html#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -400,13 +409,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/xiangfeng.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="144" column="15" selection-start="2829" selection-end="2829" vertical-scroll-proportion="-5.901961" vertical-offset="1859" max-vertical-offset="3735">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/modEnchere.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="239" column="0" selection-start="10096" selection-end="10096" vertical-scroll-proportion="-17.583334" vertical-offset="3163" max-vertical-offset="3960">
@@ -445,11 +447,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/css/xiangfeng.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="129" column="16" selection-start="2559" selection-end="2559" vertical-scroll-proportion="-2.9607842" vertical-offset="1784" max-vertical-offset="3735">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pages/detailEnchere.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="168" column="0" selection-start="7442" selection-end="7442" vertical-scroll-proportion="0.5625966" vertical-offset="2156" max-vertical-offset="3060">
+        <state line="183" column="22" selection-start="7912" selection-end="7912" vertical-scroll-proportion="0.4404946" vertical-offset="2460" max-vertical-offset="4440">
           <folding>
-            <element signature="tag#article#0;tag#footer#0;tag#body#0;tag#html#0" expanded="false" />
+            <element signature="tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#main#1;tag#body#0;tag#html#0" expanded="false" />
+            <element signature="tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#main#1;tag#body#0;tag#html#0" expanded="false" />
+            <element signature="tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#main#1;tag#body#0;tag#html#0" expanded="false" />
+            <element signature="tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#main#1;tag#body#0;tag#html#0" expanded="false" />
+            <element signature="tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#main#1;tag#body#0;tag#html#0" expanded="false" />
+            <element signature="tag#article#1;tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#main#1;tag#body#0;tag#html#0" expanded="false" />
+            <element signature="tag#article#1;tag#article#0;tag#article#0;tag#article#0;tag#main#1;tag#body#0;tag#html#0" expanded="false" />
           </folding>
         </state>
       </provider>
