@@ -11,7 +11,7 @@ window.addEventListener("load", function(){
         // Création du décompte pour la fin de l'enchère
         var currentTime = document.querySelector(".currentTime");
 
-        setTimeout(function(){decompte(10)},1000);
+        setTimeout(function(){decompte(100)},1000);
 
         // Fonction à appeler à chaque seconde pour le décompte
         function decompte(secondesTotal)

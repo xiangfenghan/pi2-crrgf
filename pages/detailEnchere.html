@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800' rel='stylesheet' type='text/css'>
     <style>
         body {
             padding-top: 50px;
@@ -28,47 +29,103 @@
 <!--[if lt IE 7]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
-<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Project name</a>
-        </div>
-        <div class="navbar-collapse collapse">
-            <form class="navbar-form navbar-right" role="form">
-                <div class="form-group">
-                    <input type="text" placeholder="Email" class="form-control">
-                </div>
-                <div class="form-group">
-                    <input type="password" placeholder="Password" class="form-control">
-                </div>
-                <button type="submit" class="btn btn-success">Sign in</button>
-            </form>
-        </div><!--/.navbar-collapse -->
-    </div>
-</div>
 
-<!-- Main jumbotron for a primary marketing message or call to action -->
-<!--<div class="jumbotron">-->
-<!--<div class="container">-->
-<!--<h1>Hello, world!</h1>-->
-<!--<p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>-->
-<!--<p><a class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>-->
-<!--</div>-->
-<!--</div>-->
 
+<!-- ------ Navigation / Menu--------- -->
+<article class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <!-- --------------LOGO------------------ -->
+    <article class="row logo"  >
+        <article class="col-md-4 col-sm-6 col-xs-9">
+            <img src="../images/Logo Arts aux encheres.svg"  alt="Logo Arts aux enchères">
+        </article>
+        <!-- --------------Bouton Connexion------------------ -->
+        <article class="col-md-8 col-xs-12 ">
+            <article class="row">
+                <article class="col-md-8 "></article>
+                <article class="col-md-2 Connexion">
+                    <button type="button" class=" btn-primary Connexion ">
+                        <a href="Commentairs_Contact.html">Administrateur</a>
+                    </button>
+                </article>
+                <article class="col-md-2 Connexion">
+                    <button type="button" class=" btn-primary Connexion ">
+                        Connexion
+                    </button>
+                </article>
+            </article>
+        </article>
+    </article>
+    <!-- -------------- Menu ------------------ -->
+    <article class="row  menu">
+        <article class="container ">
+
+            <article class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="../index.html">Accueil</a>
+                    </li>
+                    <li>
+                        <a href="Galerie.html">Galerie</a>
+                    </li>
+                    <li>
+                        <a href="Nos_encheres.html">Nos enchères</a>
+                    </li>
+                    <li>
+                        <a href="Liste_Artistes.html">Artistes</a>
+                    </li>
+                    <li>
+                        <a href="Contact.html">Contact</a>
+                    </li>
+                </ul>
+            </article>
+            <article class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </article>
+            <!-- Début de la zone de recherche -->
+            <article class="panel-group recherche" id="accordion ">
+                <article class="panel-default recherche">
+                    <article class="panel-heading">
+                        <h4 class="panel-title "><a data-toggle="collapse" data-parent="#accordion" href="#rechercer"> <span class="glyphicon glyphicon-search pull-right"></span> </a></h4>
+                    </article>
+                    <article id="rechercer" class="panel-collapse collapse collapsing in">
+                        <article class="panel-body">
+                            <!-- Début Form de recherche -->
+                            <article class=" pull-right">
+                                <form  action="#" method="post" class="navbar-form navbar-left" role="search">
+                                    <article class="form-group">
+                                        <input type="search" class="form-control">
+                                    </article>
+                                    <button type="submit" class="btn btn-primary">
+                                        <a href="Galerie.html">Rechercher</a>
+                                    </button>
+                                </form>
+                            </article>
+                            <!-- Fin Form de recherche -->
+
+                        </article>
+                    </article>
+                </article>
+            </article>
+            <!-- fin de la zone de recherche -->
+
+        </article>
+    </article>
+</article>
+<!-- ------ Fin Navigation / Menu--------- -->
+
+<main class="clearfix">
 <div class="container" id="xiangfeng">
     <!-- Example row of columns -->
-    <div class="row">
-        <div class="titre">
-            <h1>Enchère > RainbowFire</h1>
-        </div>
-    </div>
+    <!--<div class="row">-->
+        <!--<div class="titre">-->
+            <!--<h1>Enchère > RainbowFire</h1>-->
+        <!--</div>-->
+    <!--</div>-->
     <div class="row" id="contenu">
         <div class="detailProduit col-md-4">
             <div class="picProduit">
@@ -115,11 +172,74 @@
         </div>
     </div>
 </div>
-<hr>
+</main>
 
-<footer>
-    <p>&copy; Company 2014</p>
+<!-- -------------Début Footer------------------->
+<footer >
+    <article class="row">
+        <article class="col-xs-12  col-md-4 pull-left">
+            <ul>
+                <li>
+                    <a href="Nos_encheres.html"> Trouver une œuvre</a>
+                </li>
+                <li>
+                    <a href="Liste_Artistes.html">Recherche un Artiste</a>
+                </li>
+                <li>
+                    <a href="Galerie.html"> Répertoire des œuvres en enchère</a>
+                </li>
+                <li>
+                    <a href="#"> Plan du site</a>
+                </li>
+                <li>
+                    <a href="Contact.html"> Nous joindre</a>
+                </li>
+            </ul>
+        </article>
+        <article class="col-xs-12  col-md-4 pull-left">
+            <ul>
+                <li>
+                    <a href="#"> Politique de confidentialité </a>
+                </li>
+                <li>
+                    <a href="#"> Comment ça marche </a>
+                </li>
+                <li>
+                    <a href="#"> Avis complet de non-responsabilité </a>
+                </li>
+                <li>
+                    <a href="#"> Connexion</a>
+                </li>
+            </ul>
+
+        </article>
+
+        <article class="col-xs-12 col-sm-6 col-md-4 ">
+            <article class="col-xs-2 col-md-2  maidia_soc ">
+                <p>
+                    <a href="https://www.facebook.com/skander.gader"><img src="../images/facebook_logo.png" alt="logo facebook " width="60" height="35"/></a>
+                </p>
+            </article>
+            <article class="col-xs-2 col-md-2  maidia_soc">
+                <p>
+                    <a href="https://www.youtube.com/channel/UC2T0Ish3GMFzTRflE9bfIUQ"><img src="../images/youtube1.png" alt="logo youtube" width="40" height="30"/></a>
+                </p>
+            </article>
+            <article class=" col-xs-2 col-md-2  maidia_soc">
+                <p>
+                    <a href="http://gader-eskander.blogspot.ca/2013_10_01_archive.html"><img src="../images/blog_image.png" alt="logo youtube" width="40" height="30"/></a>
+                </p>
+            </article>
+            <article class=" col-xs-12 ">
+                <p>
+                    &copy; ARTS AUX ENCHÉRES 2014 .
+                </p>
+            </article>
+        </article>
+    </article>
 </footer>
+<!---------- fin Footer---------- -->
+
 </div> <!-- /container -->        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
 <script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.11.1.js"><\/script>')</script>
 
