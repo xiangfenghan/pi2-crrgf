@@ -1,0 +1,243 @@
+/*Styles généraux*/
+
+/*Section principale*/
+#xiangfeng #contenu
+{
+    width: 100%;
+    margin: 10px 0 0 0;
+}
+
+#xiangfeng .titre
+{
+    margin: 0 auto;
+    height: 50px;
+    background-color: #000;
+    -webkit-border-bottom-left-radius: 20px;
+    -webkit-border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+#xiangfeng .titre h1
+{
+    margin: 0;
+    line-height: 50px;
+    padding-left: 20px;
+    color: white;
+    font-size: 1.2em;
+}
+
+/*===================================================================*/
+/*===================================================================*/
+
+/*Détails du produit*/
+#xiangfeng  #contenu > .detailProduit
+{
+    border: 1px black solid;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#xiangfeng #contenu > .detailProduit > .picProduit
+{
+    overflow: hidden;
+}
+#xiangfeng .contenu > .detailProduit > .picProduit > img
+{
+    width: 100%;
+}
+#xiangfeng .txtProduit
+{
+    width: 100%;
+}
+.txtProduit > p
+{
+    font-size: 0.8em;
+    font-weight: 300;
+    margin: 20px 10px 20px 10px;
+}
+/*Création d'enchère*/
+#xiangfeng .conteneur > form
+{
+    border: 1px black solid;
+    font-weight: 300;
+    font-size: 1em;
+}
+#xiangfeng .conteneur > form > label
+{
+    display: block;
+    padding: 5px 5px 5px 15px;
+    margin-bottom: 10px;
+    background-color: #222;
+    border-top: 0px black solid;
+    clear: both;
+}
+#xiangfeng .conteneur > form > label:first-child
+{
+    display: block;
+    padding: 5px 5px 5px 15px;
+    margin-bottom: 10px;
+    background-color: #222;
+    border-top: 0px black solid;
+    clear: both;
+    color: white;
+    font-size: 1.1em;
+}
+#xiangfeng .conteneur > form > label:not(:first-child)
+{
+    border-top: 1px black solid;
+    color: white;
+}
+#xiangfeng .conteneur > form input[type='number'],
+#xiangfeng .conteneur > form select,
+#xiangfeng .conteneur > form span
+{
+    display: block;
+    margin-left: 15px;
+    margin-bottom: 10px;
+    height: 25px;
+    float: left;
+    line-height: 25px;
+}
+#xiangfeng .conteneur > form input[type='text']
+{
+    height: 25px;
+    margin-left: 15px;
+}
+#xiangfeng .conteneur > form .titreInput
+{
+    width: 80%;
+}
+#xiangfeng .conteneur > form input[type='checkbox']
+{
+    display: block;
+    margin-left: 15px;
+    margin-bottom: 10px;
+    float: left;
+    height: 20px;
+}
+#xiangfeng .conteneur > form .form-group
+{
+    margin: 10px 0;
+}
+#xiangfeng #txtCondition
+{
+    line-height: 25px;
+    margin: 0 0 0 5px;
+}
+#xiangfeng .btnConteneur
+{
+    border-top: 1px black solid;
+    margin-top: 50px;
+    height: 50px;
+    text-align: center;
+
+}
+#xiangfeng .btnA
+{
+    -webkit-border-radius: 4;
+    -moz-border-radius: 4;
+    border-radius: 4px;
+    color: white;
+    background: #222;
+    text-decoration: none;
+    margin: 10px 0;
+    font-weight: 300;
+    font-size: 1em;
+    padding: 3px;
+    box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.5);
+}
+#xiangfeng .btn
+{
+    -webkit-border-radius: 4;
+    -moz-border-radius: 4;
+    border-radius: 4px;
+    color: white;
+    background: #222;
+    text-decoration: none;
+    margin: 10px 0;
+    font-weight: 300;
+    font-size: 1em;
+    padding: 3px;
+}
+#xiangfeng .btn:disabled
+ {
+     background: #808080;
+ }
+#xiangfeng .btn:disabled:hover
+{
+    background: #808080;
+}
+#xiangfeng .btnOffre
+{
+    margin: 0;
+}
+#xiangfeng .btn:hover, .btnA:hover
+{
+    background: #000;
+    text-decoration: none;
+}
+
+#xiangfeng .fontRed
+{
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #B22222;
+}
+#xiangfeng .zonePrixEnchere
+{
+    clear: both;
+    background-color: #999;
+    border-top: 1px black solid;
+}
+#xiangfeng .divAchatMaintenant
+{
+    border-top: 1px black solid;
+    border-bottom: 0px black solid;
+    padding-top: 10px;
+    margin-bottom: -10px;
+}
+#xiangfeng .description
+{
+    margin: 10px;
+}
+#xiangfeng .conteneur .description > table
+{
+    width: 100%;
+    margin: 0 auto;
+}
+#xiangfeng .conteneur .description > table tr:first-child th
+{
+    background-color: #222;
+    text-align: center;
+    color: white;
+}
+#xiangfeng .conteneur .description > table td
+{
+    text-align: center;
+    font-size: 0.9em;
+    font-weight: 300;
+    border-bottom: 1px black solid;
+    padding: 5px 0;
+}
+#xiangfeng .conteneur .description > table img
+{
+    width: auto;
+    height: 150px;
+}
+#xiangfeng .conteneur .description .attention
+{
+    font-weight: 300;
+    font-size: 0.8em;
+    color: darkred;
+}
+
+
+#xiangfeng .conteneur .contenuTitre h2
+{
+    float: left;
+    margin: 10px 0;
+    font-size: 1.5em;
+}
+#xiangfeng .conteneur .contenuTitre a
+{
+    float: right;
+}
