@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e693d71-4154-43e0-8890-c65837a22f17" name="Default" comment="">
+<<<<<<< Updated upstream
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/detailEnchere.html" afterPath="$PROJECT_DIR$/pages/detailEnchere.html" />
+=======
+>>>>>>> Stashed changes
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="pi2-crrgf.iws" />
@@ -41,6 +44,7 @@
       <file leaf-file-name="detailEnchere.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pages/detailEnchere.html">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state line="183" column="22" selection-start="7912" selection-end="7912" vertical-scroll-proportion="0.4404946" vertical-offset="2460" max-vertical-offset="4440">
               <folding>
                 <element signature="tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#main#1;tag#body#0;tag#html#0" expanded="false" />
@@ -51,6 +55,10 @@
                 <element signature="tag#article#1;tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#main#1;tag#body#0;tag#html#0" expanded="false" />
                 <element signature="tag#article#1;tag#article#0;tag#article#0;tag#article#0;tag#main#1;tag#body#0;tag#html#0" expanded="false" />
               </folding>
+=======
+            <state line="101" column="32" selection-start="4563" selection-end="4563" vertical-scroll-proportion="0.0" vertical-offset="1251" max-vertical-offset="2205">
+              <folding />
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
@@ -67,7 +75,11 @@
       <file leaf-file-name="modEnchere.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/modEnchere.html">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state line="239" column="0" selection-start="10096" selection-end="10096" vertical-scroll-proportion="-17.583334" vertical-offset="3163" max-vertical-offset="3960">
+=======
+            <state line="109" column="35" selection-start="4883" selection-end="4883" vertical-scroll-proportion="0.0" vertical-offset="1326" max-vertical-offset="2220">
+>>>>>>> Stashed changes
               <folding />
             </state>
           </provider>
@@ -76,7 +88,11 @@
       <file leaf-file-name="mesEncheres.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/mesEncheres.html">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state line="206" column="0" selection-start="9476" selection-end="9476" vertical-scroll-proportion="-21.333334" vertical-offset="2578" max-vertical-offset="3465">
+=======
+            <state line="104" column="20" selection-start="5369" selection-end="5369" vertical-scroll-proportion="0.0" vertical-offset="816" max-vertical-offset="1740">
+>>>>>>> Stashed changes
               <folding />
             </state>
           </provider>
@@ -85,7 +101,20 @@
       <file leaf-file-name="createEnchere.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/createEnchere.html">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state line="177" column="7" selection-start="8021" selection-end="8021" vertical-scroll-proportion="-8.083333" vertical-offset="2461" max-vertical-offset="4080">
+=======
+            <state line="145" column="20" selection-start="6379" selection-end="6379" vertical-scroll-proportion="0.0" vertical-offset="2175" max-vertical-offset="2355">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="script.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/script.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="40" selection-start="426" selection-end="426" vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="885">
+>>>>>>> Stashed changes
               <folding />
             </state>
           </provider>
@@ -94,7 +123,11 @@
       <file leaf-file-name="xiangfeng.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/xiangfeng.css">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state line="129" column="16" selection-start="2559" selection-end="2559" vertical-scroll-proportion="-2.9607842" vertical-offset="1784" max-vertical-offset="3735">
+=======
+            <state line="98" column="1" selection-start="2006" selection-end="2006" vertical-scroll-proportion="0.0" vertical-offset="1470" max-vertical-offset="3735">
+>>>>>>> Stashed changes
               <folding />
             </state>
           </provider>
@@ -131,8 +164,13 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
+<<<<<<< Updated upstream
     <option name="x" value="21" />
     <option name="y" value="22" />
+=======
+    <option name="x" value="139" />
+    <option name="y" value="23" />
+>>>>>>> Stashed changes
     <option name="width" value="1400" />
     <option name="height" value="830" />
   </component>
@@ -247,6 +285,7 @@
     <property name="options.lastSelected" value="vcs.Git" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+<<<<<<< Updated upstream
   </component>
   <component name="PublishConfig">
     <servers>
@@ -258,6 +297,8 @@
         </serverdata>
       </server>
     </servers>
+=======
+>>>>>>> Stashed changes
   </component>
   <component name="RunManager">
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -302,8 +343,13 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
+<<<<<<< Updated upstream
     <frame x="21" y="22" width="1400" height="830" extended-state="0" />
     <editor active="true" />
+=======
+    <frame x="139" y="23" width="1400" height="979" extended-state="0" />
+    <editor active="false" />
+>>>>>>> Stashed changes
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -311,7 +357,11 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+<<<<<<< Updated upstream
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20384048" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+=======
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20642857" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+>>>>>>> Stashed changes
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -341,6 +391,7 @@
     <entry file="file://$PROJECT_DIR$/pages/detailEnchere.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="101" column="32" selection-start="4563" selection-end="4563" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2205">
+<<<<<<< Updated upstream
           <folding>
             <element signature="tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#main#1;tag#body#0;tag#html#0" expanded="false" />
             <element signature="tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#main#1;tag#body#0;tag#html#0" expanded="false" />
@@ -350,10 +401,17 @@
             <element signature="tag#article#1;tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#article#0;tag#main#1;tag#body#0;tag#html#0" expanded="false" />
             <element signature="tag#article#1;tag#article#0;tag#article#0;tag#article#0;tag#main#1;tag#body#0;tag#html#0" expanded="false" />
           </folding>
+=======
+          <folding />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/historiqueOffres.html">
+<<<<<<< Updated upstream
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="103" column="0" selection-start="4545" selection-end="4545" vertical-scroll-proportion="0.0" vertical-offset="1161" max-vertical-offset="1980">
+=======
       <provider selected="true" editor-type-id="text-editor">
         <state line="103" column="0" selection-start="4545" selection-end="4545" vertical-scroll-proportion="0.0" vertical-offset="1161" max-vertical-offset="1980">
           <folding />
@@ -361,6 +419,51 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/modEnchere.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="109" column="35" selection-start="4883" selection-end="4883" vertical-scroll-proportion="0.0" vertical-offset="1326" max-vertical-offset="2220">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/mesEncheres.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="104" column="20" selection-start="5369" selection-end="5369" vertical-scroll-proportion="0.0" vertical-offset="816" max-vertical-offset="1740">
+>>>>>>> Stashed changes
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< Updated upstream
+    <entry file="file://$PROJECT_DIR$/pages/modEnchere.html">
+=======
+    <entry file="file://$PROJECT_DIR$/pages/createEnchere.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="145" column="20" selection-start="6379" selection-end="6379" vertical-scroll-proportion="0.0" vertical-offset="2175" max-vertical-offset="2355">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="40" selection-start="426" selection-end="426" vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="885">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/xiangfeng.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="98" column="1" selection-start="2006" selection-end="2006" vertical-scroll-proportion="0.0" vertical-offset="1470" max-vertical-offset="3735">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="0" selection-start="188" selection-end="188" vertical-scroll-proportion="0.10514019" vertical-offset="0" max-vertical-offset="856" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+>>>>>>> Stashed changes
       <provider selected="true" editor-type-id="text-editor">
         <state line="109" column="35" selection-start="4883" selection-end="4883" vertical-scroll-proportion="0.0" vertical-offset="1635" max-vertical-offset="2220">
           <folding />
@@ -376,7 +479,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/createEnchere.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state line="145" column="20" selection-start="6379" selection-end="6379" vertical-scroll-proportion="0.0" vertical-offset="1536" max-vertical-offset="2355">
+=======
+        <state line="98" column="1" selection-start="2006" selection-end="2006" vertical-scroll-proportion="0.0" vertical-offset="1470" max-vertical-offset="3735">
+>>>>>>> Stashed changes
           <folding />
         </state>
       </provider>
@@ -390,7 +497,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/xiangfeng.css">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state line="98" column="1" selection-start="2006" selection-end="2006" vertical-scroll-proportion="0.0" vertical-offset="1385" max-vertical-offset="3735">
+=======
+        <state line="101" column="32" selection-start="4563" selection-end="4563" vertical-scroll-proportion="0.0" vertical-offset="1251" max-vertical-offset="2205">
+>>>>>>> Stashed changes
           <folding />
         </state>
       </provider>
@@ -404,13 +515,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/script.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state line="13" column="41" selection-start="427" selection-end="427" vertical-scroll-proportion="0.022692889" vertical-offset="180" max-vertical-offset="885">
+=======
+        <state line="104" column="20" selection-start="5369" selection-end="5369" vertical-scroll-proportion="0.0" vertical-offset="816" max-vertical-offset="1740">
+>>>>>>> Stashed changes
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/modEnchere.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state line="239" column="0" selection-start="10096" selection-end="10096" vertical-scroll-proportion="-17.583334" vertical-offset="3163" max-vertical-offset="3960">
           <folding />
         </state>
@@ -419,13 +535,20 @@
     <entry file="file://$PROJECT_DIR$/pages/mesEncheres.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="206" column="0" selection-start="9476" selection-end="9476" vertical-scroll-proportion="-21.333334" vertical-offset="2578" max-vertical-offset="3465">
+=======
+        <state line="109" column="35" selection-start="4883" selection-end="4883" vertical-scroll-proportion="0.0" vertical-offset="1326" max-vertical-offset="2220">
+>>>>>>> Stashed changes
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/createEnchere.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state line="177" column="7" selection-start="8021" selection-end="8021" vertical-scroll-proportion="-8.083333" vertical-offset="2461" max-vertical-offset="4080">
+=======
+        <state line="145" column="20" selection-start="6379" selection-end="6379" vertical-scroll-proportion="0.0" vertical-offset="2175" max-vertical-offset="2355">
+>>>>>>> Stashed changes
           <folding />
         </state>
       </provider>
