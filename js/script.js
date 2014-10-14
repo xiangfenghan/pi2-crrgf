@@ -11,7 +11,7 @@ window.addEventListener("load", function(){
         // Création du décompte pour la fin de l'enchère
         var currentTime = document.querySelector(".currentTime");
 
-        setTimeout(function(){decompte(20)},1000);
+        setTimeout(function(){decompte(10)},1000);
 
         // Fonction à appeler à chaque seconde pour le décompte
         function decompte(secondesTotal)
@@ -32,7 +32,7 @@ window.addEventListener("load", function(){
                 var btnAcheMantenant = document.getElementById("acheterMantenant");
                 var btnPlacerOffre = document.getElementById("placerOffre");
                 btnAcheMantenant.setAttribute("hidden", "hidden");
-                btnPlacerOffre.setAttribute("hidden", "hidden");
+                btnPlacerOffre.setAttribute("disabled", "disabled");
             }
         }
     }
