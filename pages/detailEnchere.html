@@ -33,40 +33,40 @@
 
 <!-- ------ Navigation / Menu--------- -->
 <article class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+
     <!-- --------------LOGO------------------ -->
     <article class="row logo"  >
-        <article class="col-md-4 col-sm-6 col-xs-9">
-            <img src="../images/Logo Arts aux encheres.svg"  alt="Logo Arts aux enchères">
+        <article class="col-md-4 col-sm-6 col-xs-12">
+            <a href="../index.html"><img src="../images/Logo Arts aux encheres.svg"  alt="Logo Arts aux enchères"></a>
         </article>
-        <!-- --------------Bouton Connexion------------------ -->
-        <article class="col-md-8 col-xs-12 ">
-            <article class="row">
-                <article class="col-md-8 "></article>
-                <article class="col-md-2 Connexion">
-                    <button type="button" class=" btn-primary Connexion ">
-                        <a href="Commentairs_Contact.html">Administrateur</a>
-                    </button>
-                </article>
-                <article class="col-md-2 Connexion">
-                    <button type="button" class=" btn-primary Connexion ">
-                        Connexion
-                    </button>
-                </article>
-            </article>
+
+        <!-- --------------Zone Rechercher------------------ -->
+        <article class="col-md-3 col-xs-12"></article>
+        <article class="col-md-4">
+            <form action="#" method="post" class="form-inline" role="form">
+                <div class="form-group">
+                    <input type="text" placeholder="peu importe" class="form-control">
+                </div>
+                <div class="form-group">
+                    <button class="btn-default btn">Rechercher</button>
+                </div>
+            </form>
         </article>
+        <article class="col-md-1 col-xs-12"></article>
     </article>
     <!-- -------------- Menu ------------------ -->
-    <article class="row  menu">
-        <article class="container ">
-
-            <article class="navbar-collapse collapse">
+    <article class="row menu">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse menuBloc">
                 <ul class="nav navbar-nav">
-                    <li>
-                        <a href="../index.html">Accueil</a>
-                    </li>
-                    <li>
-                        <a href="Galerie.html">Galerie</a>
-                    </li>
                     <li>
                         <a href="Nos_encheres.html">Nos enchères</a>
                     </li>
@@ -77,43 +77,13 @@
                         <a href="Contact.html">Contact</a>
                     </li>
                 </ul>
-            </article>
-            <article class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </article>
-            <!-- Début de la zone de recherche -->
-            <article class="panel-group recherche" id="accordion ">
-                <article class="panel-default recherche">
-                    <article class="panel-heading">
-                        <h4 class="panel-title "><a data-toggle="collapse" data-parent="#accordion" href="#rechercer"> <span class="glyphicon glyphicon-search pull-right"></span> </a></h4>
-                    </article>
-                    <article id="rechercer" class="panel-collapse collapse collapsing in">
-                        <article class="panel-body">
-                            <!-- Début Form de recherche -->
-                            <article class=" pull-right">
-                                <form  action="#" method="post" class="navbar-form navbar-left" role="search">
-                                    <article class="form-group">
-                                        <input type="search" class="form-control">
-                                    </article>
-                                    <button type="submit" class="btn btn-primary">
-                                        <a href="Galerie.html">Rechercher</a>
-                                    </button>
-                                </form>
-                            </article>
-                            <!-- Fin Form de recherche -->
-
-                        </article>
-                    </article>
-                </article>
-            </article>
-            <!-- fin de la zone de recherche -->
-
-        </article>
+            </div>
+            <div class="connexionBloc">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Se connecter</a></li>
+                </ul>
+            </div>
+        </div>
     </article>
 </article>
 <!-- ------ Fin Navigation / Menu--------- -->
