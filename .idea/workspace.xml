@@ -3,12 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="9e693d71-4154-43e0-8890-c65837a22f17" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/createEnchere.html" afterPath="$PROJECT_DIR$/pages/createEnchere.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/detailEnchere.html" afterPath="$PROJECT_DIR$/pages/detailEnchere.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/historiqueOffres.html" afterPath="$PROJECT_DIR$/pages/historiqueOffres.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/main.css" afterPath="$PROJECT_DIR$/css/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/mesEncheres.html" afterPath="$PROJECT_DIR$/pages/mesEncheres.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/modEnchere.html" afterPath="$PROJECT_DIR$/pages/modEnchere.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/xiangfeng.css" afterPath="$PROJECT_DIR$/css/xiangfeng.css" />
     </list>
     <ignored path="pi2-crrgf.iws" />
@@ -35,10 +32,9 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="0" selection-start="1047" selection-end="3509" vertical-scroll-proportion="-12.666667" vertical-offset="116" max-vertical-offset="4260">
+            <state line="45" column="48" selection-start="1925" selection-end="1925" vertical-scroll-proportion="-28.125" vertical-offset="0" max-vertical-offset="5055">
               <folding>
-                <element signature="tag#article#0;tag#body#0;tag#html#0" expanded="false" />
-                <marker date="1413334756000" expanded="true" signature="824:982" placeholder="..." />
+                <marker date="1413335003000" expanded="true" signature="824:982" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -47,10 +43,8 @@
       <file leaf-file-name="detailEnchere.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/detailEnchere.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="0" selection-start="1334" selection-end="3654" vertical-scroll-proportion="-15.958333" vertical-offset="112" max-vertical-offset="5760">
-              <folding>
-                <element signature="tag#article#0;tag#body#0;tag#html#0" expanded="false" />
-              </folding>
+            <state line="37" column="27" selection-start="1530" selection-end="1530" vertical-scroll-proportion="-2.5" vertical-offset="495" max-vertical-offset="6555">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -58,10 +52,8 @@
       <file leaf-file-name="historiqueOffres.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/historiqueOffres.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="87" column="46" selection-start="3653" selection-end="3653" vertical-scroll-proportion="-18.166666" vertical-offset="74" max-vertical-offset="2475">
-              <folding>
-                <element signature="tag#article#0;tag#body#0;tag#html#0" expanded="false" />
-              </folding>
+            <state line="87" column="46" selection-start="3653" selection-end="3653" vertical-scroll-proportion="0.0" vertical-offset="1305" max-vertical-offset="3270">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -69,10 +61,8 @@
       <file leaf-file-name="modEnchere.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/modEnchere.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="87" column="46" selection-start="3653" selection-end="3653" vertical-scroll-proportion="-18.541666" vertical-offset="65" max-vertical-offset="2715">
-              <folding>
-                <element signature="tag#article#0;tag#body#0;tag#html#0" expanded="false" />
-              </folding>
+            <state line="88" column="38" selection-start="3940" selection-end="3940" vertical-scroll-proportion="-20.0" vertical-offset="840" max-vertical-offset="3615">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -80,38 +70,25 @@
       <file leaf-file-name="mesEncheres.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/mesEncheres.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="87" column="46" selection-start="3653" selection-end="3653" vertical-scroll-proportion="-16.125" vertical-offset="123" max-vertical-offset="2220">
-              <folding>
-                <element signature="tag#article#0;tag#body#0;tag#html#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="createEnchere.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/createEnchere.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="87" column="46" selection-start="3653" selection-end="3653" vertical-scroll-proportion="-6.75" vertical-offset="348" max-vertical-offset="2835">
-              <folding>
-                <element signature="tag#article#0;tag#body#0;tag#html#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="xiangfeng.css" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/css/xiangfeng.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="20" selection-start="474" selection-end="474" vertical-scroll-proportion="0.3504673" vertical-offset="0" max-vertical-offset="3765">
+            <state line="88" column="37" selection-start="3939" selection-end="3939" vertical-scroll-proportion="-15.625" vertical-offset="945" max-vertical-offset="3120">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/main.css">
+      <file leaf-file-name="createEnchere.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pages/createEnchere.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="97" column="21" selection-start="2178" selection-end="2178" vertical-scroll-proportion="-3.490196" vertical-offset="1277" max-vertical-offset="12060">
+            <state line="88" column="37" selection-start="3939" selection-end="3939" vertical-scroll-proportion="0.6522411" vertical-offset="898" max-vertical-offset="3735">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="xiangfeng.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/xiangfeng.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="210" column="29" selection-start="4104" selection-end="4104" vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="3765">
               <folding />
             </state>
           </provider>
@@ -136,23 +113,23 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/js/script.js" />
-        <option value="$PROJECT_DIR$/css/xiangfeng.css" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/css/main.css" />
         <option value="$PROJECT_DIR$/pages/detailEnchere.html" />
         <option value="$PROJECT_DIR$/pages/historiqueOffres.html" />
-        <option value="$PROJECT_DIR$/pages/modEnchere.html" />
+        <option value="$PROJECT_DIR$/css/xiangfeng.css" />
         <option value="$PROJECT_DIR$/pages/mesEncheres.html" />
+        <option value="$PROJECT_DIR$/pages/modEnchere.html" />
         <option value="$PROJECT_DIR$/pages/createEnchere.html" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="85" />
-    <option name="y" value="23" />
-    <option name="width" value="1529" />
-    <option name="height" value="979" />
+    <option name="x" value="21" />
+    <option name="y" value="22" />
+    <option name="width" value="1400" />
+    <option name="height" value="830" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -180,6 +157,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -256,7 +234,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -268,7 +245,7 @@
   </component>
   <component name="PublishConfig">
     <servers>
-      <server id="457e831f-2294-435d-b0e4-b1bcba97a656">
+      <server id="38b489e3-eb43-47b9-a4c8-3f4b206ddefe">
         <serverdata />
       </server>
     </servers>
@@ -316,7 +293,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="85" y="23" width="1529" height="979" extended-state="0" />
+    <frame x="21" y="22" width="1400" height="830" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -325,7 +302,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18639633" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19202363" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -355,36 +332,28 @@
     <entry file="file://$PROJECT_DIR$/pages/historiqueOffres.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="103" column="0" selection-start="4545" selection-end="4545" vertical-scroll-proportion="0.0" vertical-offset="1161" max-vertical-offset="1980">
-          <folding>
-            <element signature="tag#article#0;tag#body#0;tag#html#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/modEnchere.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="109" column="35" selection-start="4883" selection-end="4883" vertical-scroll-proportion="0.0" vertical-offset="1635" max-vertical-offset="2220">
-          <folding>
-            <element signature="tag#article#0;tag#body#0;tag#html#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/mesEncheres.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="104" column="20" selection-start="5369" selection-end="5369" vertical-scroll-proportion="0.0" vertical-offset="816" max-vertical-offset="1740">
-          <folding>
-            <element signature="tag#article#0;tag#body#0;tag#html#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/createEnchere.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="145" column="20" selection-start="6379" selection-end="6379" vertical-scroll-proportion="0.0" vertical-offset="1536" max-vertical-offset="2355">
-          <folding>
-            <element signature="tag#article#0;tag#body#0;tag#html#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -407,76 +376,63 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2012" column="4" selection-start="37019" selection-end="37022" vertical-scroll-proportion="0.33333334" vertical-offset="29916" max-vertical-offset="86865">
+        <state line="2012" column="4" selection-start="37019" selection-end="37022" vertical-scroll-proportion="0.33333334" vertical-offset="29916" max-vertical-offset="86865" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/historiqueOffres.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="87" column="46" selection-start="3653" selection-end="3653" vertical-scroll-proportion="0.0" vertical-offset="1305" max-vertical-offset="3270">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="97" column="21" selection-start="2178" selection-end="2178" vertical-scroll-proportion="-3.490196" vertical-offset="1277" max-vertical-offset="12060">
+        <state line="13" column="18" selection-start="371" selection-end="378" vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="12060">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/xiangfeng.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="210" column="29" selection-start="4104" selection-end="4104" vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="3765">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="0" selection-start="1047" selection-end="3509" vertical-scroll-proportion="-12.666667" vertical-offset="116" max-vertical-offset="4260">
+        <state line="45" column="48" selection-start="1925" selection-end="1925" vertical-scroll-proportion="-28.125" vertical-offset="0" max-vertical-offset="5055">
           <folding>
-            <element signature="tag#article#0;tag#body#0;tag#html#0" expanded="false" />
-            <marker date="1413334756000" expanded="true" signature="824:982" placeholder="..." />
+            <marker date="1413335003000" expanded="true" signature="824:982" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/detailEnchere.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="0" selection-start="1334" selection-end="3654" vertical-scroll-proportion="-15.958333" vertical-offset="112" max-vertical-offset="5760">
-          <folding>
-            <element signature="tag#article#0;tag#body#0;tag#html#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/historiqueOffres.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="46" selection-start="3653" selection-end="3653" vertical-scroll-proportion="-18.166666" vertical-offset="74" max-vertical-offset="2475">
-          <folding>
-            <element signature="tag#article#0;tag#body#0;tag#html#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/modEnchere.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="46" selection-start="3653" selection-end="3653" vertical-scroll-proportion="-18.541666" vertical-offset="65" max-vertical-offset="2715">
-          <folding>
-            <element signature="tag#article#0;tag#body#0;tag#html#0" expanded="false" />
-          </folding>
+        <state line="37" column="27" selection-start="1530" selection-end="1530" vertical-scroll-proportion="-2.5" vertical-offset="495" max-vertical-offset="6555">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/mesEncheres.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="46" selection-start="3653" selection-end="3653" vertical-scroll-proportion="-16.125" vertical-offset="123" max-vertical-offset="2220">
-          <folding>
-            <element signature="tag#article#0;tag#body#0;tag#html#0" expanded="false" />
-          </folding>
+        <state line="88" column="37" selection-start="3939" selection-end="3939" vertical-scroll-proportion="-15.625" vertical-offset="945" max-vertical-offset="3120">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/modEnchere.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="88" column="38" selection-start="3940" selection-end="3940" vertical-scroll-proportion="-20.0" vertical-offset="840" max-vertical-offset="3615">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/createEnchere.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="46" selection-start="3653" selection-end="3653" vertical-scroll-proportion="-6.75" vertical-offset="348" max-vertical-offset="2835">
-          <folding>
-            <element signature="tag#article#0;tag#body#0;tag#html#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/xiangfeng.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="20" selection-start="474" selection-end="474" vertical-scroll-proportion="0.3504673" vertical-offset="0" max-vertical-offset="3765">
+        <state line="88" column="37" selection-start="3939" selection-end="3939" vertical-scroll-proportion="0.6522411" vertical-offset="898" max-vertical-offset="3735">
           <folding />
         </state>
       </provider>

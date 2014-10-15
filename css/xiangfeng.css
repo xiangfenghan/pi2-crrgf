@@ -33,7 +33,7 @@
 /*Détails du produit*/
 #xiangfeng  #contenu > .detailProduit
 {
-    border: 1px black solid;
+    border: 1px #323b40 solid;
     padding-top: 10px;
     padding-bottom: 10px;
     margin-bottom: 20px;
@@ -59,7 +59,7 @@
 /*Création d'enchère*/
 #xiangfeng .conteneur > form
 {
-    border: 1px black solid;
+    border: 1px #323b40 solid;
     font-weight: 300;
     font-size: 1em;
 }
@@ -68,8 +68,8 @@
     display: block;
     padding: 5px 5px 5px 15px;
     margin-bottom: 10px;
-    background-color: #222;
-    border-top: 0px black solid;
+    background-color: #323b40;
+    border-top: 0px #323b40 solid;
     clear: both;
 }
 #xiangfeng .conteneur > form > label:first-child
@@ -77,15 +77,15 @@
     display: block;
     padding: 5px 5px 5px 15px;
     margin-bottom: 10px;
-    background-color: #222;
-    border-top: 0px black solid;
+    background-color: #323b40;
+    border-top: 0px #323b40 solid;
     clear: both;
     color: white;
     font-size: 1.1em;
 }
 #xiangfeng .conteneur > form > label:not(:first-child)
 {
-    border-top: 1px black solid;
+    border-top: 1px #323b40 solid;
     color: white;
 }
 #xiangfeng .conteneur > form input[type='number'],
@@ -127,7 +127,7 @@
 }
 #xiangfeng .btnConteneur
 {
-    border-top: 1px black solid;
+    border-top: 1px #323b40 solid;
     margin-top: 50px;
     height: 50px;
     text-align: center;
@@ -174,7 +174,7 @@
 }
 #xiangfeng .btn:hover, .btnA:hover
 {
-    background: #000;
+    background: #323b40;
     text-decoration: none;
 }
 
@@ -188,12 +188,12 @@
 {
     clear: both;
     background-color: #999;
-    border-top: 1px black solid;
+    border-top: 1px #323b40 solid;
 }
 #xiangfeng .divAchatMaintenant
 {
-    border-top: 1px black solid;
-    border-bottom: 0px black solid;
+    border-top: 1px #323b40 solid;
+    border-bottom: 0px #323b40 solid;
     padding-top: 10px;
     margin-bottom: -10px;
 }
@@ -208,7 +208,7 @@
 }
 #xiangfeng .conteneur .description > table tr:first-child th
 {
-    background-color: #222;
+    background-color: #323b40;
     text-align: center;
     color: white;
 }
@@ -217,7 +217,7 @@
     text-align: center;
     font-size: 0.9em;
     font-weight: 300;
-    border-bottom: 1px black solid;
+    border-bottom: 1px #323b40 solid;
     padding: 5px 0;
 }
 #xiangfeng .conteneur .description > table img
