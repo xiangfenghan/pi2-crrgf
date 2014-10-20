@@ -19,8 +19,20 @@ class ControleurAdmin extends Controleur{
 
 		try{
 
+			if ( !isset($_GET['page']) ) {
+
+				$_GET['page'] = 'accueil';
+
+			}
+
 			switch ( $_GET['page'] ) {
 
+				case 'accueil':
+					self::gererAccueil();
+					break;
+
+				default:
+					$this->gererErreurs();
 
 			}
 
@@ -29,6 +41,12 @@ class ControleurAdmin extends Controleur{
 			echo "<p class=\"alert alert-danger\">".$e->getMessage()."</p>";
 
 		}
+
+	}
+
+	public static function gererAccueil(){
+
+		echo "page accueil";
 
 	}
 
