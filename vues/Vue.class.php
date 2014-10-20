@@ -21,16 +21,18 @@ class Vue {
 			<html class=\"no-js\">
 			<!--<![endif]-->
 			<head>
-				<base href=\"".SITE.DS."\">
+				<base href=\"".SITE.DS."index.php\">
 				<meta charset=\"utf-8\">
 				<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\">
-				<title>Informations - Étape 1 - Arts aux Enchères</title>
-				<meta name=\"description\" content=\"\">
+				<title>".$sTitre = ($sTitre == '') ? 'Arts aux Enchères' : $sTitre.' - Arts aux Enchères'; echo "</title>
+				<meta name=\"description\" content=\"".$sDescription = ($sDescription == '') ? 'Site de vente d\'oeuvres d\'art d\'artistes divers' : $sDescription; echo "\">
 				<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
 				<link rel=\"stylesheet\" href=\"css/bootstrap.css\">
 				<link rel=\"stylesheet\" href=\"css/bootstrap-theme.css\">
 				<link rel=\"stylesheet\" href=\"css/main.css\">
+				".$style = ($sNomStyle == '') ? '' : '<link rel="stylesheet" href="css/'.$sNomStyle.'">'; echo "
 				<script src=\"js/vendor/modernizr-2.6.2-respond-1.1.0.min.js\"></script>
+				".$script = ($sLienScript == '') ? '' : '<script rel="text/javascript" src="'.$sLienScript.'"></script>'; echo "
 			</head>
 			<body>
 				<!--[if lt IE 7]>
@@ -48,13 +50,13 @@ class Vue {
 			<header class=\"entete-document container-fluid\">
 				<div class=\"container-fluid\">
 					<section class=\"row\">
-						<div class=\"col-sm-offset-1\">
+						<div class=\"col-sm-11 col-sm-offset-1\">
 							<div class=\"row\">
 								<!-- Logo & menu burger -->
 								<div class=\"col-sm-2 text-center\">
-									<a href=\"index.html\"><img src=\"img/logo-139x60.png\" height=\"60\" width=\"139\" alt=\"\"></a>
+									<a href=\"index.php\"><img src=\"img/logo-175x75.png\" height=\"75\" width=\"175\" alt=\"Logo Arts aux Enchères\"></a>
 									<button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\".navbar-menu\">
-										<span class=\"sr-only\">Toggle navigation</span>
+										<span class=\"sr-only\">Bascule de navigation</span>
 										<span class=\"icon-bar\"></span>
 										<span class=\"icon-bar\"></span>
 										<span class=\"icon-bar\"></span>
@@ -62,11 +64,11 @@ class Vue {
 								</div><!-- /Logo & menu burger -->
 								<!-- Zone de recherche -->
 								<div class=\"col-xs-8 col-xs-offset-2 col-sm-6 col-md-6 col-md-offset-1\">
-									<form class=\"navbar-form\" role=\"search\">
+									<form class=\"navbar-form\" action=\"?page=encheres\" method=\"GET\" role=\"search\">
 										<div class=\"input-group\">
-											<input type=\"search\" class=\"form-control\" placeholder=\"Je cherche\" autofocus=\"autofocus\">
+											<input type=\"search\" name=\"q\" class=\"form-control\" value=\"".$q = ( isset($_GET['q']) && $_GET['q'] != '' ) ? $_GET['q'] : '' ; echo "\" placeholder=\"Je cherche\" autofocus=\"autofocus\">
 											<span class=\"input-group-btn\">
-												<button type=\"submit\" class=\"btn btn-default\">Rechercher</button>
+												<input class=\"btn btn-default\" type=\"submit\" name=\"cmd\" value=\"Rechercher\">
 											</span>
 										</div>
 									</form>
@@ -90,22 +92,30 @@ class Vue {
 						<div class=\"collapse navbar-collapse navbar-menu\">
 							<div class=\"col-md-5 col-md-offset-1\">
 								<ul class=\"nav navbar-nav\">
-									<li><a href=\"pages/Nos_encheres.html\">Nos enchères</a></li>
-									<li><a href=\"pages/Liste_Artistes.html\">Artistes</a></li>
-									<li><a href=\"pages/Contact.html\">Contact</a></li>
+									<li><a href=\"?page=encheres\">Nos enchères</a></li>
+									<li><a href=\"?page=artistes\">Artistes</a></li>
+									<li><a href=\"?page=contact\">Contact</a></li>
 								</ul>
 							</div>
 							<div class=\"col-md-5\">
 								<ul class=\"nav navbar-nav navbar-right\">
-									<li><a href=\"pages/formulaire_login.html\">Se connecter</a></li>
-									<li><a href=\"pages/formulaire_inscription.html\">S'inscrire</a></li>
-									<!-- <li><a href=\"#\">Link</a></li>
+									<!-- Si non connecte
+									<li><a href=\"?page=login\">Se connecter</a></li>
+									<li><a href=\"?page=inscription\">S'inscrire</a></li>
+									<!-- /Si non connecte -->
+									<!-- Lorsque connecte -->
+									<li><a href=\"?page=mes-encheres\">Mes enchères</a></li>
+									<li><a href=\"?page=mes-oeuvres\">Mes oeuvres</a></li>
+									<li><a href=\"?page=commentaires\">Commentaires</a></li>
 									<li class=\"dropdown\">
-										<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">Dropdown <b class=\"caret\"></b></a>
+										<a href=\"?page=compte\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">Mon compte <b class=\"caret\"></b></a>
 										<ul class=\"dropdown-menu\">
-											<li><a href=\"#\">Action</a></li>
+											<li><a href=\"?page=compte&action=mod\">Modifier</a></li>
+											<li><a href=\"?page=compte&action=supp\">Supprimer</a></li>
+											<li><a href=\"?page=compte&action=deconnecter\">Déconnecter</a></li>
 										</ul>
-									</li> -->
+									</li>
+									<!-- /Lorsque connecte -->
 								</ul>
 							</div>
 						</div><!-- /.navbar-collapse -->
@@ -163,6 +173,7 @@ class Vue {
 			</script>
 			<script src=\"js/vendor/bootstrap.min.js\"></script>
 			<script src=\"js/main.js\"></script>
+			".$script = ( $sNomScript == '' ) ? '' : '<script type="text/javascript" src="'.$sNomScript.'"></script>'; echo "
 			<script src=\"js/plugins.js\"></script>
 			<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 			<script>
@@ -186,41 +197,56 @@ class Vue {
 
 	}
 
-	public static function carousel($aImages = array()) {
-		// TODO
-		// Rendre le carousel responsive et pleine largeur
-		echo "
-			<article id=\"carousel-tableau\" class=\"carousel slide hidden-xs\" data-ride=\"carousel\">
-			    <ol class=\"carousel-indicators\">
-			        <li data-target=\"#carousel-tableau\" data-slide-to=\"0\" class=\"active\"></li>
-			        <li data-target=\"#carousel-tableau\" data-slide-to=\"1\" class=\"\"></li>
-			        <li data-target=\"#carousel-tableau\" data-slide-to=\"2\" class=\"\"></li>
-			        <li data-target=\"#carousel-tableau\" data-slide-to=\"3\" class=\"\"></li>
-			        <li data-target=\"#carousel-tableau\" data-slide-to=\"4\" class=\"\"></li>
-			        <li data-target=\"#carousel-tableau\" data-slide-to=\"5\" class=\"\"></li>
-			    </ol>
-			    <section class=\"carousel-inner\">
-			        <article class=\"item active\">
-			            <img alt=\"First slide\" src=\"img/carousel/carousel1.jpg\" height=\"350\" width=\"auto\">
-			        </article>
-			        <article class=\"item\">
-			            <img alt=\"First slide\" src=\"img/carousel/carousel2.png\" height=\"350\" width=\"auto\">
-			        </article>
-			        <article class=\"item\">
-			            <img alt=\"First slide\" src=\"img/carousel/carousel3.jpg\" height=\"350\" width=\"auto\">
-			        </article>
-			        <article class=\"item\">
-			            <img alt=\"First slide\" src=\"img/carousel/carousel4.jpg\" height=\"350\" width=\"auto\">
-			        </article>
-			        <article class=\"item\">
-			            <img alt=\"First slide\" src=\"img/carousel/carousel5.jpg\" height=\"350\" width=\"auto\">
-			        </article>
-			        <article class=\"item\">
-			            <img alt=\"First slide\" src=\"img/carousel/carousel6.jpg\" height=\"350\" width=\"auto\">
-			        </article>
-			    </section>
-			</article>
-		";
+	public static function carousel($aImages = array(array('src' => 'img/image1.jpg', 'alt' => 'Image1'),array('src' => 'img/image2.jpg', 'alt' => 'Image2'))) {
+
+		if ( count($aImages) ) {
+
+			echo "<article id=\"carousel\" class=\"carousel slide hidden-xs\" data-ride=\"carousel\">
+			    <ol class=\"carousel-indicators\">";
+
+			foreach ( $aImages AS $iImage => $aImage ) {
+
+				if ( $iImage == 0 ) {
+
+					echo "<li data-target=\"#carousel\" data-slide-to=\"".$iImage."\" class=\"active\"></li>";
+
+				} else {
+
+					echo "<li data-target=\"#carousel\" data-slide-to=\"".$iImage."\" class=\"\"></li>";
+
+				}
+
+			}
+
+			echo "
+				</ol>
+				<section class=\"carousel-inner\">";
+
+			foreach ( $aImages AS $iImage => $aImage ) {
+
+				if ( $iImage == 0 ) {
+
+					echo "
+						<article class=\"item active\">
+			            	<img src=\"img/carousel/".$aImage['src']."\" alt=\"".$aImage['alt']."\" height=\"350\" width=\"auto\">
+			        	</article>";
+
+				} else {
+
+					echo "
+						<article class=\"item\">
+				            <img src=\"img/carousel/".$aImage['src']."\" alt=\"".$aImage['alt']."\" height=\"350\" width=\"auto\">
+				        </article>";
+
+				}
+
+			}
+
+			echo "
+				</section>
+			</article>";
+
+		}
 
 	}
 

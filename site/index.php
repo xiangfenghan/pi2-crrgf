@@ -6,6 +6,7 @@
 	define('SYSTEME', RACINE.DS."systeme");
 
 	require_once '../systeme/includes.php';
-	ControleurSite::gererSite();
+
+	$oControleurSite = new ControleurSite();
 
  ?>

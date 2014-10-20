@@ -19,4 +19,31 @@ class Modeles extends Connexion{
 
 	}
 
+	public function selectAllFrom($sNomTable) {
+
+		$sSQL = "SELECT * FROM ".$sNomTable.";";
+
+		$requete = $oPDO->prepare($sSQL);
+
+		if ( $requete->execute() ) {
+
+			if ( $requete->rowCount() ) {
+
+				$aResultats = $requete->fetchAll();
+
+			} else {
+
+				//$sMsg = array('type'=>'warning', 'msg'=>'Aucune donnees de disponible pour le moment');
+
+			}
+
+		} else {
+
+			throw new Exception("Erreur lors de la requete");
+			//$sMsg = array('type'=>'danger', 'msg'=>'Erreur lors de la requete.');
+
+		}
+
+	}
+
 }

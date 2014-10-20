@@ -11,11 +11,11 @@ class ControleurSite extends Controleur{
 
 	public function __construct(){
 
-		self::gererSite();
+		$this->gererSite();
 
 	}
 
-	public static function gererSite(){
+	public function gererSite(){
 
 		try{
 
@@ -28,7 +28,7 @@ class ControleurSite extends Controleur{
 			switch ( $_GET['page'] ) {
 
 				case 'accueil':
-					self::gererAccueil();
+					$this->gererAccueil();
 					break;
 
 				default:
@@ -44,7 +44,7 @@ class ControleurSite extends Controleur{
 
 	}
 
-	public static function gererAccueil(){
+	public function gererAccueil(){
 
 		VueAccueil::afficherAccueil();
 
