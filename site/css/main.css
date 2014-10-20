@@ -89,6 +89,14 @@ nav .navbar-menu{
 	background-color: #323b40;
 }
 
+.dropdown-menu{
+	background-color: #323b40;
+}
+
+.dropdown-menu >li >a{
+	color: #CCCCCC;
+}
+
 /** Carousel **/
 #carousel-tableau{
 	background-color: rgb(201, 212, 218);
