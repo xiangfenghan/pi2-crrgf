@@ -11,12 +11,14 @@ class VueAccueil {
 
 	public static function afficherAccueil() {
 
-		Vue::head();
-		Vue::header();
+		// Inclu les morceaux de pages, dont les metas, l'entete, la navigation et le carousel
+		Vue::head('Achetez des oeuvres d\'art', 'Site de vente d\'oeuvres d\'art en ligne');
+		Vue::header('Ma recherche');
 		Vue::nav();
-		Vue::carousel();
+		Vue::carousel(array(array('src' => 'carousel1.jpg', 'alt' => 'Image 1'), array('src' => 'carousel2.png', 'alt' => 'Image 2'), array('src' => 'carousel3.jpg', 'alt' => 'Image 3'), array('src' => 'carousel4.jpg', 'alt' => 'Image 4'), array('src' => 'carousel5.jpg', 'alt' => 'Image 5'), array('src' => 'carousel6.jpg', 'alt' => 'Image 6')));
+
 		echo "
-			<article class=\"accueil\">
+			<article class=\"accueil container-fluid\">
 				<section class=\"le-site row\">
 					<article class=\"col-md-6 col-md-offset-3\">
 						<header>
@@ -52,6 +54,7 @@ class VueAccueil {
 				</section>
 			</article>
 		";
+
 		Vue::footer();
 
 	}

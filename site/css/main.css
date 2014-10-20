@@ -45,6 +45,10 @@ h1, h2, h3{
 	box-shadow: none;
 }
 
+nav .navbar-menu{
+	border-top: solid 1px #CCC;
+	border-bottom: solid 1px #CCC;
+}
 .navbar-toggle .icon-bar {
   background-color: white;
 }
@@ -68,6 +72,12 @@ h1, h2, h3{
 
 .nav >li >a:hover, .nav >li >a:focus{
 	background-color: transparent;
+}
+
+.nav .open >a, .nav .open >a:hover, .nav .open >a:focus{
+	color: #FFA500;
+	border-color: #CCC;
+	background-color: #333333;
 }
 
 .navbar a > img{
@@ -100,6 +110,19 @@ h1, h2, h3{
 	background-color: #FFA500;
 }
 
+/** Contenu **/
+main section header p{
+	font-style: italic;
+}
+
+main section header p:before{
+	content: open-quote;
+}
+
+main section header p:after{
+	content: close-quote;
+}
+
 /** Pied de page **/
 footer{
 	padding: 20px 0;
@@ -127,6 +150,15 @@ footer .droits{
 	h1{
 		font-size: 24px;
 	}
+
+	.navbar-menu a{
+		text-align: center;
+	}
+
+	nav .navbar-right{
+		border-top: solid 1px #CCC;
+	}
+
 }
 
 /** Page d'accueil **/
