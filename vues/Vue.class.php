@@ -207,11 +207,13 @@ class Vue {
 
 				if ( $iImage == 0 ) {
 
-					echo "<li data-target=\"#carousel\" data-slide-to=\"".$iImage."\" class=\"active\"></li>";
+					echo "
+					<li data-target=\"#carousel\" data-slide-to=\"".$iImage."\" class=\"active\"></li>";
 
 				} else {
 
-					echo "<li data-target=\"#carousel\" data-slide-to=\"".$iImage."\" class=\"\"></li>";
+					echo "
+					<li data-target=\"#carousel\" data-slide-to=\"".$iImage."\" class=\"\"></li>";
 
 				}
 
@@ -251,12 +253,18 @@ class Vue {
 
 	// TODO
 	// Faire le contenu du panneau/aside droit de la page d'accueil.
-	public static function aside() {
+	public static function aside() { ?>
 
-		echo "
-			Ceci est l'aside.
-		";
-
+		<aside class="derniere-minute col-md-3">
+			<h1 class="text-center">Enchères <br><span>de dernière minutes</span></h1 class="text-center">
+			<ul class="list-unstyled text-center">
+				<li><a href="?page=oeuvres&id=1"><img src="img/oeuvres/oeuvre1-224x288.jpg" height="288" width="224" alt="Oeuvre 1"></a></li>
+				<li><a href="?page=oeuvres&id=2"><img src="img/oeuvres/oeuvre2-224x262.jpg" height="262" width="224" alt="Oeuvre 2"></a></li>
+				<li><a href="?page=oeuvres&id=3"><img src="img/oeuvres/oeuvre3-224x307.jpg" height="307" width="224" alt="Oeuvre 3"></a></li>
+				<li><a href="?page=oeuvres&id=4"><img src="img/oeuvres/oeuvre4-224x263.jpg" height="263" width="224" alt="Oeuvre 4"></a></li>
+			</ul>
+		</aside>
+<?php
 	}
 
 }

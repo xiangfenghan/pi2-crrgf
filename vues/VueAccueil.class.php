@@ -21,9 +21,9 @@ class VueAccueil {
 		Vue::carousel(array(array('src' => 'carousel1.jpg', 'alt' => 'Image 1'), array('src' => 'carousel2.png', 'alt' => 'Image 2'), array('src' => 'carousel3.jpg', 'alt' => 'Image 3'), array('src' => 'carousel4.jpg', 'alt' => 'Image 4'), array('src' => 'carousel5.jpg', 'alt' => 'Image 5'), array('src' => 'carousel6.jpg', 'alt' => 'Image 6')));
 
 		echo "
-			<article class=\"accueil container-fluid\">
+			<article class=\"accueil col-md-9\">
 				<section class=\"a-propos row\">
-					<article class=\"col-md-6 col-md-offset-3\">
+					<article class=\"col-md-9 col-md-offset-1\">
 						<header>
 							<h1 class=\"text-center\">À propos de nous</h1>
 							<p class=\"text-center\">Un site qui rassemble les passionnés d'oeuvres d'art.</p>
@@ -32,7 +32,7 @@ class VueAccueil {
 					</article>
 				</section>
 				<section class=\"fonctionnalites row\">
-					<article class=\"col-md-6 col-md-offset-3\">
+					<article class=\"col-md-9 col-md-offset-1\">
 						<header>
 							<h1 class=\"text-center\">Fonctionnalités</h1>
 							<p class=\"text-center\">Accédez à tout moment et de partout à vos informations via une interface personnalisé.</p>
@@ -46,7 +46,7 @@ class VueAccueil {
 					</article>
 				</section>
 				<section class=\"notre-engagement row\">
-					<article class=\"col-md-6 col-md-offset-3\">
+					<article class=\"col-md-9 col-md-offset-1\">
 						<header>
 							<h1 class=\"text-center\">Notre engagement</h1>
 							<p class=\"text-center\">La promesse d'<strong>Arts aux Enchères</strong></p>
@@ -58,6 +58,7 @@ class VueAccueil {
 			</article>
 		";
 
+		Vue::aside();
 		Vue::footer();
 
 	}
