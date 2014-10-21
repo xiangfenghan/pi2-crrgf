@@ -90,14 +90,14 @@ class Vue {
 					<section class=\"row\">
 						<!-- navbar-collapse -->
 						<div class=\"collapse navbar-collapse navbar-menu\">
-							<div class=\"col-md-5 col-md-offset-1\">
+							<div class=\"col-md-5 \">
 								<ul class=\"nav navbar-nav\">
 									<li><a href=\"?page=encheres\">Nos enchères</a></li>
 									<li><a href=\"?page=artistes\">Artistes</a></li>
 									<li><a href=\"?page=contact\">Contact</a></li>
 								</ul>
 							</div>
-							<div class=\"col-md-5\">
+							<div class=\"col-md-6\">
 								<ul class=\"nav navbar-nav navbar-right\">
 									<!-- Si non connecte
 									<li><a href=\"?page=login\">Se connecter</a></li>
