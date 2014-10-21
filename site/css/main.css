@@ -132,9 +132,29 @@ article header p:after{
 	content: close-quote;
 }
 
+/** Echeres derniere minute **/
+.derniere-minute{
+	background-image: url(../img/fond-rayures_fonces.png);
+}
+
+.derniere-minute h1{
+	padding-bottom: 10px;
+	color: #CCC;
+	border-bottom: 1px solid #CCC;
+}
+
+.derniere-minute h1 span{
+	font-size: 75%;
+}
+
+.derniere-minute li{
+	margin: 20px 0;
+}
+
 /** Pied de page **/
 footer{
 	padding: 20px 0;
+	border-top: 1px solid #CCC;
 }
 
 footer section:not(:last-child) li{
