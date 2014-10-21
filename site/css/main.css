@@ -1,0 +1,192 @@
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+html{
+	font-size: 12px;
+}
+
+body {
+	font-family: 'Lato', Calibri, Arial, sans-serif;
+	font-family: Lucida Sans Unicode, Arial, Helvetica, sans-serif;
+	color: #323b40;
+	background-repeat: repeat;
+	background-image: url('../img/fond-rayures_pales.png');
+	background-color: #464647;
+}
+
+/** Titres **/
+h1{
+	font-size: 24px;
+}
+
+h2{
+	font-size: 14px;
+}
+
+h1, h2, h3{
+	font-weight: bold;
+}
+
+/** Entete du document **/
+.entete-document{
+	padding: 20px 0;
+}
+
+.entete-document, footer {
+	background-repeat: repeat;
+	background-image: url('../img/fond-rayures_fonces.png');
+	background-color: #464647;
+}
+
+/** Navigation **/
+.navbar-form{
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+nav .navbar-menu{
+	border-top: solid 1px #CCC;
+	border-bottom: solid 1px #CCC;
+}
+.navbar-toggle .icon-bar {
+  background-color: white;
+}
+
+.navbar{
+	margin-bottom: 0;
+	border: 0 none transparent;
+}
+
+.navbar a, footer a{
+	color: #CCC;
+}
+
+.navbar-nav >li >a{
+	text-shadow: 0 0 0 transparent;
+}
+
+.navbar a:hover{
+	color: #FFA500;
+}
+
+.nav >li >a:hover, .nav >li >a:focus{
+	background-color: transparent;
+}
+
+.nav .open >a, .nav .open >a:hover, .nav .open >a:focus{
+	color: #FFA500;
+	border-color: #CCC;
+	background-color: #333333;
+}
+
+.navbar a > img{
+	padding: 10px 0;
+	display: inline;
+}
+
+.navbar-menu{
+	background-color: #323b40;
+}
+
+.dropdown-menu{
+	background-color: #323b40;
+}
+
+.dropdown-menu >li >a{
+	color: #CCCCCC;
+}
+
+/** Carousel **/
+#carousel-tableau{
+	background-color: rgb(201, 212, 218);
+}
+
+.carousel-inner {
+	max-height: 300px;
+}
+
+.carousel-inner img{
+	margin: 0 auto;
+}
+
+.carousel-indicators{
+	bottom: 0;
+}
+
+.carousel-indicators .active{
+	background-color: #FFA500;
+}
+
+/** Contenu **/
+main section header p{
+	font-style: italic;
+}
+
+main section header p:before{
+	content: open-quote;
+}
+
+main section header p:after{
+	content: close-quote;
+}
+
+/** Pied de page **/
+footer{
+	padding: 20px 0;
+}
+
+footer section:not(:last-child) li{
+	margin-bottom: 10px;
+}
+
+footer a:hover, footer a:focus{
+	color: #CCC;
+}
+
+footer .droits{
+	color: #CCC;
+	font-size: 12px;
+}
+
+/** Medias Queries **/
+@media all and (max-width: 768px){
+	html{
+		font-size: 0.5em;
+	}
+
+	h1{
+		font-size: 24px;
+	}
+
+	.navbar-menu a{
+		text-align: center;
+	}
+
+	nav .navbar-right{
+		border-top: solid 1px #CCC;
+	}
+
+}
+
+/** Page d'accueil **/
+.accueil >section{
+	min-height: 300px;
+	padding: 50px 0;
+}
+
+.le-site, .engagement{
+	background-size: 100% 100%;
+}
+
+.le-site{
+	background-image: url('../img/fond-peinture1.jpg');
+}
+
+.compatibilite{
+	background-color: #FFA500;
+}
+
+.engagement{
+	background-image: url('../img/fond-peinture3.jpg');
+}
