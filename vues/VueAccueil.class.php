@@ -9,6 +9,9 @@
  */
 class VueAccueil {
 
+	/**
+	 * Affiche le contenu de la page d'accueil du site côté clients
+	 */
 	public static function afficherAccueil() {
 
 		// Inclu les morceaux de pages, dont les metas, l'entete, la navigation et le carousel
@@ -19,7 +22,7 @@ class VueAccueil {
 
 		echo "
 			<article class=\"accueil container-fluid\">
-				<section class=\"le-site row\">
+				<section class=\"a-propos row\">
 					<article class=\"col-md-6 col-md-offset-3\">
 						<header>
 							<h1 class=\"text-center\">À propos de nous</h1>
@@ -28,10 +31,10 @@ class VueAccueil {
 						<p><strong>Arts aux enchères</strong> permet aux artistes de proposés des oeuvres sous la forme d’enchères. Nous offrons aussi la possibilité aux artistes de proposer leurs oeuvres en  mode achat instantané.</p>
 					</article>
 				</section>
-				<section class=\"compatibilite row\">
+				<section class=\"fonctionnalites row\">
 					<article class=\"col-md-6 col-md-offset-3\">
 						<header>
-							<h1 class=\"text-center\">Compatibilité</h1>
+							<h1 class=\"text-center\">Fonctionnalités</h1>
 							<p class=\"text-center\">Accédez à tout moment et de partout à vos informations via une interface personnalisé.</p>
 						</header>
 						<ul>
@@ -42,10 +45,10 @@ class VueAccueil {
 						<p class=\"text-center\"><img src=\"img/mobiles.png\" alt=\"Tableau6\"></p>
 					</article>
 				</section>
-				<section class=\"engagement row\">
+				<section class=\"notre-engagement row\">
 					<article class=\"col-md-6 col-md-offset-3\">
 						<header>
-							<h1 class=\"text-center\">Engagement</h1>
+							<h1 class=\"text-center\">Notre engagement</h1>
 							<p class=\"text-center\">La promesse d'<strong>Arts aux Enchères</strong></p>
 						</header>
 						<p>Nous élevons votre expérience artistique, grâce à une approche spécialisée, complète et unique dans le monde du marché de l’art.</p>
