@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e693d71-4154-43e0-8890-c65837a22f17" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controleurs/ControleurSite.class.php" afterPath="$PROJECT_DIR$/controleurs/ControleurSite.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/systeme/Conf.class.php" afterPath="$PROJECT_DIR$/systeme/Conf.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/systeme/Connexion.class.php" afterPath="$PROJECT_DIR$/systeme/Connexion.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeles/Enchere.class.php" afterPath="$PROJECT_DIR$/modeles/Enchere.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/systeme/Modeles.class.php" afterPath="$PROJECT_DIR$/systeme/Modeles.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="pi2-crrgf.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,10 +29,98 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ControleurSite.class.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ControleurSite.class.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controleurs/ControleurSite.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="0" selection-start="408" selection-end="408" vertical-scroll-proportion="0.36090225" vertical-offset="75" max-vertical-offset="825">
+            <state line="21" column="0" selection-start="408" selection-end="408" vertical-scroll-proportion="-13.125" vertical-offset="0" max-vertical-offset="825">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Modeles.class.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/systeme/Modeles.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="0" selection-start="564" selection-end="564" vertical-scroll-proportion="-15.0" vertical-offset="0" max-vertical-offset="810">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Enchere.class.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/modeles/Enchere.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="130" column="5" selection-start="2940" selection-end="2940" vertical-scroll-proportion="0.66613674" vertical-offset="1531" max-vertical-offset="2340">
+              <folding>
+                <element signature="e#6#86#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Connexion.class.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/systeme/Connexion.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="0" selection-start="288" selection-end="288" vertical-scroll-proportion="0.9583333" vertical-offset="173" max-vertical-offset="825">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Vue.class.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vues/Vue.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="46.25" vertical-offset="1110" max-vertical-offset="3990">
+              <folding>
+                <marker date="1413897007000" expanded="true" signature="1733:1982" placeholder="..." />
+                <marker date="1413897007000" expanded="true" signature="1743:1977" placeholder="..." />
+                <marker date="1413897007000" expanded="true" signature="3351:3466" placeholder="..." />
+                <marker date="1413897007000" expanded="true" signature="3735:5269" placeholder="..." />
+                <marker date="1413897007000" expanded="true" signature="3771:5259" placeholder="..." />
+                <marker date="1413897007000" expanded="true" signature="3800:5248" placeholder="..." />
+                <marker date="1413897007000" expanded="true" signature="3890:5206" placeholder="..." />
+                <marker date="1413897007000" expanded="true" signature="3938:4180" placeholder="..." />
+                <marker date="1413897007000" expanded="true" signature="3976:4166" placeholder="..." />
+                <marker date="1413897007000" expanded="true" signature="4212:5193" placeholder="..." />
+                <marker date="1413897007000" expanded="true" signature="4263:5179" placeholder="..." />
+                <marker date="1413897007000" expanded="true" signature="4278:4448" placeholder="..." />
+                <marker date="1413897007000" expanded="true" signature="4714:5129" placeholder="..." />
+                <marker date="1413897007000" expanded="true" signature="4878:5114" placeholder="..." />
+                <marker date="1413897007000" expanded="true" signature="5305:5360" placeholder="..." />
+                <marker date="1413897007000" expanded="true" signature="7890:8354" placeholder="..." />
+                <marker date="1413897007000" expanded="true" signature="7925:8246" placeholder="{...}" />
+                <marker date="1413897007000" expanded="true" signature="7993:8047" placeholder="{...}" />
+                <marker date="1413897007000" expanded="true" signature="8664:8706" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VueAccueil.class.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vues/VueAccueil.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="2.5" vertical-offset="60" max-vertical-offset="1005">
+              <folding>
+                <marker date="1413897007000" expanded="true" signature="948:2591" placeholder="..." />
+                <marker date="1413897007000" expanded="true" signature="984:1459" placeholder="..." />
+                <marker date="1413897007000" expanded="true" signature="1034:1444" placeholder="..." />
+                <marker date="1413897007000" expanded="true" signature="1049:1210" placeholder="..." />
+                <marker date="1413897007000" expanded="true" signature="1501:2045" placeholder="..." />
+                <marker date="1413897007000" expanded="true" signature="1551:2030" placeholder="..." />
+                <marker date="1413897007000" expanded="true" signature="1566:1757" placeholder="..." />
+                <marker date="1413897007000" expanded="true" signature="1768:1932" placeholder="..." />
+                <marker date="1413897007000" expanded="true" signature="2084:2577" placeholder="..." />
+                <marker date="1413897007000" expanded="true" signature="2134:2562" placeholder="..." />
+                <marker date="1413897007000" expanded="true" signature="2149:2299" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/site/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="255">
               <folding />
             </state>
           </provider>
@@ -61,6 +153,10 @@
         <option value="$PROJECT_DIR$/pages/modEnchere.html" />
         <option value="$PROJECT_DIR$/pages/createEnchere.html" />
         <option value="$PROJECT_DIR$/controleurs/ControleurSite.class.php" />
+        <option value="$PROJECT_DIR$/systeme/Conf.class.php" />
+        <option value="$PROJECT_DIR$/systeme/Connexion.class.php" />
+        <option value="$PROJECT_DIR$/systeme/Modeles.class.php" />
+        <option value="$PROJECT_DIR$/modeles/Enchere.class.php" />
       </list>
     </option>
   </component>
@@ -264,7 +360,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21629855" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21629855" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -291,10 +387,114 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/vues/Vue.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="46.25" vertical-offset="1110" max-vertical-offset="3990">
+          <folding>
+            <marker date="1413897007000" expanded="true" signature="1733:1982" placeholder="..." />
+            <marker date="1413897007000" expanded="true" signature="1743:1977" placeholder="..." />
+            <marker date="1413897007000" expanded="true" signature="3351:3466" placeholder="..." />
+            <marker date="1413897007000" expanded="true" signature="3735:5269" placeholder="..." />
+            <marker date="1413897007000" expanded="true" signature="3771:5259" placeholder="..." />
+            <marker date="1413897007000" expanded="true" signature="3800:5248" placeholder="..." />
+            <marker date="1413897007000" expanded="true" signature="3890:5206" placeholder="..." />
+            <marker date="1413897007000" expanded="true" signature="3938:4180" placeholder="..." />
+            <marker date="1413897007000" expanded="true" signature="3976:4166" placeholder="..." />
+            <marker date="1413897007000" expanded="true" signature="4212:5193" placeholder="..." />
+            <marker date="1413897007000" expanded="true" signature="4263:5179" placeholder="..." />
+            <marker date="1413897007000" expanded="true" signature="4278:4448" placeholder="..." />
+            <marker date="1413897007000" expanded="true" signature="4714:5129" placeholder="..." />
+            <marker date="1413897007000" expanded="true" signature="4878:5114" placeholder="..." />
+            <marker date="1413897007000" expanded="true" signature="5305:5360" placeholder="..." />
+            <marker date="1413897007000" expanded="true" signature="7890:8354" placeholder="..." />
+            <marker date="1413897007000" expanded="true" signature="7925:8246" placeholder="{...}" />
+            <marker date="1413897007000" expanded="true" signature="7993:8047" placeholder="{...}" />
+            <marker date="1413897007000" expanded="true" signature="8664:8706" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vues/VueAccueil.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="2.5" vertical-offset="60" max-vertical-offset="1005">
+          <folding>
+            <marker date="1413897007000" expanded="true" signature="948:2591" placeholder="..." />
+            <marker date="1413897007000" expanded="true" signature="984:1459" placeholder="..." />
+            <marker date="1413897007000" expanded="true" signature="1034:1444" placeholder="..." />
+            <marker date="1413897007000" expanded="true" signature="1049:1210" placeholder="..." />
+            <marker date="1413897007000" expanded="true" signature="1501:2045" placeholder="..." />
+            <marker date="1413897007000" expanded="true" signature="1551:2030" placeholder="..." />
+            <marker date="1413897007000" expanded="true" signature="1566:1757" placeholder="..." />
+            <marker date="1413897007000" expanded="true" signature="1768:1932" placeholder="..." />
+            <marker date="1413897007000" expanded="true" signature="2084:2577" placeholder="..." />
+            <marker date="1413897007000" expanded="true" signature="2134:2562" placeholder="..." />
+            <marker date="1413897007000" expanded="true" signature="2149:2299" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/TypeException.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="4.375" vertical-offset="105" max-vertical-offset="1545">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/systeme/Controleur.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="689">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/controleurs/ControleurSite.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="0" selection-start="408" selection-end="408" vertical-scroll-proportion="0.36090225" vertical-offset="75" max-vertical-offset="825">
+        <state line="21" column="0" selection-start="408" selection-end="408" vertical-scroll-proportion="-13.125" vertical-offset="0" max-vertical-offset="825">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/systeme/includes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="689">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="689">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/systeme/Conf.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="39" selection-start="704" selection-end="704" vertical-scroll-proportion="0.43609023" vertical-offset="100" max-vertical-offset="765">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/systeme/Connexion.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="288" selection-end="288" vertical-scroll-proportion="0.9583333" vertical-offset="173" max-vertical-offset="825">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/systeme/Modeles.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="0" selection-start="564" selection-end="564" vertical-scroll-proportion="-15.0" vertical-offset="0" max-vertical-offset="810">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modeles/Enchere.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="130" column="5" selection-start="2940" selection-end="2940" vertical-scroll-proportion="0.66613674" vertical-offset="1531" max-vertical-offset="2340">
+          <folding>
+            <element signature="e#6#86#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

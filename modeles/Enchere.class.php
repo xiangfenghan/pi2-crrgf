@@ -16,9 +16,9 @@ class Enchere
     private $dateDebut;
     private $aColletionOffres;
     private $oCreateurEnchere;
-    private $oProduit;
+    private $oOeuvre;
 
-    public function  __construct($idEnchere=0, $nomEnchere, $prixDebut, $montantAugment, $prixAcheterMaintenant, $dateDebut, $oCreateur, $oProduit, $oOffre)
+    public function  __construct($idEnchere=0, $nomEnchere, $prixDebut, $montantAugment, $prixAcheterMaintenant, $dateDebut, $oCreateur, $oOeuvre, $oOffre)
     {
         $this->setIdEnchere($idEnchere);
         $this->setNomEnchere($nomEnchere);
@@ -27,7 +27,7 @@ class Enchere
         $this->setPrixAcheterMaintenant($prixAcheterMaintenant);
         $this->setDateDebut($dateDebut);
         $this->setCreateurEnchere($oCreateur);
-        $this->setProduitEnchere($oProduit);
+        $this->setProduitEnchere($oOeuvre);
         $this->setColletionOffre($oOffre);
     }
 
@@ -71,9 +71,9 @@ class Enchere
         $this->oCreateurEnchere = $oUtilisateur;
     }
 
-    public function setProduitEnchere(Produit $oProduit)
+    public function setProduitEnchere(Oeuvre $oOeuvre)
     {
-        $this->oProduit = $oProduit;
+        $this->oOeuvre = $oOeuvre;
     }
 
     /*********/
@@ -118,9 +118,9 @@ class Enchere
         return $this->oCreateurEnchere;
     }
 
-    public function getProduitEnchere()
+    public function getOeuvreEnchere()
     {
-        return $this->oProduit;
+        return $this->oOeuvre;
     }
 
     /**
@@ -132,7 +132,7 @@ class Enchere
         //connecter a la BD
 
         //realiser la requete de rehcercher par idEnchere
-        $sRequete = "SELECT * FROM encheres WHERE idProduit=".$this->getProduitEnchere()->getIdProduit().";";
+        $sRequete = "SELECT * FROM encheres WHERE idProduit=".$this->getOeuvreEnchere()->getIdOeuvre().";";
 
         //
         return $aEncheres;

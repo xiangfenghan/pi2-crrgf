@@ -7,10 +7,11 @@
  * @brief Gère les connexions à la base de données
  * @details Crée une connexion à la base de donnée et sauvegarde celle-ci
  */
-class Connexion{
+class Connexion
+{
 
 	// Les paramètres de connexion
-	protected $sBDConf = 'defaut'; // Parametre de connexion dans "configs/conf.class.php"
+	protected $sBDConf = 'feng'; // Parametre de connexion dans "configs/conf.class.php"
 	protected $oPDO; // L'objet PDO / la connexion
 
 	/**

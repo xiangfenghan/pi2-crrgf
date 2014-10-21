@@ -23,7 +23,7 @@ class Modeles extends Connexion{
 
 		$sSQL = "SELECT * FROM ".$sNomTable.";";
 
-		$requete = $oPDO->prepare($sSQL);
+		$requete = $this->oPDO->prepare($sSQL);
 
 		if ( $requete->execute() ) {
 
