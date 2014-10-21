@@ -39,21 +39,26 @@ h1, h2, h3{
 	background-color: #464647;
 }
 
-/** Navigation **/
+/** Formulaire de recherche **/
 .navbar-form{
 	-webkit-box-shadow: none;
 	box-shadow: none;
 }
 
-nav .navbar-menu{
-	border-top: solid 1px #CCC;
-	border-bottom: solid 1px #CCC;
-}
+/** Menu burger **/
 .navbar-toggle .icon-bar {
   background-color: white;
 }
 
+/** Navigation **/
+.navbar-menu{
+	border-top: solid 1px #CCC;
+	border-bottom: solid 1px #CCC;
+	background-color: #323b40;
+}
+
 .navbar{
+	min-height: 0;
 	margin-bottom: 0;
 	border: 0 none transparent;
 }
@@ -62,12 +67,17 @@ nav .navbar-menu{
 	color: #CCC;
 }
 
-.navbar-nav >li >a{
-	text-shadow: 0 0 0 transparent;
-}
-
 .navbar a:hover{
 	color: #FFA500;
+}
+
+.navbar a > img{
+	padding: 10px 0;
+	display: inline;
+}
+
+.navbar-nav >li >a{
+	text-shadow: 0 0 0 transparent;
 }
 
 .nav >li >a:hover, .nav >li >a:focus{
@@ -80,15 +90,6 @@ nav .navbar-menu{
 	background-color: #333333;
 }
 
-.navbar a > img{
-	padding: 10px 0;
-	display: inline;
-}
-
-.navbar-menu{
-	background-color: #323b40;
-}
-
 .dropdown-menu{
 	background-color: #323b40;
 }
@@ -98,7 +99,7 @@ nav .navbar-menu{
 }
 
 /** Carousel **/
-#carousel-tableau{
+#carousel{
 	background-color: rgb(201, 212, 218);
 }
 
@@ -119,15 +120,15 @@ nav .navbar-menu{
 }
 
 /** Contenu **/
-main section header p{
+article header p{
 	font-style: italic;
 }
 
-main section header p:before{
+article header p:before{
 	content: open-quote;
 }
 
-main section header p:after{
+article header p:after{
 	content: close-quote;
 }
 
@@ -175,18 +176,18 @@ footer .droits{
 	padding: 50px 0;
 }
 
-.le-site, .engagement{
+.a-propos, .notre-engagement{
 	background-size: 100% 100%;
 }
 
-.le-site{
+.a-propos{
 	background-image: url('../img/fond-peinture1.jpg');
 }
 
-.compatibilite{
+.fonctionnalites{
 	background-color: #FFA500;
 }
 
-.engagement{
+.notre-engagement{
 	background-image: url('../img/fond-peinture3.jpg');
 }
