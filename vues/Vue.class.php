@@ -92,27 +92,26 @@ class Vue {
 						<div class=\"collapse navbar-collapse navbar-menu\">
 							<div class=\"col-md-5 \">
 								<ul class=\"nav navbar-nav\">
-									<li><a href=\"?page=encheres\">Nos enchères</a></li>
+									<li><a href=\"?page=encheres\">Enchères</a></li>
 									<li><a href=\"?page=artistes\">Artistes</a></li>
 									<li><a href=\"?page=contact\">Contact</a></li>
 								</ul>
 							</div>
-							<div class=\"col-md-6\">
+							<div class=\"col-md-7\">
 								<ul class=\"nav navbar-nav navbar-right\">
 									<!-- Si non connecte
-									<li><a href=\"?page=login\">Se connecter</a></li>
+									<li><a href=\"?page=connexion\">Se connecter</a></li>
 									<li><a href=\"?page=inscription\">S'inscrire</a></li>
 									<!-- /Si non connecte -->
 									<!-- Lorsque connecte -->
-									<li><a href=\"?page=mes-encheres\">Mes enchères</a></li>
-									<li><a href=\"?page=mes-oeuvres\">Mes oeuvres</a></li>
 									<li><a href=\"?page=commentaires\">Commentaires</a></li>
 									<li class=\"dropdown\">
 										<a href=\"?page=compte\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">Mon compte <b class=\"caret\"></b></a>
 										<ul class=\"dropdown-menu\">
-											<li><a href=\"?page=compte&action=mod\">Modifier</a></li>
-											<li><a href=\"?page=compte&action=supp\">Supprimer</a></li>
-											<li><a href=\"?page=compte&action=deconnecter\">Déconnecter</a></li>
+											<li><a href=\"?page=mes-encheres\">Mes enchères</a></li>
+											<li><a href=\"?page=mes-oeuvres\">Mes oeuvres</a></li>
+											<li><a href=\"?page=parametres\">Paramètres</a></li>
+											<li><a href=\"?action=deconnecter\">Déconnecter</a></li>
 										</ul>
 									</li>
 									<!-- /Lorsque connecte -->
@@ -139,16 +138,16 @@ class Vue {
 				<aside class=\"row\">
 					<section class=\"col-xs-offset-1 col-sm-5 col-sm-offset-1 col-md-3\">
 						<ul class=\"list-unstyled\">
-							<li><a href=\"pages/Nos_encheres.html\">Trouver une œuvre</a></li>
-							<li><a href=\"pages/Liste_Artistes.html\">Recherche un Artiste</a></li>
-							<li><a href=\"pages/Contact.html\">Nous joindre</a></li>
+							<li><a href=\"?page=encheres\">Trouver une oeuvre</a></li>
+							<li><a href=\"?page=artistes\">Trouver un artiste</a></li>
+							<li><a href=\"?page=contact\">Nous joindre</a></li>
 						</ul>
 					</section>
 					<section class=\"col-xs-offset-1 col-sm-6 col-sm-offset-0 col-md-4\">
 						<ul class=\"list-unstyled\">
-							<li><a href=\"pages/Politique_confidentialite.html\">Politique de confidentialité </a></li>
-							<li><a href=\"pages/non_responsabilite.html\">Avis complet de non-responsabilité </a></li>
-							<li><a href=\"pages/formulaire_login.html\">Connexion</a></li>
+							<li><a href=\"?page=confidentialite\">Politique de confidentialité </a></li>
+							<li><a href=\"?page=non-responsabilite\">Avis de non-responsabilité </a></li>
+							<li><a href=\"?page=connexion\">Connexion</a></li>
 						</ul>
 					</section>
 					<!-- Reseaux sociaux -->
@@ -250,6 +249,8 @@ class Vue {
 
 	}
 
+	// TODO
+	// Faire le contenu du panneau/aside droit de la page d'accueil.
 	public static function aside() {
 
 		echo "
