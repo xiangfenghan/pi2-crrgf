@@ -31,6 +31,10 @@ class ControleurSite extends Controleur{
 					$this->gererAccueil();
 					break;
 
+				case 'test':
+					$this->gererTest();
+					break;
+
 				default:
 					$this->gererErreurs();
 
@@ -47,6 +51,12 @@ class ControleurSite extends Controleur{
 	public function gererAccueil(){
 
 		VueAccueil::afficherAccueil();
+
+	}
+
+	public function gererTest(){
+
+		VueTest::afficherTest();
 
 	}
 
