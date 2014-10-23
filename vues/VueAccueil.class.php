@@ -9,18 +9,21 @@
  */
 class VueAccueil {
 
+	/**
+	 * Affiche le contenu de la page d'accueil du site côté clients
+	 */
 	public static function afficherAccueil() {
 
 		// Inclu les morceaux de pages, dont les metas, l'entete, la navigation et le carousel
 		Vue::head('Achetez des oeuvres d\'art', 'Site de vente d\'oeuvres d\'art en ligne');
 		Vue::header('Ma recherche');
 		Vue::nav();
-		Vue::carousel(array(array('src' => 'carousel1.jpg', 'alt' => 'Image 1'), array('src' => 'carousel2.png', 'alt' => 'Image 2'), array('src' => 'carousel3.jpg', 'alt' => 'Image 3'), array('src' => 'carousel4.jpg', 'alt' => 'Image 4'), array('src' => 'carousel5.jpg', 'alt' => 'Image 5'), array('src' => 'carousel6.jpg', 'alt' => 'Image 6')));
+		Vue::carousel(array(array('src' => 'carousel5.jpg', 'alt' => 'Image 1'), array('src' => 'carousel7.jpg', 'alt' => 'Image 2'), array('src' => 'carousel8.jpg', 'alt' => 'Image 3'), array('src' => 'carousel9.jpg', 'alt' => 'Image 4'), array('src' => 'carousel10.jpg', 'alt' => 'Image 5'), array('src' => 'carousel11.jpg', 'alt' => 'Image 6'), array('src' => 'carousel12.jpg', 'alt' => 'Image 7')));
 
 		echo "
-			<article class=\"accueil container-fluid\">
-				<section class=\"le-site row\">
-					<article class=\"col-md-6 col-md-offset-3\">
+			<article class=\"accueil col-md-10\">
+				<section class=\"a-propos row\">
+					<article class=\"col-md-9 col-md-offset-1\">
 						<header>
 							<h1 class=\"text-center\">À propos de nous</h1>
 							<p class=\"text-center\">Un site qui rassemble les passionnés d'oeuvres d'art.</p>
@@ -28,10 +31,10 @@ class VueAccueil {
 						<p><strong>Arts aux enchères</strong> permet aux artistes de proposés des oeuvres sous la forme d’enchères. Nous offrons aussi la possibilité aux artistes de proposer leurs oeuvres en  mode achat instantané.</p>
 					</article>
 				</section>
-				<section class=\"compatibilite row\">
-					<article class=\"col-md-6 col-md-offset-3\">
+				<section class=\"fonctionnalites row\">
+					<article class=\"col-md-9 col-md-offset-1\">
 						<header>
-							<h1 class=\"text-center\">Compatibilité</h1>
+							<h1 class=\"text-center\">Fonctionnalités</h1>
 							<p class=\"text-center\">Accédez à tout moment et de partout à vos informations via une interface personnalisé.</p>
 						</header>
 						<ul>
@@ -42,10 +45,10 @@ class VueAccueil {
 						<p class=\"text-center\"><img src=\"img/mobiles.png\" alt=\"Tableau6\"></p>
 					</article>
 				</section>
-				<section class=\"engagement row\">
-					<article class=\"col-md-6 col-md-offset-3\">
+				<section class=\"notre-engagement row\">
+					<article class=\"col-md-9 col-md-offset-1\">
 						<header>
-							<h1 class=\"text-center\">Engagement</h1>
+							<h1 class=\"text-center\">Notre engagement</h1>
 							<p class=\"text-center\">La promesse d'<strong>Arts aux Enchères</strong></p>
 						</header>
 						<p>Nous élevons votre expérience artistique, grâce à une approche spécialisée, complète et unique dans le monde du marché de l’art.</p>
@@ -55,6 +58,7 @@ class VueAccueil {
 			</article>
 		";
 
+		Vue::aside();
 		Vue::footer();
 
 	}

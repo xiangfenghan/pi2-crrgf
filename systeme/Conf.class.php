@@ -13,7 +13,7 @@ class Conf {
 	static $aBaseDonnees = array(
 		"defaut" => array(
 			"hote"        => "localhost",
-			"bd"          => "pi2",
+			"bd"          => "bd_pi2",
 			"utilisateur" => "root",
 			"motDePasse"  => "",
 		),
@@ -24,10 +24,10 @@ class Conf {
 			"motDePasse"  => "aaa",
 		),
 		"feng" => array(
-			"hote"        => "127.0.0.1",
-			"bd"          => "pi2",
-			"utilisateur" => "root",
-			"motDePasse"  => "26y6fasdf",
+			"hote"        => "localhost",
+			"bd"          => "code",
+			"utilisateur" => "code",
+			"motDePasse"  => "motdepasse",
 		),
 		"eskander" => array(
 			"hote"        => "localhost",

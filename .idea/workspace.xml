@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e693d71-4154-43e0-8890-c65837a22f17" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/systeme/Conf.class.php" afterPath="$PROJECT_DIR$/systeme/Conf.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/systeme/Connexion.class.php" afterPath="$PROJECT_DIR$/systeme/Connexion.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeles/Enchere.class.php" afterPath="$PROJECT_DIR$/modeles/Enchere.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/systeme/Modeles.class.php" afterPath="$PROJECT_DIR$/systeme/Modeles.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="9e693d71-4154-43e0-8890-c65837a22f17" name="Default" comment="" />
     <ignored path="pi2-crrgf.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />

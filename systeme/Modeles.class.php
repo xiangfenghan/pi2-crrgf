@@ -31,16 +31,13 @@ class Modeles extends Connexion{
 
 				$aResultats = $requete->fetchAll();
 
-			} else {
-
-				//$sMsg = array('type'=>'warning', 'msg'=>'Aucune donnees de disponible pour le moment');
-
 			}
+
+			return $aResultats;
 
 		} else {
 
-			throw new Exception("Erreur lors de la requete");
-			//$sMsg = array('type'=>'danger', 'msg'=>'Erreur lors de la requete.');
+			throw new Exception(ERR_REQUEST);
 
 		}
 

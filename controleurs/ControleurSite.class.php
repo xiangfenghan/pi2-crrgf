@@ -7,44 +7,57 @@
  * @brief Controleur de la section des utilisateurs
  * @details Gère et controle la section des utilisateurs
  */
-class ControleurSite extends Controleur
-{
+class ControleurSite extends Controleur{
 
-	public function __construct()
-    {
+	public function __construct(){
+
 		$this->gererSite();
+
 	}
 
-	public function gererSite()
-    {
+	public function gererSite(){
 
 		try{
 
-			if(!isset($_GET['page']))
-            {
+			if ( !isset($_GET['page']) ) {
+
 				$_GET['page'] = 'accueil';
+
 			}
 
-			switch ($_GET['page'])
-            {
+			switch ( $_GET['page'] ) {
+
 				case 'accueil':
 					$this->gererAccueil();
 					break;
 
+				case 'test':
+					$this->gererTest();
+					break;
+
 				default:
 					$this->gererErreurs();
+
 			}
 
-		}catch(Exception $e)
-        {
+		} catch ( Exception $e ) {
+
 			echo "<p class=\"alert alert-danger\">".$e->getMessage()."</p>";
+
 		}
 
 	}
 
-	public function gererAccueil()
-    {
+	public function gererAccueil(){
+
 		VueAccueil::afficherAccueil();
+
+	}
+
+	public function gererTest(){
+
+		VueTest::afficherTest();
+
 	}
 
 }

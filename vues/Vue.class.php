@@ -21,7 +21,7 @@ class Vue {
 			<html class=\"no-js\">
 			<!--<![endif]-->
 			<head>
-				<base href=\"".SITE.DS."index.php\">
+				<base href=\"index.php\">
 				<meta charset=\"utf-8\">
 				<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\">
 				<title>".$sTitre = ($sTitre == '') ? 'Arts aux Enchères' : $sTitre.' - Arts aux Enchères'; echo "</title>
@@ -90,29 +90,28 @@ class Vue {
 					<section class=\"row\">
 						<!-- navbar-collapse -->
 						<div class=\"collapse navbar-collapse navbar-menu\">
-							<div class=\"col-md-5 col-md-offset-1\">
+							<div class=\"col-md-5 \">
 								<ul class=\"nav navbar-nav\">
-									<li><a href=\"?page=encheres\">Nos enchères</a></li>
+									<li><a href=\"?page=encheres\">Enchères</a></li>
 									<li><a href=\"?page=artistes\">Artistes</a></li>
 									<li><a href=\"?page=contact\">Contact</a></li>
 								</ul>
 							</div>
-							<div class=\"col-md-5\">
+							<div class=\"col-md-7\">
 								<ul class=\"nav navbar-nav navbar-right\">
 									<!-- Si non connecte
-									<li><a href=\"?page=login\">Se connecter</a></li>
+									<li><a href=\"?page=connexion\">Se connecter</a></li>
 									<li><a href=\"?page=inscription\">S'inscrire</a></li>
 									<!-- /Si non connecte -->
 									<!-- Lorsque connecte -->
-									<li><a href=\"?page=mes-encheres\">Mes enchères</a></li>
-									<li><a href=\"?page=mes-oeuvres\">Mes oeuvres</a></li>
 									<li><a href=\"?page=commentaires\">Commentaires</a></li>
 									<li class=\"dropdown\">
 										<a href=\"?page=compte\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">Mon compte <b class=\"caret\"></b></a>
 										<ul class=\"dropdown-menu\">
-											<li><a href=\"?page=compte&action=mod\">Modifier</a></li>
-											<li><a href=\"?page=compte&action=supp\">Supprimer</a></li>
-											<li><a href=\"?page=compte&action=deconnecter\">Déconnecter</a></li>
+											<li><a href=\"?page=mes-encheres\">Mes enchères</a></li>
+											<li><a href=\"?page=mes-oeuvres\">Mes oeuvres</a></li>
+											<li><a href=\"?page=parametres\">Paramètres</a></li>
+											<li><a href=\"?action=deconnecter\">Déconnecter</a></li>
 										</ul>
 									</li>
 									<!-- /Lorsque connecte -->
@@ -139,16 +138,16 @@ class Vue {
 				<aside class=\"row\">
 					<section class=\"col-xs-offset-1 col-sm-5 col-sm-offset-1 col-md-3\">
 						<ul class=\"list-unstyled\">
-							<li><a href=\"pages/Nos_encheres.html\">Trouver une œuvre</a></li>
-							<li><a href=\"pages/Liste_Artistes.html\">Recherche un Artiste</a></li>
-							<li><a href=\"pages/Contact.html\">Nous joindre</a></li>
+							<li><a href=\"?page=encheres\">Trouver une oeuvre</a></li>
+							<li><a href=\"?page=artistes\">Trouver un artiste</a></li>
+							<li><a href=\"?page=contact\">Nous joindre</a></li>
 						</ul>
 					</section>
 					<section class=\"col-xs-offset-1 col-sm-6 col-sm-offset-0 col-md-4\">
 						<ul class=\"list-unstyled\">
-							<li><a href=\"pages/Politique_confidentialite.html\">Politique de confidentialité </a></li>
-							<li><a href=\"pages/non_responsabilite.html\">Avis complet de non-responsabilité </a></li>
-							<li><a href=\"pages/formulaire_login.html\">Connexion</a></li>
+							<li><a href=\"?page=confidentialite\">Politique de confidentialité </a></li>
+							<li><a href=\"?page=non-responsabilite\">Avis de non-responsabilité </a></li>
+							<li><a href=\"?page=connexion\">Connexion</a></li>
 						</ul>
 					</section>
 					<!-- Reseaux sociaux -->
@@ -176,7 +175,7 @@ class Vue {
 			".$script = ( $sNomScript == '' ) ? '' : '<script type="text/javascript" src="'.$sNomScript.'"></script>'; echo "
 			<script src=\"js/plugins.js\"></script>
 			<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-			<script>
+			<!-- <script>
 				( function(b, o, i, l, e, r) {
 					b.GoogleAnalyticsObject = l;
 					b[l] || (b[l] = function() {
@@ -190,7 +189,7 @@ class Vue {
 				}(window, document, 'script', 'ga'));
 				ga('create', 'UA-XXXXX-X');
 				ga('send', 'pageview');
-			</script>
+			</script> -->
 		</body>
 		</html>
 		";
@@ -208,11 +207,13 @@ class Vue {
 
 				if ( $iImage == 0 ) {
 
-					echo "<li data-target=\"#carousel\" data-slide-to=\"".$iImage."\" class=\"active\"></li>";
+					echo "
+					<li data-target=\"#carousel\" data-slide-to=\"".$iImage."\" class=\"active\"></li>";
 
 				} else {
 
-					echo "<li data-target=\"#carousel\" data-slide-to=\"".$iImage."\" class=\"\"></li>";
+					echo "
+					<li data-target=\"#carousel\" data-slide-to=\"".$iImage."\" class=\"\"></li>";
 
 				}
 
@@ -250,12 +251,18 @@ class Vue {
 
 	}
 
-	public static function aside() {
+	public static function aside() { ?>
 
-		echo "
-			Ceci est l'aside.
-		";
-
+		<aside class="derniere-minute col-md-2">
+			<h1 class="text-center">Enchères <br><span>de dernière minutes</span></h1 class="text-center">
+			<ul class="list-unstyled text-center">
+				<li><a href="?page=oeuvres&id=1"><img class="img-responsive" src="img/oeuvres/oeuvre1-224x288.jpg" height="288" width="224" alt="Oeuvre 1"></a></li>
+				<li><a href="?page=oeuvres&id=2"><img class="img-responsive" src="img/oeuvres/oeuvre2-224x262.jpg" height="262" width="224" alt="Oeuvre 2"></a></li>
+				<li><a href="?page=oeuvres&id=3"><img class="img-responsive" src="img/oeuvres/oeuvre3-224x307.jpg" height="307" width="224" alt="Oeuvre 3"></a></li>
+				<li><a href="?page=oeuvres&id=4"><img class="img-responsive" src="img/oeuvres/oeuvre4-224x263.jpg" height="263" width="224" alt="Oeuvre 4"></a></li>
+			</ul>
+		</aside>
+<?php
 	}
 
 }
