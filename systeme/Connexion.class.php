@@ -22,14 +22,18 @@ class Connexion{
 
 		try {
 
-			$oPDO = new PDO('mysql:host='.$conf['hote'].';dbname='.$conf['bd'].'',''.$conf['utilisateur'].'',''.$conf['motDePasse'].''); // Création d'un objet PDO
-			$oPDO->exec('set names utf8'); // Force l'encodage de la connexion
-			// Configuration d'attributs PDO
-			$oPDO->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC); // Définit le mode de récupération par défaut - Fetch associatif
-			$oPDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // PDO::ERRMODE_SILENT, simplement les codes d'erreur. PDO::ERRMODE_WARNING: alerte E_WARNING. PDO::ERRMODE_EXCEPTION émet une exception.
-    		$oPDO->setAttribute(PDO::ATTR_EMULATE_PREPARES, false); // Active ou désactive la simulation des requêtes préparées.
+			// Création d'une connexion si elle n'existe pas
+			if ( !isset($this->oPDO) ) {
 
-			$this->oPDO = $oPDO; // Retourne l'objet PDO (la connexion)
+				$oPDO = new PDO('mysql:host='.$conf['hote'].';dbname='.$conf['bd'].'',''.$conf['utilisateur'].'',''.$conf['motDePasse'].''); // Création d'un objet PDO
+				$oPDO->exec('set names utf8'); // Force l'encodage de la connexion
+				// Configuration d'attributs PDO
+				$oPDO->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC); // Définit le mode de récupération par défaut - Fetch associatif
+				$oPDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // PDO::ERRMODE_SILENT, simplement les codes d'erreur. PDO::ERRMODE_WARNING: alerte E_WARNING. PDO::ERRMODE_EXCEPTION émet une exception.
+	    		$oPDO->setAttribute(PDO::ATTR_EMULATE_PREPARES, false); // Active ou désactive la simulation des requêtes préparées.
+				$this->oPDO = $oPDO; // Retourne l'objet PDO (la connexion)
+
+			}
 
 		// Si la connexion ne fonctionne pas
 		} catch (PDOException $e) {
