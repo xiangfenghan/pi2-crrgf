@@ -21,7 +21,7 @@ class Vue {
 			<html class=\"no-js\">
 			<!--<![endif]-->
 			<head>
-				<base href=\"".SITE.DS."index.php\">
+				<base href=\"index.php\">
 				<meta charset=\"utf-8\">
 				<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\">
 				<title>".$sTitre = ($sTitre == '') ? 'Arts aux Enchères' : $sTitre.' - Arts aux Enchères'; echo "</title>
@@ -175,7 +175,7 @@ class Vue {
 			".$script = ( $sNomScript == '' ) ? '' : '<script type="text/javascript" src="'.$sNomScript.'"></script>'; echo "
 			<script src=\"js/plugins.js\"></script>
 			<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-			<script>
+			<!-- <script>
 				( function(b, o, i, l, e, r) {
 					b.GoogleAnalyticsObject = l;
 					b[l] || (b[l] = function() {
@@ -189,7 +189,7 @@ class Vue {
 				}(window, document, 'script', 'ga'));
 				ga('create', 'UA-XXXXX-X');
 				ga('send', 'pageview');
-			</script>
+			</script> -->
 		</body>
 		</html>
 		";
