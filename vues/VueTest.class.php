@@ -1,4 +1,4 @@
-<?php 
+<?php
 class VueTest{
 
 	public static function afficherTest() {
