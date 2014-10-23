@@ -27,7 +27,6 @@ Contient tout les fichiers "piliers" du site. Le fichier de configuration, de co
 
 ## vues
 Contient les vues du site internet.
-=========
 
 # Les fichiers
 Les fichiers asurant le fonctionnement minimal du site
