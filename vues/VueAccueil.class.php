@@ -18,10 +18,10 @@ class VueAccueil {
 		Vue::head('Achetez des oeuvres d\'art', 'Site de vente d\'oeuvres d\'art en ligne');
 		Vue::header('Ma recherche');
 		Vue::nav();
-		Vue::carousel(array(array('src' => 'carousel1.jpg', 'alt' => 'Image 1'), array('src' => 'carousel2.png', 'alt' => 'Image 2'), array('src' => 'carousel3.jpg', 'alt' => 'Image 3'), array('src' => 'carousel4.jpg', 'alt' => 'Image 4'), array('src' => 'carousel5.jpg', 'alt' => 'Image 5'), array('src' => 'carousel6.jpg', 'alt' => 'Image 6')));
+		Vue::carousel(array(array('src' => 'carousel5.jpg', 'alt' => 'Image 1'), array('src' => 'carousel7.jpg', 'alt' => 'Image 2'), array('src' => 'carousel8.jpg', 'alt' => 'Image 3'), array('src' => 'carousel9.jpg', 'alt' => 'Image 4'), array('src' => 'carousel10.jpg', 'alt' => 'Image 5'), array('src' => 'carousel11.jpg', 'alt' => 'Image 6'), array('src' => 'carousel12.jpg', 'alt' => 'Image 7')));
 
 		echo "
-			<article class=\"accueil col-md-9\">
+			<article class=\"accueil col-md-10\">
 				<section class=\"a-propos row\">
 					<article class=\"col-md-9 col-md-offset-1\">
 						<header>
