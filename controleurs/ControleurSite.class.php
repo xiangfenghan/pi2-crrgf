@@ -30,6 +30,10 @@ class ControleurSite extends Controleur{
 				case 'accueil':
 					$this->gererAccueil();
 					break;
+				
+				case 'utilisateur':
+					$this->gererUtilisateur();
+					break;
 
 				case 'test':
 					$this->gererTest();
@@ -52,6 +56,19 @@ class ControleurSite extends Controleur{
 
 		VueAccueil::afficherAccueil();
 
+	}
+	public function gererUtilisateur(){
+		switch ($_GET['action']){
+			case 'inscription':
+			VueUtilisateur::afficherFormInscription();
+			break;
+			case 'connexion':
+			VueUtilisateur::afficherFormConnexion();
+			break;
+			case 'parametres':
+			VueUtilisateur::afficherformModSup();
+			break;
+			}
 	}
 
 	public function gererTest(){
