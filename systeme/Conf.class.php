@@ -24,22 +24,38 @@ class Conf {
 			"motDePasse"  => "aaa",
 		),
 		"feng" => array(
+<<<<<<< HEAD
 			"hote"        => "127.0.0.1",
 			"bd"          => "pi2_artsEncheres",
 			"utilisateur" => "root",
 			"motDePasse"  => "26y6fasdf",
 		),
 		"eskander" => array(
+=======
+>>>>>>> upstream/master
 			"hote"        => "localhost",
 			"bd"          => "code",
 			"utilisateur" => "code",
 			"motDePasse"  => "motdepasse",
 		),
+<<<<<<< HEAD
 		"martin" => array(
+=======
+		"eskander" => array(
+>>>>>>> upstream/master
 			"hote"        => "localhost",
 			"bd"          => "code",
 			"utilisateur" => "code",
 			"motDePasse"  => "motdepasse",
+<<<<<<< HEAD
+=======
+		),
+		"martin" => array(
+			"hote"        => "localhost",
+			"bd"          => "pi2",
+			"utilisateur" => "e9581797",
+			"motDePasse"  => "hb193ss94",
+>>>>>>> upstream/master
 		)
 	);
 
