@@ -80,19 +80,22 @@ class Enchere extends XFHModeles
 
     public function setPrixDebut($prixDebut)
     {
-//        TypeException::estNumerique($prixDebut);
+        $prixDebut = number_format($prixDebut,2);
+        TypeException::estFloat($prixDebut);
         $this->prixDebut = $prixDebut;
     }
 
     public function setMontantAugment($montantAugment)
     {
-//        TypeException::estNumerique($montantAugment);
+        $montantAugment = number_format($montantAugment,2);
+        TypeException::estFloat($montantAugment);
         $this->montantAugment = $montantAugment;
     }
 
     public function setPrixAcheterMaintenant($prixAcheterMaintenant)
     {
-//        TypeException::estNumerique($prixAcheterMaintenant);
+        $prixAcheterMaintenant = number_format($prixAcheterMaintenant,2);
+        TypeException::estFloat($prixAcheterMaintenant);
         $this->prixAcheterMaintenant = $prixAcheterMaintenant;
     }
 
@@ -254,6 +257,7 @@ class Enchere extends XFHModeles
         $aEnchere = $aEncheres[0];
 
         $oCreateur = new Utilisateur($aEnchere['Utilisateurs_id']);
+        $oCreateur->rechercherUnUtilisateur();
         $oOeuvre = new Oeuvre($aEnchere['Oeuvres_id']);
 
         $this->setCreateurEnchere($oCreateur);

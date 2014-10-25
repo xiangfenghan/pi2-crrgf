@@ -4,6 +4,7 @@ class TypeException extends Exception {
 	const ERR_VIDE ="Le paramètre ne doit pas être une chaîne vide.";
 	const ERR_STRING ="Le paramètre doit être une chaîne de caractères.";
 	const ERR_INTEGER ="Le paramètre doit être une valeur entière.";
+	const ERR_FLOAT ="Le paramètre doit être une valeur float.";
 	const ERR_NUMERIC ="Le paramètre doit être une valeur numérique.";
 	const ERR_FOLDER="Le paramètre doit être un dossier";
 	const ERR_RESOURCE="Le paramètre doit être une ressource";
@@ -36,6 +37,14 @@ class TypeException extends Exception {
 		if(is_numeric($iInt)==false)
 			throw new TypeException(TypeException::ERR_NUMERIC);
 	}
+    /**
+     * détermine si le paramètre est une valeur numérique
+     * @param mixed $iInt
+     */
+    public static function estFloat($iInt){
+        if(is_float($iInt)==false)
+            throw new TypeException(TypeException::ERR_FLOAT);
+    }
 	/**
 	 * détermine si le paramètre est une valeur entière
 	 * @param mixed $iInt
