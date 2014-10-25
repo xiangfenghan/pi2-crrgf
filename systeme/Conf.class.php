@@ -24,10 +24,10 @@ class Conf {
 			"motDePasse"  => "aaa",
 		),
 		"feng" => array(
-			"hote"        => "localhost",
-			"bd"          => "code",
-			"utilisateur" => "code",
-			"motDePasse"  => "motdepasse",
+			"hote"        => "127.0.0.1",
+			"bd"          => "pi2_artsEncheres",
+			"utilisateur" => "root",
+			"motDePasse"  => "26y6fasdf",
 		),
 		"eskander" => array(
 			"hote"        => "localhost",

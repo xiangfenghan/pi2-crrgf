@@ -32,7 +32,7 @@ class ControleurAdmin extends Controleur{
 					break;
 
 				default:
-					$this->gererErreurs();
+					self::gererErreurs();
 
 			}
 
