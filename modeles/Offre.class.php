@@ -85,7 +85,7 @@ class Offre extends XFHModeles
 
         $aOffre = $aOffres[0];
 
-        $oBidder = new Utilisateur($aOffre['utilisateurs_id']);
+        $oBidder = new Utilisateur($aOffre['utilisateur_id']);
 
         $this->setBidder($oBidder);
         $this->setDateOffre($aOffre['date']);
@@ -99,7 +99,7 @@ class Offre extends XFHModeles
         {
             $oBidder = new Utilisateur($_SESSION['idUtilisateur']);
             $this->setBidder($oBidder);
-            $sRequete = "INSERT INTO Offres ('montant', 'date', 'encheres_id', 'utilisateurs_id') VALUES (".$_GET['prixFin'].", now(), ".$_GET['idEnchere'].", ".$this->getBidder()->getIdUtilisateur().");";
+            $sRequete = "INSERT INTO Offres ('montant', 'date', 'enchere_id', 'utilisateur_id') VALUES (".$_GET['prixFin'].", now(), ".$_GET['idEnchere'].", ".$this->getBidder()->getIdUtilisateur().");";
             $idOffre = $this->insertInto($sRequete);
             $this->setIdOffre($idOffre);
             if($idOffre)

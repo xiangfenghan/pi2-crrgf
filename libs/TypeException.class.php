@@ -4,10 +4,11 @@ class TypeException extends Exception {
 	const ERR_VIDE ="Le paramètre ne doit pas être une chaîne vide.";
 	const ERR_STRING ="Le paramètre doit être une chaîne de caractères.";
 	const ERR_INTEGER ="Le paramètre doit être une valeur entière.";
-<<<<<<< HEAD
+
 	const ERR_FLOAT ="Le paramètre doit être une valeur float.";
-=======
->>>>>>> upstream/master
+	const ERR_UTILISATEUR ="Le paramètre doit être un objet de type Utilisateur.";
+	const ERR_OEUVRE ="Le paramètre doit être un objet de type Oeuvre.";
+
 	const ERR_NUMERIC ="Le paramètre doit être une valeur numérique.";
 	const ERR_FOLDER="Le paramètre doit être un dossier";
 	const ERR_RESOURCE="Le paramètre doit être une ressource";
@@ -40,17 +41,34 @@ class TypeException extends Exception {
 		if(is_numeric($iInt)==false)
 			throw new TypeException(TypeException::ERR_NUMERIC);
 	}
-<<<<<<< HEAD
+
     /**
-     * détermine si le paramètre est une valeur numérique
+     * détermine si le paramètre est une valeur float
      * @param mixed $iInt
      */
     public static function estFloat($iInt){
         if(is_float($iInt)==false)
             throw new TypeException(TypeException::ERR_FLOAT);
     }
-=======
->>>>>>> upstream/master
+
+    /**
+     * détermine si le paramètre est un objet de type Utilisateur
+     * @param Utilisateur $oUtilisateur
+     */
+    public static function estUtilisateur(Object $oUtilisateur){
+        if(gettype($oUtilisateur) !== 'Utilisateur')
+            throw new TypeException(TypeException::ERR_UTILISATEUR);
+    }
+
+    /**
+     * détermine si le paramètre est un objet de type Oeuvre
+     * @param Oeuvre $oOeuvre
+     */
+    public static function estOeuvre(Object $oOeuvre){
+        if(gettype($oOeuvre) !== 'Oeuvre')
+            throw new TypeException(TypeException::ERR_OEUVRE);
+    }
+
 	/**
 	 * détermine si le paramètre est une valeur entière
 	 * @param mixed $iInt

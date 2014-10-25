@@ -14,29 +14,39 @@ class VueEnchere
         Vue::header();
         Vue::nav();
 
-        $i = 0;
-        foreach($aEncheres as $oEnchere)
+        if(count($aEncheres)>0)
         {
-            if($i==4)
+            $i = 0;
+            foreach($aEncheres as $oEnchere)
             {
-                echo "</div><div class='row'>";
-                $i=0;
-            }
+                if($i==4)
+                {
+                    echo "</div><div class='row'>";
+                    $i=0;
+                }
 
-            echo "<article class='col-md-3 col-sm-6'>";
+                echo "<article class='col-md-3 col-sm-6'>";
 
-            print_r($oEnchere);
-            echo "<br><br><br>";
+                print_r($oEnchere);
+                echo "<br><br><br>";
 
 
 //            echo "<img src='".$oEnchere->getOeuvreEnchere()->getUrl()."' class='img-responsive' alt='Responsive image'>";
-            echo "<a href='index.php?page=detailsEnchere&idEnchere=" . $oEnchere->getIdEnchere() . "'><h1>".$oEnchere->getOeuvreEnchere()->getNom()."</h1></a>";
+                echo "<a href='index.php?page=detailsEnchere&idEnchere=" . $oEnchere->getIdEnchere() . "'><h1>".$oEnchere->getOeuvreEnchere()->getNom()."</h1></a>";
 //            echo "<p>".$oEnchere->getOeuvreEnchere()->getDescription()."</p>";
-            echo "<span>".$oEnchere->getPrixDebut()."</span>";
-            echo "<span>".$oEnchere->getPrixAcheterMaintenant()."</span>";
-            echo "<article>";
-            $i++;
+                echo "<span>".$oEnchere->getPrixDebut()."</span>";
+                echo "<span>".$oEnchere->getPrixAcheterMaintenant()."</span>";
+                echo "<article>";
+                $i++;
+            }
         }
+        else
+        {
+            echo "<div class='container'>";
+            echo "<span class='label label-danger'>Il n'y ai aucune enchere disponible en ce monment.</span>";
+            echo "</div>";
+        }
+
 
         Vue::footer();
     }
@@ -49,18 +59,28 @@ class VueEnchere
 
         echo "<h1>Gestion des enchères</h1>".
              "<a class='btn-default btn' href='index.php?page=gestionEnchere&action=add'>Creer une enchere</a>";
-        echo "<table class='table'>";
-
-        foreach($aEncheres as $oEnchere)
+        if(count($aEncheres)>0)
         {
-            echo "<tr><td>".$oEnchere->getNomEnchere()."</td>".
-                 "<td><img src='".$oEnchere->getOeuvreEnchere()->getUrl()."' class='img-responsive' alt='Responsive image' class='col-md-2'></td>".
-                 "<td>".$oEnchere->getEtat()."</td>".
-                 "<td><a href='index.php?page=gestionEnchere&action=mod&idEnchere=".$oEnchere->getIdEnchere()."'>Modifier</a></td>".
-                 "<td><a href='index.php?page=gestionEnchere&action=sup&idEnchere=".$oEnchere->getIdEnchere()."'>Supprimer</a></td>".
-                 "</tr>";
+            echo "<table class='table'>";
+
+            foreach($aEncheres as $oEnchere)
+            {
+                echo "<tr><td>".$oEnchere->getNomEnchere()."</td>".
+                    "<td><img src='".$oEnchere->getOeuvreEnchere()->getUrlOeuvre()."' class='img-responsive' alt='Responsive image' class='col-md-2'></td>".
+                    "<td>".$oEnchere->getEtat()."</td>".
+                    "<td><a href='index.php?page=gestionEnchere&action=mod&idEnchere=".$oEnchere->getIdEnchere()."'>Modifier</a></td>".
+                    "<td><a href='index.php?page=gestionEnchere&action=sup&idEnchere=".$oEnchere->getIdEnchere()."'>Supprimer</a></td>".
+                    "</tr>";
+            }
+            echo "</table>";
         }
-        echo "</table>";
+        else
+        {
+            echo "<div class='container'>";
+            echo "<span class='label label-danger'>Il n'y ai aucune enchere disponible en ce monment.</span>";
+            echo "</div>";
+        }
+
 
         Vue::footer();
     }
@@ -115,7 +135,7 @@ class VueEnchere
                         "<select name='oeuvre'>";
                             foreach($aoOeuvres as $oOeuvre)
                             {
-                                echo "<option value='".$oOeuvre->getId()."'>".$oOeuvre->getNom()."</option>";
+                                echo "<option value='".$oOeuvre->getIdOeuvre()."'>".$oOeuvre->getNomOeuvre()."</option>";
                             }
                     echo "</select></div>".
                     "<div class='form-group'><label>Titre de votre enchère</label>".
