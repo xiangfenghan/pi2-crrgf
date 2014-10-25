@@ -30,7 +30,6 @@ class ControleurSite extends Controleur{
 				case 'accueil':
 					$this->gererAccueil();
 					break;
-<<<<<<< HEAD
 
 				case 'test':
 					$this->gererTest();
@@ -56,11 +55,6 @@ class ControleurSite extends Controleur{
                     $this->gererOffres();
                     break;
 
-				default:
-					$this->gererErreurs();
-                    break;
-=======
-				
 				case 'utilisateur':
 					$this->gererUtilisateur();
 					break;
@@ -71,7 +65,6 @@ class ControleurSite extends Controleur{
 
 				default:
 					$this->gererErreurs();
->>>>>>> upstream/master
 
 			}
 
@@ -88,7 +81,7 @@ class ControleurSite extends Controleur{
 		VueAccueil::afficherAccueil();
 
 	}
-<<<<<<< HEAD
+
 
 	public function gererTest(){
 
@@ -130,14 +123,14 @@ class ControleurSite extends Controleur{
      */
     public function gererEnchere()
     {
-        if(isset($_SESSION) && $_SESSION['idUtilisateur']!=0)
-        {
+//        if(isset($_SESSION) && $_SESSION['idUtilisateur']!=0)
+//        {
 
             if(!isset($_GET['action']))
             {
                 $_GET['action'] = 'default';
             }
-            switch($_POST['action'])
+            switch($_GET['action'])
             {
                 case 'add':
                     $this->gererCreerUneEnchere();
@@ -157,11 +150,11 @@ class ControleurSite extends Controleur{
                     break;
             }
 
-        }
-        else
-        {
-            header("Location: index.php");
-        }
+//        }
+//        else
+//        {
+//            header("Location: index.php");
+//        }
     }
 
     public function gererAjaxEnchere()
@@ -184,29 +177,51 @@ class ControleurSite extends Controleur{
 
     public function gererCreerUneEnchere()
     {
-        $oCreateur = new Utilisateur($_SESSION['idUtilisateur']);
-        $oModeleXHFModele = new XFHModeles();
-        $sCondition = "WHERE Utilisateurs_id=" . $_SESSION['idUtilisateur'] . " AND etat='disponible' ;";
-
-        $aEnregs = $oModeleXHFModele->selectParCondition('Oeuvres', $sCondition);
-
-        $aOeuvres = array();
-        foreach($aEnregs as $value)
+        //$_SESSION['idUtilisateur'] = 1;//fake utilisateur pour test!
+        if(isset($_SESSION['idUtilisateur']))
         {
-            $aOeuvres[] = new Oeuvre($value['id']);
-        }
+            $oCreateur = new Utilisateur($_SESSION['idUtilisateur']);
 
-        if(!isset($_POST['enregistrerEnchere']))
-        {
-            VueEnchere::formCreerEnchere($aOeuvres);
+            $oCreateur = $oCreateur->rechercherUnUtilisateur();//it doesn't work, constructor of Class Utilisateur has errors
         }
         else
         {
-            $oOeuvre = new Oeuvre($_POST['oeuvre']);
-            $oEnchere = new Enchere(0, $oCreateur, $oOeuvre);
-            $oEnchere = $oEnchere->creerUneEnchere();
-            VueEnchere::afficherUneEnchere($oEnchere);
+            header("Location: index.php?page=utilisateur&action=connexion");
         }
+
+        $oModeleXHFModele = new XFHModeles();
+
+        $sCondition = "WHERE Utilisateur_id=" . $_SESSION['idUtilisateur'] . " AND etat='disponible' ;";//it doesn't work, database table 'Oeuvres' doesn't have a foreign key connect to users.
+
+        $aEnregs = $oModeleXHFModele->selectParCondition('oeuvres', $sCondition);
+
+        $aOeuvres = array();
+        if(count($aEnregs)>0)
+        {
+            foreach($aEnregs as $value)
+            {
+                $aOeuvres[] = new Oeuvre($value['id']);
+            }
+            if(!isset($_POST['enregistrerEnchere']))
+            {
+                VueEnchere::formCreerEnchere($aOeuvres);
+            }
+            else
+            {
+                $oOeuvre = new Oeuvre($_POST['oeuvre']);
+                $oEnchere = new Enchere(0, $oCreateur, $oOeuvre);
+                $oEnchere = $oEnchere->creerUneEnchere();
+                VueEnchere::afficherUneEnchere($oEnchere);
+            }
+        }
+        else
+        {
+            header("Location: index.php?page=gererOeuvre&action=ajoutOeuvre");//if the user doesn't have any oeuvre, send to page 'add un oeuvre'
+        }
+
+
+
+
     }
 
     public function gererModEnchere()
@@ -256,9 +271,16 @@ class ControleurSite extends Controleur{
     {
         $oModeleXHFModele = new XFHModeles();
 
-        $sCondition = "WHERE Utilisateurs_id=" . $_SESSION['idUtilisateur'];
+        $sCondition='';
 
-        $aEnregs = $oModeleXHFModele->selectParCondition("Encheres", $sCondition);
+        if(isset($_SESSION['idUtilisateur']))
+        {
+            $sCondition = "WHERE Utilisateur_id=" . $_SESSION['idUtilisateur'];
+        }
+
+        $aEnregs = $oModeleXHFModele->selectParCondition("pi2_Encheres", $sCondition);
+
+        $aEncheres=array();
 
         foreach($aEnregs as $value)
         {
@@ -283,7 +305,7 @@ class ControleurSite extends Controleur{
 
     }
 
-=======
+
 	public function gererUtilisateur(){
 		switch ($_GET['action']){
 			case 'inscription':
@@ -341,5 +363,5 @@ class ControleurSite extends Controleur{
 			echo "<p>".$e->getMessage()."</p>";
 		}
 	}
->>>>>>> upstream/master
+
 }

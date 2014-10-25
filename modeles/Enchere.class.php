@@ -101,11 +101,13 @@ class Enchere extends XFHModeles
 
     public function setDateDebut($date)
     {
+        TypeException::estString($date);
         $this->dateDebut = $date;
     }
 
     public function setDateFin($date)
     {
+        TypeException::estString($date);
         $this->dateFin = $date;
     }
 
@@ -116,6 +118,8 @@ class Enchere extends XFHModeles
 
     public function setPrixFin($prix)
     {
+        $prix = number_format($prix,2);
+        TypeException::estFloat($prix);
         if($prix>=($this->getPrixFin()+$this->getMontantAugment()) || !$this->getPrixFin())
         {
             $this->prixFin = $prix;
@@ -170,6 +174,7 @@ class Enchere extends XFHModeles
 
     public function setEtat($etat)
     {
+        TypeException::estString($etat);
         $this->etat = $etat;
     }
 
@@ -294,7 +299,7 @@ class Enchere extends XFHModeles
     public static function chargerLesEncheres()
     {
         $oModele = new Modeles();
-        $aEncheres = $oModele->selectAllFrom("Encheres");
+        $aEncheres = $oModele->selectAllFrom("pi2_Encheres");
         return $aEncheres;
     }
 
@@ -305,7 +310,7 @@ class Enchere extends XFHModeles
     public function creerUneEnchere()
     {
         $sRequete = "INSERT INTO Encheres ('titre', 'prixDebut', 'prixFin', 'montantAug', 'prixDirecte', 'dateDebut', 'dateFin', 'etat', 'utilisateur_id', 'oeuvre_id')
-        VALUES ('".$_POST['titreEnchere']."', ".$_POST['prixDebut'].", ".$_POST['prixDebut'].", ".$_POST['prixAug'].", ".$_POST['prixDirecte'].", now(), now()+INTERVAL ".$_POST['duree']." DAY, 'ouverte', ".$this->oCreateurEnchere->getIdUtilisateur().", ".$this->oOeuvre->getId().");";
+        VALUES ('".$_POST['titreEnchere']."', ".$_POST['prixDebut'].", ".$_POST['prixDebut'].", ".$_POST['prixAug'].", ".$_POST['prixDirecte'].", now(), now()+INTERVAL ".$_POST['duree']." DAY, 'ouverte', ".$this->oCreateurEnchere->getIdUtilisateur().", ".$this->oOeuvre->getIdOeuvre().");";
         $id = $this->insertInto($sRequete);
         if($id)
         {

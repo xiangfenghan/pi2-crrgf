@@ -27,6 +27,10 @@ class XFHModeles extends Modeles
                 $aResultats = $requete->fetchAll();
                 return $aResultats;
             }
+            else
+            {
+                return array();
+            }
         }
         else
         {
