@@ -31,11 +31,7 @@ class ControleurSite extends Controleur{
 					$this->gererAccueil();
 					break;
 
-				case 'test':
-					$this->gererTest();
-					break;
-
-                case 'lesEncheres':
+                case 'encheres':
                     $this->gererLesEncheres();
                     break;
 
@@ -64,6 +60,7 @@ class ControleurSite extends Controleur{
 					break;
 
 				default:
+					header("HTTP/1.0 404 Not Found");
 					$this->gererErreurs();
 
 			}

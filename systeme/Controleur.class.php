@@ -11,7 +11,7 @@ class Controleur{
 
 	public function gererErreurs(){
 
-		echo "ex.: Page introuvable";
+		VueErreur::afficherErreur404();
 
 	}
 
