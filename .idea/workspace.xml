@@ -2,18 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e693d71-4154-43e0-8890-c65837a22f17" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/systeme/Conf.class.php" afterPath="$PROJECT_DIR$/systeme/Conf.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/systeme/Connexion.class.php" afterPath="$PROJECT_DIR$/systeme/Connexion.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controleurs/ControleurAdmin.class.php" afterPath="$PROJECT_DIR$/controleurs/ControleurAdmin.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controleurs/ControleurSite.class.php" afterPath="$PROJECT_DIR$/controleurs/ControleurSite.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeles/Enchere.class.php" afterPath="$PROJECT_DIR$/modeles/Enchere.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/systeme/Modeles.class.php" afterPath="$PROJECT_DIR$/systeme/Modeles.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/MySqliLib.class.php" afterPath="$PROJECT_DIR$/libs/MySqliLib.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modeles/Offre.class.php" afterPath="$PROJECT_DIR$/modeles/Offre.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/TypeException.class.php" afterPath="$PROJECT_DIR$/libs/TypeException.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vues/VueEnchere.class.php" afterPath="$PROJECT_DIR$/vues/VueEnchere.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/systeme/XFHModeles.class.php" afterPath="$PROJECT_DIR$/systeme/XFHModeles.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/site/index.php" afterPath="$PROJECT_DIR$/site/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="pi2-crrgf.iws" />
@@ -40,7 +28,7 @@
       <file leaf-file-name="ControleurSite.class.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controleurs/ControleurSite.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="212" column="42" selection-start="4914" selection-end="4914" vertical-scroll-proportion="66.833336" vertical-offset="4784" max-vertical-offset="5580">
+            <state line="212" column="42" selection-start="4914" selection-end="4914" vertical-scroll-proportion="0.0" vertical-offset="4784" max-vertical-offset="5580">
               <folding />
             </state>
           </provider>
@@ -49,7 +37,7 @@
       <file leaf-file-name="Enchere.class.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modeles/Enchere.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="317" column="25" selection-start="8556" selection-end="8556" vertical-scroll-proportion="-195.0" vertical-offset="0" max-vertical-offset="5265">
+            <state line="317" column="25" selection-start="8556" selection-end="8556" vertical-scroll-proportion="0.0" vertical-offset="4755" max-vertical-offset="5340">
               <folding />
             </state>
           </provider>
@@ -58,18 +46,25 @@
       <file leaf-file-name="Offre.class.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modeles/Offre.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="115" column="52" selection-start="2789" selection-end="2789" vertical-scroll-proportion="-24.416666" vertical-offset="1139" max-vertical-offset="1935">
-              <folding>
-                <element signature="e#6#90#0" expanded="true" />
-              </folding>
+            <state line="115" column="52" selection-start="2789" selection-end="2789" vertical-scroll-proportion="0.0" vertical-offset="1725" max-vertical-offset="1935">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VueEnchere.class.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="VueEnchere.class.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vues/VueEnchere.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="68" column="80" selection-start="2150" selection-end="2150" vertical-scroll-proportion="-2.4672434" vertical-offset="2941" max-vertical-offset="3750">
+            <state line="68" column="80" selection-start="2150" selection-end="2150" vertical-scroll-proportion="3.125" vertical-offset="1020" max-vertical-offset="3750">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Utilisateur.class.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/modeles/Utilisateur.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="55" column="28" selection-start="1354" selection-end="1354" vertical-scroll-proportion="0.14833127" vertical-offset="600" max-vertical-offset="3210">
               <folding />
             </state>
           </provider>
@@ -78,7 +73,7 @@
       <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/site/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="0" selection-start="380" selection-end="380" vertical-scroll-proportion="-7.5" vertical-offset="0" max-vertical-offset="285">
+            <state line="12" column="0" selection-start="380" selection-end="380" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="285">
               <folding />
             </state>
           </provider>
@@ -87,7 +82,7 @@
       <file leaf-file-name="Conf.class.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/systeme/Conf.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="825">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="825">
               <folding />
             </state>
           </provider>
@@ -96,7 +91,7 @@
       <file leaf-file-name="Connexion.class.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/systeme/Connexion.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="4.3333335" vertical-offset="104" max-vertical-offset="900">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="900">
               <folding />
             </state>
           </provider>
@@ -105,16 +100,7 @@
       <file leaf-file-name="Modeles.class.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/systeme/Modeles.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="30" selection-start="469" selection-end="469" vertical-scroll-proportion="-10.625" vertical-offset="0" max-vertical-offset="780">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ControleurAdmin.class.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controleurs/ControleurAdmin.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="2.5416667" vertical-offset="61" max-vertical-offset="870">
+            <state line="17" column="30" selection-start="469" selection-end="469" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="780">
               <folding />
             </state>
           </provider>
@@ -123,7 +109,7 @@
       <file leaf-file-name="XFHModeles.class.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/systeme/XFHModeles.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="28" selection-start="640" selection-end="645" vertical-scroll-proportion="-1.2083334" vertical-offset="361" max-vertical-offset="1170">
+            <state line="31" column="28" selection-start="640" selection-end="645" vertical-scroll-proportion="0.0" vertical-offset="465" max-vertical-offset="1245">
               <folding />
             </state>
           </provider>
@@ -199,7 +185,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -322,14 +307,15 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="options.lastSelected" value="vcs.Git" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="PublishConfig">
     <servers>
@@ -427,18 +413,6 @@
     <entry file="file://$PROJECT_DIR$/vues/VueOeuvre.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.4845488" vertical-offset="1201" max-vertical-offset="2010">
-          <folding>
-            <marker date="1414270223000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1414270223000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1414270223000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1414270223000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modeles/Utilisateur.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="28" selection-start="889" selection-end="902" vertical-scroll-proportion="0.625" vertical-offset="450" max-vertical-offset="3210">
           <folding />
         </state>
       </provider>
@@ -459,31 +433,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controleurs/ControleurAdmin.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="2.5416667" vertical-offset="61" max-vertical-offset="870">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="870">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controleurs/ControleurSite.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="212" column="42" selection-start="4914" selection-end="4914" vertical-scroll-proportion="66.833336" vertical-offset="4784" max-vertical-offset="5580">
+        <state line="212" column="42" selection-start="4914" selection-end="4914" vertical-scroll-proportion="0.0" vertical-offset="4784" max-vertical-offset="5580">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modeles/Enchere.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="317" column="25" selection-start="8556" selection-end="8556" vertical-scroll-proportion="-195.0" vertical-offset="0" max-vertical-offset="5265">
+        <state line="317" column="25" selection-start="8556" selection-end="8556" vertical-scroll-proportion="0.0" vertical-offset="4755" max-vertical-offset="5340">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modeles/Offre.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="115" column="52" selection-start="2789" selection-end="2789" vertical-scroll-proportion="-24.416666" vertical-offset="1139" max-vertical-offset="1935">
-          <folding>
-            <element signature="e#6#90#0" expanded="true" />
-          </folding>
+        <state line="115" column="52" selection-start="2789" selection-end="2789" vertical-scroll-proportion="0.0" vertical-offset="1725" max-vertical-offset="1935">
+          <folding />
         </state>
       </provider>
     </entry>
@@ -496,7 +468,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/site/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="380" selection-end="380" vertical-scroll-proportion="-7.5" vertical-offset="0" max-vertical-offset="285">
+        <state line="12" column="0" selection-start="380" selection-end="380" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="285">
           <folding />
         </state>
       </provider>
@@ -510,28 +482,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/systeme/Connexion.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="4.3333335" vertical-offset="104" max-vertical-offset="900">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="900">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/systeme/Modeles.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="30" selection-start="469" selection-end="469" vertical-scroll-proportion="-10.625" vertical-offset="0" max-vertical-offset="780">
+        <state line="17" column="30" selection-start="469" selection-end="469" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="780">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/systeme/XFHModeles.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="28" selection-start="640" selection-end="645" vertical-scroll-proportion="-1.2083334" vertical-offset="361" max-vertical-offset="1170">
+        <state line="31" column="28" selection-start="640" selection-end="645" vertical-scroll-proportion="0.0" vertical-offset="465" max-vertical-offset="1245">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vues/VueEnchere.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="80" selection-start="2150" selection-end="2150" vertical-scroll-proportion="-2.4672434" vertical-offset="2941" max-vertical-offset="3750">
+        <state line="68" column="80" selection-start="2150" selection-end="2150" vertical-scroll-proportion="3.125" vertical-offset="1020" max-vertical-offset="3750">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modeles/Utilisateur.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="28" selection-start="1354" selection-end="1354" vertical-scroll-proportion="0.14833127" vertical-offset="600" max-vertical-offset="3210">
           <folding />
         </state>
       </provider>
