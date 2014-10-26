@@ -30,7 +30,7 @@ class ControleurSite extends Controleur{
 				case 'accueil':
 					$this->gererAccueil();
 					break;
-				
+
 				case 'utilisateur':
 					$this->gererUtilisateur();
 					break;
@@ -40,6 +40,7 @@ class ControleurSite extends Controleur{
 					break;
 
 				default:
+					header("HTTP/1.0 404 Not Found");
 					$this->gererErreurs();
 
 			}
