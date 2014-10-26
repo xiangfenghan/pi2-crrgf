@@ -120,6 +120,11 @@ h1, h2, h3{
 }
 
 /** Contenu **/
+.contenu-principal >section{
+	min-height: 300px;
+	padding: 50px 0;
+}
+
 article header p{
 	font-style: italic;
 }
@@ -190,12 +195,13 @@ footer .droits{
 
 }
 
-/** Page d'accueil **/
-.accueil >section{
-	min-height: 300px;
-	padding: 50px 0;
+@media all and (min-width: 769px) {
+	main{
+		min-height: 375px;
+	}
 }
 
+/** Page d'accueil **/
 .a-propos, .notre-engagement{
 	background-size: 100% 100%;
 }
