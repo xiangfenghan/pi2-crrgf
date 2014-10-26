@@ -43,12 +43,19 @@ class ControleurSite extends Controleur{
                     $this->gererEnchere();
                     break;
 
-                case 'statutEnchere':
-                    $this->gererAjaxEnchere();
-                    break;
-
                 case 'listeOffre':
                     $this->gererOffres();
+                    break;
+
+                case 'statutEnchere':
+                    $this->gererAjaxStatutEnchere();
+                    break;
+
+                case 'ajoutOffre':
+                    if(isset($_SESSION['idUtilisateur']) && $_SESSION['idUtilisateur']!=0)
+                    {
+                        $this->gererAjaxAjoutOffre();
+                    }
                     break;
 
 				case 'utilisateur':
@@ -87,7 +94,7 @@ class ControleurSite extends Controleur{
 	}
 
     /**
-     *
+     * afficher les encheres
      */
     public function gererLesEncheres()
     {
@@ -104,14 +111,22 @@ class ControleurSite extends Controleur{
     }
 
     /**
-     *
+     * afficher detail d'une enchere
      */
     public function gererUneEnchere()
     {
-//        $oEnchere = new Enchere($_GET['idEnchere']);
-        $oEnchere = new Enchere(1);
-        $oEnchere->chargerUneEnchereParIdEnchere();
-//        print_r($oEnchere);
+        if(isset($_GET['idEnchere']))
+        {
+            $oEnchere = new Enchere($_GET['idEnchere']);
+            $oEnchere->chargerUneEnchereParIdEnchere();
+        }
+        elseif(isset($_GET['idOeuvre']))
+        {
+            $idEnchere = Enchere::rechercherIdEnchereParIdOeuvre($_GET['idOeuvre']);
+            $oEnchere = new Enchere($idEnchere);
+            $oEnchere->chargerUneEnchereParIdEnchere();
+        }
+
         VueEnchere::afficherUneEnchere($oEnchere);
     }
 
@@ -120,8 +135,8 @@ class ControleurSite extends Controleur{
      */
     public function gererEnchere()
     {
-//        if(isset($_SESSION) && $_SESSION['idUtilisateur']!=0)
-//        {
+        if(isset($_SESSION) && $_SESSION['idUtilisateur']!=0)
+        {
 
             if(!isset($_GET['action']))
             {
@@ -147,34 +162,16 @@ class ControleurSite extends Controleur{
                     break;
             }
 
-//        }
-//        else
-//        {
-//            header("Location: index.php");
-//        }
-    }
-
-    public function gererAjaxEnchere()
-    {
-
-            switch($_GET['page'])
-            {
-                case 'statutEnchere':
-                    $this->gererAjaxStatutEnchere();
-                    break;
-                case 'ajoutOffre':
-                    if(isset($_SESSION['idUtilisateur']) && $_SESSION['idUtilisateur']!=0)
-                    {
-                        $this->gererAjaxAjoutOffre();
-                    }
-                    break;
-            }
-
+        }
+        else
+        {
+            header("Location: index.php");
+        }
     }
 
     public function gererCreerUneEnchere()
     {
-        //$_SESSION['idUtilisateur'] = 1;//fake utilisateur pour test!
+        $_SESSION['idUtilisateur'] = 1;//fake utilisateur pour test!
         if(isset($_SESSION['idUtilisateur']))
         {
             $oCreateur = new Utilisateur($_SESSION['idUtilisateur']);
@@ -188,7 +185,7 @@ class ControleurSite extends Controleur{
 
         $oModeleXHFModele = new XFHModeles();
 
-        $sCondition = "WHERE Utilisateur_id=" . $_SESSION['idUtilisateur'] . " AND etat='disponible' ;";//it doesn't work, database table 'Oeuvres' doesn't have a foreign key connect to users.
+        $sCondition = "WHERE utilisateur_id=" . $_SESSION['idUtilisateur'] . " AND etat='disponible' ;";//it doesn't work, database table 'Oeuvres' doesn't have a foreign key connect to users.
 
         $aEnregs = $oModeleXHFModele->selectParCondition('oeuvres', $sCondition);
 
