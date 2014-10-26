@@ -98,45 +98,29 @@ class Vue {
 								</ul>
 							</div>
 							<div class=\"col-md-7\">
-<<<<<<< HEAD
-								<ul class=\"nav navbar-nav navbar-right\">
-									<!-- Si non connecte
-									<li><a href=\"?page=connexion\">Se connecter</a></li>
-									<li><a href=\"?page=inscription\">S'inscrire</a></li>
-									<!-- /Si non connecte -->
-									<!-- Lorsque connecte -->
-=======
 								<ul class=\"nav navbar-nav navbar-right\">";
-									//Si non connecte
-								if(!isset($_SESSION['idUser'])){
+								//Si non connecte
+								if( !isset($_SESSION['idUser']) ) {
 									echo "
 									<li><a href=\"?page=utilisateur&action=connexion\">Se connecter</a></li>
 									<li><a href=\"?page=utilisateur&action=inscription\">S'inscrire</a></li>
-									";}//fin Si non connecte
-									//Lorsque connecte
-								else{
+									";
+								//Lorsque connecte
+								} else {
 									echo"
->>>>>>> upstream/master
 									<li><a href=\"?page=commentaires\">Commentaires</a></li>
 									<li class=\"dropdown\">
 										<a href=\"?page=compte\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">Mon compte <b class=\"caret\"></b></a>
 										<ul class=\"dropdown-menu\">
 											<li><a href=\"?page=mes-encheres\">Mes enchères</a></li>
 											<li><a href=\"?page=mes-oeuvres\">Mes oeuvres</a></li>
-<<<<<<< HEAD
-											<li><a href=\"?page=parametres\">Paramètres</a></li>
-											<li><a href=\"?action=deconnecter\">Déconnecter</a></li>
-										</ul>
-									</li>
-									<!-- /Lorsque connecte -->
-=======
 											<li><a href=\"?page=utilisateur&action=parametres\">Paramètres</a></li>
 											<li><a href=\"?action=deconnecter\">Déconnecter</a></li>
 										</ul>
 									</li>
-									";}//Fin Lorsque connecte
-		echo"
->>>>>>> upstream/master
+									";
+								}//Fin Lorsque connecte
+								echo"
 								</ul>
 							</div>
 						</div><!-- /.navbar-collapse -->
@@ -145,8 +129,7 @@ class Vue {
 			</nav>
 			<main class=\"container-fluid\">
 				<!-- row principale -->
-				<div class=\"row\">
-		";
+				<div class=\"row\">";
 
 	}
 
@@ -273,18 +256,19 @@ class Vue {
 
 	}
 
-	public static function aside() { ?>
+	public static function aside() {
 
-		<aside class="derniere-minute col-md-2">
-			<h1 class="text-center">Enchères <br><span>de dernière minutes</span></h1 class="text-center">
-			<ul class="list-unstyled text-center">
-				<li><a href="?page=oeuvres&id=1"><img class="img-responsive" src="img/oeuvres/oeuvre1-224x288.jpg" height="288" width="224" alt="Oeuvre 1"></a></li>
-				<li><a href="?page=oeuvres&id=2"><img class="img-responsive" src="img/oeuvres/oeuvre2-224x262.jpg" height="262" width="224" alt="Oeuvre 2"></a></li>
-				<li><a href="?page=oeuvres&id=3"><img class="img-responsive" src="img/oeuvres/oeuvre3-224x307.jpg" height="307" width="224" alt="Oeuvre 3"></a></li>
-				<li><a href="?page=oeuvres&id=4"><img class="img-responsive" src="img/oeuvres/oeuvre4-224x263.jpg" height="263" width="224" alt="Oeuvre 4"></a></li>
+		echo "
+		<aside class=\"derniere-minute col-md-2\">
+			<h1 class=\"text-center\">Enchères <br><span>de dernière minutes</span></h1 class=\"text-center\">
+			<ul class=\"list-unstyled text-center\">
+				<li><a href=\"?page=oeuvres&id=1\"><img class=\"img-responsive\" src=\"img/oeuvres/oeuvre1-224x288.jpg\" height=\"288\" width=\"224\" alt=\"Oeuvre 1\"></a></li>
+				<li><a href=\"?page=oeuvres&id=2\"><img class=\"img-responsive\" src=\"img/oeuvres/oeuvre2-224x262.jpg\" height=\"262\" width=\"224\" alt=\"Oeuvre 2\"></a></li>
+				<li><a href=\"?page=oeuvres&id=3\"><img class=\"img-responsive\" src=\"img/oeuvres/oeuvre3-224x307.jpg\" height=\"307\" width=\"224\" alt=\"Oeuvre 3\"></a></li>
+				<li><a href=\"?page=oeuvres&id=4\"><img class=\"img-responsive\" src=\"img/oeuvres/oeuvre4-224x263.jpg\" height=\"263\" width=\"224\" alt=\"Oeuvre 4\"></a></li>
 			</ul>
-		</aside>
-<?php
+		</aside>";
+
 	}
 
 }
