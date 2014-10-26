@@ -25,6 +25,7 @@ class Modeles extends Connexion{
 
 		$requete = $this->oPDO->prepare($sSQL);
 
+        $aResultats=array();
 		if ( $requete->execute() ) {
 
 			if ( $requete->rowCount() ) {
