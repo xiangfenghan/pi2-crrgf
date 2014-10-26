@@ -9,7 +9,7 @@
  */
 
 class Utilisateur extends Modeles{
-	
+
 	/* Propriétés privées */
 	private $idUtilisateur;
 	private $sNom;
@@ -19,13 +19,13 @@ class Utilisateur extends Modeles{
 	private $sTel;
 	private $sTypeUtilisateur;
 	private $sEtat
-	
+
 	/**
 	 * variable qui provient de la relation de composition
 	 * entre la classe Dossier et la classe Etudiant
 	 */
-	
-	
+
+
 	/**
 	 * Constructeur
 	 * @param integer $idEtudiant
@@ -42,9 +42,9 @@ class Utilisateur extends Modeles{
 		$this->setTel($sTel);
 		$this->setTypeUtilisateur($sTypeUtilisateur);
 		$this->setEtat($sEtat);
-		
+
 	} //fin du constructeur
-	
+
 	/* Affectation */
 	/**
 	 *  * @param string $sNom
@@ -52,7 +52,7 @@ class Utilisateur extends Modeles{
 	public function setNom($sNom){
 		TypeException::estString($sNom);
 		TypeException::estVide($sNom);
-		
+
 		$this->sNom = $sNom;
 	}
 	/**
@@ -61,7 +61,7 @@ class Utilisateur extends Modeles{
 	public function setPrenom($sPrenom){
 		TypeException::estString($sPrenom);
 		TypeException::estVide($sPrenom);
-		
+
 		$this->sPrenom = $sPrenom;
 	}
 	/**
@@ -78,7 +78,7 @@ class Utilisateur extends Modeles{
 	 */
 	public function setIdUtilisateurt($idUtilisateur){
 		TypeException::estNumerique($idUtilisateur);
-		
+
 		$this->idUtilisateur = $idUtilisateur;
 	}
 	/**
@@ -100,7 +100,7 @@ class Utilisateur extends Modeles{
 	* @param string $sEtat
 	*/
 	public function setEtat($sEtat){
-		TypeException::estString($sEtat);		
+		TypeException::estString($sEtat);
 		TypeException::estVide($sPrenom);
 
 	}
@@ -113,13 +113,13 @@ class Utilisateur extends Modeles{
 
 	}
 
-	
+
 	/**
 	 * @param array $aDossiers
 	 */
 	/*public function setDossiers($aDossiers){
 		TypeException::estArray($aDossiers);
-		
+
 		$this->aDossiers = $aDossiers;
 	}*/
 	/**
@@ -170,8 +170,8 @@ class Utilisateur extends Modeles{
 	public function getIdUtilisateur(){
 		return $this->idUtilisateur;
 	}
-	
-	
+
+
 	/**
 	 * Rechercher un utilisateur par son idUtilisateur
 	 * @return boolean true si l'enregistrement est trouvé dans la BDD
@@ -209,8 +209,8 @@ class Utilisateur extends Modeles{
 			//$sMsg = array('type'=>'danger', 'msg'=>'Erreur lors de la requete.');
 
 		}
-			
+
 		}
-	
-	 
+
+
 	}

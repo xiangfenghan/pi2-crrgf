@@ -24,22 +24,26 @@ class Conf {
 			"motDePasse"  => "aaa",
 		),
 		"feng" => array(
-			"hote"        => "localhost",
-			"bd"          => "code",
-			"utilisateur" => "code",
-			"motDePasse"  => "motdepasse",
+
+			"hote"        => "127.0.0.1",
+			"bd"          => "codeEleve",
+			"utilisateur" => "root",
+			"motDePasse"  => "26y6fasdf",
 		),
 		"eskander" => array(
+
 			"hote"        => "localhost",
 			"bd"          => "code",
 			"utilisateur" => "code",
 			"motDePasse"  => "motdepasse",
 		),
+
 		"martin" => array(
 			"hote"        => "localhost",
 			"bd"          => "pi2",
 			"utilisateur" => "e9581797",
 			"motDePasse"  => "hb193ss94",
+
 		)
 	);
 

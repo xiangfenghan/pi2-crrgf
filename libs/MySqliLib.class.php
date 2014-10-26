@@ -2,10 +2,10 @@
 	require_once 'MySqliException.class.php';
     class MySqliLib extends mysqli { /* héritage */
     	/* constantes d'authentification à la base de données */
-    	const HOST ="localhost";
+    	const HOST ="127.0.0.1";
 		const USER ="root";
-		const PWD="";
-		const BDD="bd_oeuvres";
+		const PWD="26y6fasdf";
+		const BDD="codeEleve";
 
 		/**
 		 * @var string
