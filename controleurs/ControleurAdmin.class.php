@@ -31,6 +31,10 @@ class ControleurAdmin extends Controleur{
 					self::gererAccueil();
 					break;
 
+                case 'encheres':
+                    ControleurAdmin::adm_GererEncheres();
+                    break;
+
 				default:
 					ControleurAdmin::gererErreurs();
 
@@ -49,5 +53,40 @@ class ControleurAdmin extends Controleur{
 		echo "page accueil";
 
 	}
+
+
+    public function adm_GererEncheres()
+    {
+        $sSQL = "SELECT * FROM pi2_Encheres";
+
+        $requete = $this->oPDO->prepare($sSQL);
+
+        $aResultats=array();
+
+        if ( $requete->execute() )
+        {
+
+            if ( $requete->rowCount() )
+            {
+
+                $aResultats = $requete->fetchAll();
+
+            }
+            foreach($aResultats as $value)
+            {
+                $aEncheres[] = new Enchere($value['id']);
+            }
+
+            VueEnchere::admAfficherListeEncheres($aEncheres);
+        }
+        else
+        {
+            throw new Exception(ERR_REQUEST);
+        }
+
+
+
+
+    }
 
 }
