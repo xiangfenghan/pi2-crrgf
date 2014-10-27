@@ -9,7 +9,11 @@
  */
 
 class Utilisateur extends Modeles{
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> upstream/master
 	/* Propriétés privées */
 	private $idUtilisateur;
 	private $sNom;
@@ -18,14 +22,24 @@ class Utilisateur extends Modeles{
 	private $sMotDePasse;
 	private $sTel;
 	private $sTypeUtilisateur;
+<<<<<<< HEAD
 	private $sEtat;
 	
+=======
+	private $sEtat
+
+>>>>>>> upstream/master
 	/**
 	 * variable qui provient de la relation de composition
 	 * entre la classe Dossier et la classe Etudiant
 	 */
+<<<<<<< HEAD
 	
 	
+=======
+
+
+>>>>>>> upstream/master
 	/**
 	 * Constructeur
 	 * @param integer $idEtudiant
@@ -34,7 +48,11 @@ class Utilisateur extends Modeles{
 	 * @param integer $iAge
 	 */
 	public function __construct($idUtilisateur=0, $sNom=" ", $sPrenom=" ", $sCourriel=" ", $MotDePasse=" ",$sTel=" ",$sTypeUtilisateur="membre",$sEtat="actif" ){
+<<<<<<< HEAD
 		$this->setIdUtilisateur($idUtilisateur);
+=======
+		$this->setIdEtudiant($idUtilisateur);
+>>>>>>> upstream/master
 		$this->setNom($sNom);
 		$this->setPrenom($sPrenom);
 		$this->setCourriel($sCourriel);
@@ -42,9 +60,15 @@ class Utilisateur extends Modeles{
 		$this->setTel($sTel);
 		$this->setTypeUtilisateur($sTypeUtilisateur);
 		$this->setEtat($sEtat);
+<<<<<<< HEAD
 		
 	} //fin du constructeur
 	
+=======
+
+	} //fin du constructeur
+
+>>>>>>> upstream/master
 	/* Affectation */
 	/**
 	 *  * @param string $sNom
@@ -52,7 +76,11 @@ class Utilisateur extends Modeles{
 	public function setNom($sNom){
 		TypeException::estString($sNom);
 		TypeException::estVide($sNom);
+<<<<<<< HEAD
 		
+=======
+
+>>>>>>> upstream/master
 		$this->sNom = $sNom;
 	}
 	/**
@@ -61,7 +89,11 @@ class Utilisateur extends Modeles{
 	public function setPrenom($sPrenom){
 		TypeException::estString($sPrenom);
 		TypeException::estVide($sPrenom);
+<<<<<<< HEAD
 		
+=======
+
+>>>>>>> upstream/master
 		$this->sPrenom = $sPrenom;
 	}
 	/**
@@ -69,16 +101,26 @@ class Utilisateur extends Modeles{
 	 */
 	public function setCourriel($sCourriel){
 		TypeException::eststring($sCourriel);
+<<<<<<< HEAD
 		TypeException::estVide($sCourriel);
+=======
+		TypeException::estVide($sPrenom);
+>>>>>>> upstream/master
 
 		$this->sCourriel = $sCourriel;
 	}
 	/**
 	 * @param integer $idUtilisateur
 	 */
+<<<<<<< HEAD
 	public function setIdUtilisateur($idUtilisateur){
 		TypeException::estNumerique($idUtilisateur);
 		
+=======
+	public function setIdUtilisateurt($idUtilisateur){
+		TypeException::estNumerique($idUtilisateur);
+
+>>>>>>> upstream/master
 		$this->idUtilisateur = $idUtilisateur;
 	}
 	/**
@@ -87,27 +129,39 @@ class Utilisateur extends Modeles{
 	public function setTel($sTel){
 		TypeException::estString($sTel);
 		TypeException::estVide($sTel);
+<<<<<<< HEAD
 		
 		$this->sTel = $sTel;
+=======
+>>>>>>> upstream/master
 	}
 	/**
 	* @param string $sTypeUtilisateur
 	*/
 	public function setTypeUtilisateur($sTypeUtilisateur){
 		TypeException::estString($sTypeUtilisateur);
+<<<<<<< HEAD
 		TypeException::estVide($sTypeUtilisateur);
 		
 		$this->sTypeUtilisateur = $sTypeUtilisateur;
+=======
+		TypeException::estVide($sPrenom);
+>>>>>>> upstream/master
 
 	}
 	/**
 	* @param string $sEtat
 	*/
 	public function setEtat($sEtat){
+<<<<<<< HEAD
 		TypeException::estString($sEtat);		
 		TypeException::estVide($sEtat);
 		
 		$this->sEtat = $sEtat;
+=======
+		TypeException::estString($sEtat);
+		TypeException::estVide($sPrenom);
+>>>>>>> upstream/master
 
 	}
 	/**
@@ -115,18 +169,30 @@ class Utilisateur extends Modeles{
 	*/
 	public function setMotDePasse($sMotDePasse){
 
+<<<<<<< HEAD
 		TypeException::estVide($sMotDePasse);
 		
 		$this->sMotDePasse = $sMotDePasse;
 	}
 
 	
+=======
+		TypeException::estVide($sPrenom);
+
+	}
+
+
+>>>>>>> upstream/master
 	/**
 	 * @param array $aDossiers
 	 */
 	/*public function setDossiers($aDossiers){
 		TypeException::estArray($aDossiers);
+<<<<<<< HEAD
 		
+=======
+
+>>>>>>> upstream/master
 		$this->aDossiers = $aDossiers;
 	}*/
 	/**
@@ -151,13 +217,21 @@ class Utilisateur extends Modeles{
 	 * @return string $sMotDePasse
 	 */
 	public function getMotDePasse(){
+<<<<<<< HEAD
 		return $this->sMotDePasse;
+=======
+		return $this->sMotdePasse;
+>>>>>>> upstream/master
 	}
 	/**
 	 * @return string $sTelRes
 	 */
 	public function getTel(){
+<<<<<<< HEAD
 		return $this->sTel;
+=======
+		return $this->sTelRes;
+>>>>>>> upstream/master
 	}
 	/**
 	 * @return string $Etat
@@ -177,14 +251,20 @@ class Utilisateur extends Modeles{
 	public function getIdUtilisateur(){
 		return $this->idUtilisateur;
 	}
+<<<<<<< HEAD
 	
 	
+=======
+
+
+>>>>>>> upstream/master
 	/**
 	 * Rechercher un utilisateur par son idUtilisateur
 	 * @return boolean true si l'enregistrement est trouvé dans la BDD
 	 * false dans tous les autres cas
 	 */
 	function rechercherUnUtilisateur(){
+<<<<<<< HEAD
 		$oPDO = new Connexion;
 
 		//Réaliser la requête de recherche par le idEtudiant
@@ -224,6 +304,10 @@ class Utilisateur extends Modeles{
 	public function rechercherUtilisateurParEmail(){
 		//Réaliser la requête de recherche par le idEtudiant
 		$sSQL = "SELECT * FROM utilisateurs WHERE courriel=".$this->getCourriel();
+=======
+		//Réaliser la requête de recherche par le idEtudiant
+		$sSQL = "SELECT * FROM utilisateurs WHERE idUtilisateur=".$this->getIdUtilisateur();
+>>>>>>> upstream/master
 		//préparer la requête
 		$requete = $oPDO->prepare($sSQL);
 		//Exécuter la requête
@@ -253,6 +337,7 @@ class Utilisateur extends Modeles{
 			//$sMsg = array('type'=>'danger', 'msg'=>'Erreur lors de la requete.');
 
 		}
+<<<<<<< HEAD
 	}
 	public static function emailExiste($sCourriel){
 		//ouverture de la connexion
@@ -549,3 +634,10 @@ class Utilisateur extends Modeles{
 
 	}//fin adm_connexion();
 }
+=======
+
+		}
+
+
+	}
+>>>>>>> upstream/master

@@ -99,6 +99,7 @@ class Vue {
 							</div>
 							<div class=\"col-md-7\">
 								<ul class=\"nav navbar-nav navbar-right\">";
+<<<<<<< HEAD
 									//Si non connecte
 								if(!isset($_SESSION['idUser'])){
 									echo "
@@ -107,6 +108,16 @@ class Vue {
 									";}//fin Si non connecte
 									//Lorsque connecte
 								else{
+=======
+								//Si non connecte
+								if( !isset($_SESSION['idUser']) ) {
+									echo "
+									<li><a href=\"?page=utilisateur&action=connexion\">Se connecter</a></li>
+									<li><a href=\"?page=utilisateur&action=inscription\">S'inscrire</a></li>
+									";
+								//Lorsque connecte
+								} else {
+>>>>>>> upstream/master
 									echo"
 									<li><a href=\"?page=commentaires\">Commentaires</a></li>
 									<li class=\"dropdown\">
@@ -115,11 +126,20 @@ class Vue {
 											<li><a href=\"?page=mes-encheres\">Mes enchères</a></li>
 											<li><a href=\"?page=mes-oeuvres\">Mes oeuvres</a></li>
 											<li><a href=\"?page=utilisateur&action=parametres\">Paramètres</a></li>
+<<<<<<< HEAD
 											<li><a href=\"?page=utilisateur&action=déconnexion\">Déconnecter</a></li>
 										</ul>
 									</li>
 									";}//Fin Lorsque connecte
 		echo"
+=======
+											<li><a href=\"?action=deconnecter\">Déconnecter</a></li>
+										</ul>
+									</li>
+									";
+								}//Fin Lorsque connecte
+								echo"
+>>>>>>> upstream/master
 								</ul>
 							</div>
 						</div><!-- /.navbar-collapse -->
@@ -128,8 +148,12 @@ class Vue {
 			</nav>
 			<main class=\"container-fluid\">
 				<!-- row principale -->
+<<<<<<< HEAD
 				<div class=\"row\">
 		";
+=======
+				<div class=\"row\">";
+>>>>>>> upstream/master
 
 	}
 
@@ -256,6 +280,7 @@ class Vue {
 
 	}
 
+<<<<<<< HEAD
 	public static function aside() { ?>
 
 		<aside class="derniere-minute col-md-2">
@@ -268,6 +293,21 @@ class Vue {
 			</ul>
 		</aside>
 <?php
+=======
+	public static function aside() {
+
+		echo "
+		<aside class=\"derniere-minute col-md-2\">
+			<h1 class=\"text-center\">Enchères <br><span>de dernière minutes</span></h1 class=\"text-center\">
+			<ul class=\"list-unstyled text-center\">
+				<li><a href=\"?page=oeuvres&id=1\"><img class=\"img-responsive\" src=\"img/oeuvres/oeuvre1-224x288.jpg\" height=\"288\" width=\"224\" alt=\"Oeuvre 1\"></a></li>
+				<li><a href=\"?page=oeuvres&id=2\"><img class=\"img-responsive\" src=\"img/oeuvres/oeuvre2-224x262.jpg\" height=\"262\" width=\"224\" alt=\"Oeuvre 2\"></a></li>
+				<li><a href=\"?page=oeuvres&id=3\"><img class=\"img-responsive\" src=\"img/oeuvres/oeuvre3-224x307.jpg\" height=\"307\" width=\"224\" alt=\"Oeuvre 3\"></a></li>
+				<li><a href=\"?page=oeuvres&id=4\"><img class=\"img-responsive\" src=\"img/oeuvres/oeuvre4-224x263.jpg\" height=\"263\" width=\"224\" alt=\"Oeuvre 4\"></a></li>
+			</ul>
+		</aside>";
+
+>>>>>>> upstream/master
 	}
 
 }
