@@ -122,8 +122,9 @@ window.addEventListener("load", function(){
         }
 
         var idEnchere = document.getElementById('idEnchere').value;
+        var prixFin = document.getElementById('prixFin').value;
 
-        xmlHttpOffre.open("GET","index.php?page=ajoutOffre&idEnchere=" + idEnchere,true);
+        xmlHttpOffre.open("GET","index.php?page=ajoutOffre&idEnchere=" + idEnchere + "&montant=" + prixFin,true);
         xmlHttpOffre.send();
     }
 

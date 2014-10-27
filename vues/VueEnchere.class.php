@@ -10,7 +10,7 @@ class VueEnchere
 {
     public static function afficherLesEnchere($aEncheres)
     {
-        Vue::head('Liste des enchères','Arts aux enchères - ');
+        Vue::head('Liste des enchères','Arts aux enchères');
         Vue::header();
         Vue::nav();
 
@@ -27,13 +27,9 @@ class VueEnchere
 
                 echo "<article class='col-md-3 col-sm-6'>";
 
-                print_r($oEnchere);
-                echo "<br><br><br>";
-
-
-//            echo "<img src='".$oEnchere->getOeuvreEnchere()->getUrl()."' class='img-responsive' alt='Responsive image'>";
+                echo "<img src='".$oEnchere->getOeuvreEnchere()->getUrlOeuvre()."' class='img-responsive' alt='Responsive image'>";
                 echo "<a href='index.php?page=detailsEnchere&idEnchere=" . $oEnchere->getIdEnchere() . "'><h1>".$oEnchere->getOeuvreEnchere()->getNom()."</h1></a>";
-//            echo "<p>".$oEnchere->getOeuvreEnchere()->getDescription()."</p>";
+                echo "<p>".$oEnchere->getOeuvreEnchere()->getDescription()."</p>";
                 echo "<span>".$oEnchere->getPrixDebut()."</span>";
                 echo "<span>".$oEnchere->getPrixAcheterMaintenant()."</span>";
                 echo "<article>";
@@ -53,10 +49,11 @@ class VueEnchere
 
     public static function afficherListeEncheres($aEncheres)
     {
-        Vue::head('Liste des enchères','Arts aux enchères - ');
+        Vue::head('Liste des enchères','Arts aux enchères');
         Vue::header();
         Vue::nav();
 
+        echo "<div class='container'>";
         echo "<h1>Gestion des enchères</h1>".
              "<a class='btn-default btn' href='index.php?page=gestionEnchere&action=add'>Creer une enchere</a>";
         if(count($aEncheres)>0)
@@ -72,7 +69,7 @@ class VueEnchere
                     "<td><a href='index.php?page=gestionEnchere&action=sup&idEnchere=".$oEnchere->getIdEnchere()."'>Supprimer</a></td>".
                     "</tr>";
             }
-            echo "</table>";
+            echo "</table></div>";
         }
         else
         {
@@ -94,11 +91,11 @@ class VueEnchere
         Vue::nav();
 
         echo "<article class='col-md-5 col-sm-6'>".
-//                "<img src='".$oEnchere->getOeuvreEnchere()->getUrl()."' class='img-responsive' alt='Responsive image'>".
+                "<img src='".$oEnchere->getOeuvreEnchere()->getUrlOeuvre()."' class='img-responsive' alt='Responsive image'>".
              "</article>";
         echo "<article class='col-md-7 col-sm-6'>".
              "<form action='#'><input type='hidden' id='idEnchere' value='".$oEnchere->getIdEnchere()."'>".
-//                "<h2>".$oEnchere->getOeuvreEnchere()->getNom().$oEnchere->getOeuvreEnchere()->getDimension()."</h2>".
+                "<h2>".$oEnchere->getOeuvreEnchere()->getNomOeuvre().$oEnchere->getOeuvreEnchere()->getDimensionOeuvre()."</h2>".
                 "<div class='form-group'>".
                     "<label>Temps restant: </label>".
                     "<span class='tempRestant'>".$oEnchere->getTempsRestant()."</span></div>".
@@ -113,7 +110,7 @@ class VueEnchere
                     "<button id='btnOffre' onclick='AjoutOffre();'>Placer un offre</button></div>".
                 "<div class='form-group'>".
                     "<span>".$oEnchere->getPrixAcheterMaintenant()."</span></div>".
-                    "<button id='btnAcheter'>Acheter maintenant</button></div>".
+                    "<button id='btnAcheter' onclick=\"document.location.href='index.php?page=PaiementMaintenant&idEnchere=".$oEnchere->getIdEnchere()."'\">Acheter maintenant</button></div>".
              "</form></article>";
         Vue::footer();
     }
@@ -200,6 +197,13 @@ class VueEnchere
         {
             $oEnchere = new Enchere($_GET['idEnchere']);
 
+            if(strtotime($oEnchere->getDateFin())<=time())
+            {
+                $oEnchere->fermerEnchere();
+            }
+
+
+
             header("Content-Type: application/xml; charset=utf-8");
 
             $xml = new DOMDocument("1.0", "utf-8");
@@ -242,6 +246,43 @@ class VueEnchere
         {
             exit();
         }
+    }
+
+
+
+    public static function admAfficherListeEncheres($aEncheres)
+    {
+        Vue::head('Liste des enchères','Arts aux enchères');
+        Vue::header();
+        Vue::nav();
+
+        echo "<div class='container'>";
+        echo "<h1>Gestion des enchères - Administration</h1>".
+            "<a class='btn-default btn' href='index.php?page=gestionEnchere&action=add'>Creer une enchere</a>";
+        if(count($aEncheres)>0)
+        {
+            echo "<table class='table'>";
+
+            foreach($aEncheres as $oEnchere)
+            {
+                echo "<tr><td>".$oEnchere->getNomEnchere()."</td>".
+                    "<td><img src='".$oEnchere->getOeuvreEnchere()->getUrlOeuvre()."' class='img-responsive' alt='Responsive image' class='col-md-2'></td>".
+                    "<td>".$oEnchere->getEtat()."</td>".
+                    "<td><a href='index.php?page=gestionEnchere&action=mod&idEnchere=".$oEnchere->getIdEnchere()."'>Modifier</a></td>".
+                    "<td><a href='index.php?page=gestionEnchere&action=sup&idEnchere=".$oEnchere->getIdEnchere()."'>Supprimer</a></td>".
+                    "</tr>";
+            }
+            echo "</table></div>";
+        }
+        else
+        {
+            echo "<div class='container'>";
+            echo "<span class='label label-danger'>Il n'y ai aucune enchere disponible en ce monment.</span>";
+            echo "</div>";
+        }
+
+
+        Vue::footer();
     }
 
 }

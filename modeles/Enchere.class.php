@@ -239,15 +239,22 @@ class Enchere extends XFHModeles
 
     /**
      * rechercher une enchere par id oeuvre
-     * @return array encheres
+     * @return int
      */
-    public function rechercherUneEnchereParIdOeuvre()
+    public static function rechercherIdEnchereParIdOeuvre($sIdOeuvre)
     {
-        //realiser la requete de rehcercher par idEnchere
-        $sCondition = 'WHERE idOeuvre = ' . $this->getOeuvreEnchere()->getIdOeuvre() . ';';
-        $aEncheres = $this->selectParCondition('Encheres',$sCondition);
 
-        return $aEncheres;
+        $sCondition = 'WHERE idOeuvre = ' . $sIdOeuvre . ';';
+        $oXHFModele = new XFHModeles();
+        $aEncheres = $oXHFModele->selectParCondition('pi2_encheres',$sCondition);
+        if(count($aEncheres)>0)
+        {
+            return $aEncheres[0]['id'];
+        }
+        else
+        {
+            return 0;
+        }
     }
 
     /**
@@ -257,13 +264,23 @@ class Enchere extends XFHModeles
     {
 
         $condition = 'WHERE id=' . $this->getIdEnchere() . ';';
-        $aEncheres = $this->selectParCondition('encheres', $condition);
 
-        $aEnchere = $aEncheres[0];
+        $aEncheres = $this->selectParCondition('pi2_encheres', $condition);
 
-        $oCreateur = new Utilisateur($aEnchere['Utilisateurs_id']);
+        if(count($aEncheres)>0)
+        {
+            $aEnchere = $aEncheres[0];
+        }
+        else
+        {
+            return false;
+        }
+
+        $oCreateur = new Utilisateur($aEnchere['utilisateur_id']);
+
         $oCreateur->rechercherUnUtilisateur();
-        $oOeuvre = new Oeuvre($aEnchere['Oeuvres_id']);
+
+        $oOeuvre = new Oeuvre($aEnchere['oeuvre_id']);
 
         $this->setCreateurEnchere($oCreateur);
         $this->setDateFin($aEnchere['dateFin']);
@@ -309,7 +326,7 @@ class Enchere extends XFHModeles
      */
     public function creerUneEnchere()
     {
-        $sRequete = "INSERT INTO Encheres ('titre', 'prixDebut', 'prixFin', 'montantAug', 'prixDirecte', 'dateDebut', 'dateFin', 'etat', 'utilisateur_id', 'oeuvre_id')
+        $sRequete = "INSERT INTO pi2_Encheres ('titre', 'prixDebut', 'prixFin', 'montantAug', 'prixDirecte', 'dateDebut', 'dateFin', 'etat', 'utilisateur_id', 'oeuvre_id')
         VALUES ('".$_POST['titreEnchere']."', ".$_POST['prixDebut'].", ".$_POST['prixDebut'].", ".$_POST['prixAug'].", ".$_POST['prixDirecte'].", now(), now()+INTERVAL ".$_POST['duree']." DAY, 'ouverte', ".$this->oCreateurEnchere->getIdUtilisateur().", ".$this->oOeuvre->getIdOeuvre().");";
         $id = $this->insertInto($sRequete);
         if($id)
@@ -341,6 +358,19 @@ class Enchere extends XFHModeles
 
         return $iTempsRestant;
 
+    }
+
+    public function fermerEnchere()
+    {
+        $sRequete = "UPDATE pi2_Encheres SET etat='fermée'";
+        $this->update($sRequete);
+
+        if(count($this->getCollectionOffre())>0)
+        {
+            $sRequete = "INSERT INTO pi2_EncheresGagnees ('utilisateur_id', 'enchere_id', 'date') VALUES (".$this->getCreateurEnchere()->getIdUtilisateur().", ".$this->getIdEnchere().", now();)";
+            $idGagnee = $this->insertInto($sRequete);
+        }
+        $this->setEtat("fermée");
     }
 
 
