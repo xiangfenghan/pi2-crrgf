@@ -99,6 +99,7 @@ class Vue {
 							</div>
 							<div class=\"col-md-7\">
 								<ul class=\"nav navbar-nav navbar-right\">";
+									
 								//Si non connecte
 								if( !isset($_SESSION['idUser']) ) {
 									echo "
@@ -115,6 +116,7 @@ class Vue {
 											<li><a href=\"?page=mes-encheres\">Mes enchères</a></li>
 											<li><a href=\"?page=mes-oeuvres\">Mes oeuvres</a></li>
 											<li><a href=\"?page=utilisateur&action=parametres\">Paramètres</a></li>
+
 											<li><a href=\"?action=deconnecter\">Déconnecter</a></li>
 										</ul>
 									</li>
@@ -129,7 +131,9 @@ class Vue {
 			</nav>
 			<main class=\"container-fluid\">
 				<!-- row principale -->
-				<div class=\"row\">";
+				<div class=\"row\">
+		";
+
 
 	}
 
@@ -255,7 +259,7 @@ class Vue {
 		}
 
 	}
-
+	
 	public static function aside() {
 
 		echo "

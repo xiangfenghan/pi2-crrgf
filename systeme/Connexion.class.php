@@ -10,8 +10,7 @@
 class Connexion{
 
 	// Les paramètres de connexion
-
-	protected $sBDConf = 'feng'; // Parametre de connexion dans "configs/conf.class.php"
+	protected $sBDConf = 'defaut'; // Parametre de connexion dans "configs/conf.class.php"
 
 	protected $oPDO; // L'objet PDO / la connexion
 

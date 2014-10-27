@@ -11,6 +11,7 @@ class Controleur{
 
 	public function gererErreurs(){
 
+
 		VueErreur::afficherErreur404();
 
 	}

@@ -55,6 +55,7 @@ class ControleurAdmin extends Controleur{
 	}
 
 
+
     public function adm_GererEncheres()
     {
         $sSQL = "SELECT * FROM pi2_Encheres";

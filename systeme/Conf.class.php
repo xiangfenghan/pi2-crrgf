@@ -24,6 +24,14 @@ class Conf {
 			"motDePasse"  => "aaa",
 		),
 		"feng" => array(
+<<<<<<< HEAD
+			"hote"        => "localhost",
+			"bd"          => "code",
+			"utilisateur" => "code",
+			"motDePasse"  => "motdepasse",
+		),
+		"eskander" => array(
+=======
 
 			"hote"        => "127.0.0.1",
 			"bd"          => "codeEleve",
@@ -32,11 +40,19 @@ class Conf {
 		),
 		"eskander" => array(
 
+>>>>>>> upstream/master
 			"hote"        => "localhost",
 			"bd"          => "code",
 			"utilisateur" => "code",
 			"motDePasse"  => "motdepasse",
 		),
+<<<<<<< HEAD
+		"martin" => array(
+			"hote"        => "localhost",
+			"bd"          => "bd_artsencheres",
+			"utilisateur" => "root",
+			"motDePasse"  => "",
+=======
 
 		"martin" => array(
 			"hote"        => "localhost",
@@ -44,6 +60,7 @@ class Conf {
 			"utilisateur" => "e9581797",
 			"motDePasse"  => "hb193ss94",
 
+>>>>>>> upstream/master
 		)
 	);
 
