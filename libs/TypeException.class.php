@@ -10,7 +10,8 @@ class TypeException extends Exception {
 	const ERR_OBJET = "Erreur - le paramètre doit être un objet";
 	const ERR_MEDIA = "Erreur - le paramètre doit être un objet de type Media";
 	const ERR_ARRAY = "Erreur - le paramètre doit être un array";
-
+	//martin
+	const ERR_CONF_EMAIL = "les adresses de courriel ne sont pas identique";
 	/**
 	 * détermine si le paramètre est une chaîne vide
 	 * @param mixed $sCh

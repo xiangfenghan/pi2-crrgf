@@ -7,16 +7,18 @@
  * @brief Modèles Utilisateur
  * @details Modele contenant les fonctions Utilisateurs
  */
+
 class Utilisateur extends Modeles{
+	
 	/* Propriétés privées */
 	private $idUtilisateur;
 	private $sNom;
 	private $sPrenom;
 	private $sCourriel;
 	private $sMotDePasse;
-	private $sTelRes;
-	private $sTelMob;
+	private $sTel;
 	private $sTypeUtilisateur;
+	private $sEtat;
 	
 	/**
 	 * variable qui provient de la relation de composition
@@ -31,15 +33,15 @@ class Utilisateur extends Modeles{
 	 * @param string $sPrenom
 	 * @param integer $iAge
 	 */
-	public function __construct($idUtilisateur=0, $sNom=" ", $sPrenom=" ", $sCourriel=" ", $MotDePasse=" ",$sTelRes=" ", $sTelMob=" ",$sTypeUtilisateur=" " ){
-		$this->setIdEtudiant($idUtilisateur);
+	public function __construct($idUtilisateur=0, $sNom=" ", $sPrenom=" ", $sCourriel=" ", $MotDePasse=" ",$sTel=" ",$sTypeUtilisateur="membre",$sEtat="actif" ){
+		$this->setIdUtilisateur($idUtilisateur);
 		$this->setNom($sNom);
 		$this->setPrenom($sPrenom);
 		$this->setCourriel($sCourriel);
 		$this->setMotDePasse($MotDePasse);
-		$this->setTelRes($sTelRes);
-		$this->setTelMob($sTelMob);
+		$this->setTel($sTel);
 		$this->setTypeUtilisateur($sTypeUtilisateur);
+		$this->setEtat($sEtat);
 		
 	} //fin du constructeur
 	
@@ -66,33 +68,67 @@ class Utilisateur extends Modeles{
 	 * @param string $sCourriel
 	 */
 	public function setCourriel($sCourriel){
-		TypeException::estCourriel($sCourriel);
+		TypeException::eststring($sCourriel);
+		TypeException::estVide($sCourriel);
+
 		$this->sCourriel = $sCourriel;
 	}
 	/**
 	 * @param integer $idUtilisateur
 	 */
-	public function setIdUtilisateurt($idUtilisateur){
+	public function setIdUtilisateur($idUtilisateur){
 		TypeException::estNumerique($idUtilisateur);
 		
 		$this->idUtilisateur = $idUtilisateur;
 	}
-	/*TODO 
-	set TelRes
-	set TelMob
-	set Motdepasse
-	set TypeUtilisatur
-	
+	/**
+	* @param string $sTel
 	*/
+	public function setTel($sTel){
+		TypeException::estString($sTel);
+		TypeException::estVide($sTel);
+		
+		$this->sTel = $sTel;
+	}
+	/**
+	* @param string $sTypeUtilisateur
+	*/
+	public function setTypeUtilisateur($sTypeUtilisateur){
+		TypeException::estString($sTypeUtilisateur);
+		TypeException::estVide($sTypeUtilisateur);
+		
+		$this->sTypeUtilisateur = $sTypeUtilisateur;
+
+	}
+	/**
+	* @param string $sEtat
+	*/
+	public function setEtat($sEtat){
+		TypeException::estString($sEtat);		
+		TypeException::estVide($sEtat);
+		
+		$this->sEtat = $sEtat;
+
+	}
+	/**
+	* @param string $sMotDePasse
+	*/
+	public function setMotDePasse($sMotDePasse){
+
+		TypeException::estVide($sMotDePasse);
+		
+		$this->sMotDePasse = $sMotDePasse;
+	}
+
 	
 	/**
 	 * @param array $aDossiers
 	 */
-	public function setDossiers($aDossiers){
+	/*public function setDossiers($aDossiers){
 		TypeException::estArray($aDossiers);
 		
 		$this->aDossiers = $aDossiers;
-	}
+	}*/
 	/**
 	 *  * @return string $sNom
 	 */
@@ -115,19 +151,19 @@ class Utilisateur extends Modeles{
 	 * @return string $sMotDePasse
 	 */
 	public function getMotDePasse(){
-		return $this->sMotdePasse;
+		return $this->sMotDePasse;
 	}
 	/**
 	 * @return string $sTelRes
 	 */
-	public function getTelRes(){
-		return $this->sTelRes;
+	public function getTel(){
+		return $this->sTel;
 	}
 	/**
-	 * @return string $TelMob
+	 * @return string $Etat
 	 */
-	public function getTelMob(){
-		return $this->sTelMob;
+	public function getEtat(){
+		return $this->sEtat;
 	}
 	/**
 	 * @return string $sTypeUtilisateur
@@ -149,24 +185,26 @@ class Utilisateur extends Modeles{
 	 * false dans tous les autres cas
 	 */
 	function rechercherUnUtilisateur(){
+		$oPDO = new Connexion;
+
 		//Réaliser la requête de recherche par le idEtudiant
-		$sSQL = "SELECT * FROM utilisateurs WHERE idUtilisateur=".$this->getIdUtilisateur();
+		$sSQL = "SELECT * FROM utilisateurs WHERE id=".$this->getIdUtilisateur();
 		//préparer la requête
-		$requete = $oPDO->prepare($sSQL);
+		$requete = $oPDO->oPDO->prepare($sSQL);
 		//Exécuter la requête
 		if ( $requete->execute() ) {
 			//s'il y a un résultat
 			if ( $requete->rowCount() ) {
 
 				$aResultats = $requete->fetchAll();
-				$this->setNom($aResultats[0]['sNom']);
-				$this->setPrenomm($aResultats[0]['sPrenom']);
-				$this->setCourriel($aResultats[0]['sCourriel']);
-				$this->setIdUtilisateur($aResultats[0]['idUtilisateur']);
-				$this->setTelRes($aResultats[0]['sTelRes']);
-				$this->setTelMob($aResultats[0]['sTelMob']);
-				$this->setMotDePasse($aResultats[0]['sMotDePasse']);
-				$this->setTypeUtilisateur($aResultats[0]['sTypeUtilisateur']);
+				$this->setNom($aResultats[0]['nom']);
+				$this->setPrenom($aResultats[0]['prenom']);
+				$this->setCourriel($aResultats[0]['courriel']);
+				$this->setIdUtilisateur($aResultats[0]['id']);
+				$this->setTel($aResultats[0]['telephone']);
+				$this->setEtat($aResultats[0]['etat']);
+				$this->setMotDePasse($aResultats[0]['motDePasse']);
+				$this->setTypeUtilisateur($aResultats[0]['type']);
 
 			} else {
 
@@ -181,7 +219,332 @@ class Utilisateur extends Modeles{
 
 		}
 			
-		}
+	}//fin de rechercher un utilisateur()
 	
-	 
+	public function rechercherUtilisateurParEmail(){
+		//Réaliser la requête de recherche par le idEtudiant
+		$sSQL = "SELECT * FROM utilisateurs WHERE courriel=".$this->getCourriel();
+		//préparer la requête
+		$requete = $oPDO->prepare($sSQL);
+		//Exécuter la requête
+		if ( $requete->execute() ) {
+			//s'il y a un résultat
+			if ( $requete->rowCount() ) {
+
+				$aResultats = $requete->fetchAll();
+				$this->setNom($aResultats[0]['nom']);
+				$this->setPrenomm($aResultats[0]['prenom']);
+				$this->setCourriel($aResultats[0]['courriel']);
+				$this->setIdUtilisateur($aResultats[0]['id']);
+				$this->setTel($aResultats[0]['telephone']);
+				$this->setEtat($aResultats[0]['etat']);
+				$this->setMotDePasse($aResultats[0]['motDePasse']);
+				$this->setTypeUtilisateur($aResultats[0]['type']);
+
+			} else {
+
+				//$sMsg = array('type'=>'warning', 'msg'=>'Aucune aucun utilisateur n'a été trouvé);
+
+			}
+
+		} else {
+
+			throw new Exception("Erreur lors de la requete");
+			//$sMsg = array('type'=>'danger', 'msg'=>'Erreur lors de la requete.');
+
+		}
 	}
+	public static function emailExiste($sCourriel){
+		//ouverture de la connexion
+		$oPDO = new Connexion;
+		
+		//Réaliser la requête de recherche par le idEtudiant
+		$sSQL = "SELECT * FROM utilisateurs WHERE courriel='".$sCourriel."' AND etat='actif'";
+		//préparer la requête
+		$requete = $oPDO->oPDO->prepare($sSQL);
+		//Exécuter la requête
+		if ( $requete->execute() ) {
+			//s'il y a un résultat
+			if ( $requete->rowCount() ) {
+
+				return true;
+
+			}else{
+				return false;
+			}
+		} else {
+
+		throw new Exception("Erreur lors de la requete");
+		//$sMsg = array('type'=>'danger', 'msg'=>'Erreur lors de la requete.');
+
+		}
+	}
+	public function ajouterUtilisateur(){
+		//ouverture de la connexion
+		$oPDO = new Connexion;
+
+		//Réaliser la requête de recherche par le idEtudiant
+		$sSQL = "INSERT INTO utilisateurs VALUES('','".$this->sNom."','".$this->sPrenom."','".$this->sCourriel."','".$this->sMotDePasse."','".$this->sTel."','".$this->sTypeUtilisateur."','".$this->sEtat."') ";
+		//préparer la requête
+		$requete = $oPDO->oPDO->prepare($sSQL);
+		//Exécuter la requête
+		if ( $requete->execute() ) {
+			$_SESSION['idUser'] = $oPDO->oPDO->lastInsertId();
+			header("location:index.php");
+		} else {
+
+			throw new Exception("Erreur lors de la requete");
+			//$sMsg = array('type'=>'danger', 'msg'=>'Erreur lors de la requete.');
+		
+		}
+		
+		
+	}
+	
+	public function connexionUtilisateur(){
+		//ouverture de la connexion
+		$oPDO = new Connexion;
+
+		//Réaliser la requête de recherche par le idEtudiant
+		$sSQL = "Select * FROM utilisateurs WHERE motDePasse='".$this->sMotDePasse."' AND courriel='".$this->sCourriel."' AND etat='actif'";
+		//préparer la requête
+		$requete = $oPDO->oPDO->prepare($sSQL);
+		//Exécuter la requête
+		if ( $requete->execute() ) {
+			if ( $requete->rowCount() ) {
+				$aResultats = $requete->fetchAll();
+
+				$this->idUtilisateur=$aResultats[0]["id"];
+				return true;
+
+			}else{
+				return false;
+			}
+		} else {
+
+		throw new Exception("Erreur lors de la requete");
+		//$sMsg = array('type'=>'danger', 'msg'=>'Erreur lors de la requete.');
+
+		}
+	}
+	
+	public function modifierUtilisateur(){
+		//ouverture de la connexion
+		$oPDO = new Connexion;
+
+		//Réaliser la requête de recherche par le idEtudiant
+		$sSQL = "
+			UPDATE utilisateurs
+			SET nom='".$this->getNom()."', prenom='".$this->getPrenom()."', courriel='".$this->getCourriel()."',telephone='".$this->getTel()."', motDePasse='".$this->getMotDePasse()."'
+			WHERE id='".$_SESSION['idUser']."'
+		";
+		//préparer la requête
+		$requete = $oPDO->oPDO->prepare($sSQL);
+		//Exécuter la requête
+		if ( $requete->execute() ) {
+			if ( $requete->rowCount() ) {
+
+				return true;
+
+			}else{
+				return false;
+			}
+		} else {
+
+		throw new Exception("Erreur lors de la requete");
+		//$sMsg = array('type'=>'danger', 'msg'=>'Erreur lors de la requete.');
+
+		}
+
+	}//Fin modifierUtilisateur
+	
+	public function desactiverUtilisateur(){
+		//ouverture de la connexion
+		$oPDO = new Connexion;
+
+		//Réaliser la requête de recherche par le idEtudiant
+		$sSQL = "
+			UPDATE utilisateurs
+			SET etat='inactif'
+			WHERE id='".$_SESSION['idUser']."'
+		";
+		//préparer la requête
+		$requete = $oPDO->oPDO->prepare($sSQL);
+		//Exécuter la requête
+		if ( $requete->execute() ) {
+				unset($_SESSION['idUser']);
+
+		
+		} else {
+
+		throw new Exception("Erreur lors de la requete");
+		//$sMsg = array('type'=>'danger', 'msg'=>'Erreur lors de la requete.');
+
+		}
+
+	}
+	
+	public static function adm_ajouterUtilisateur(){
+		//ouverture de la connexion
+		$oPDO = new Connexion;
+
+		//Réaliser la requête de recherche par le idEtudiant
+		$sSQL = "INSERT INTO utilisateurs VALUES('','".$this->sNom."','".$this->sPrenom."','".$this->sCourriel."','".$this->sMotDePasse."','".$this->sTel."','".$this->sTypeUtilisateur."','".$this->sEtat."') ";
+		//préparer la requête
+		$requete = $oPDO->oPDO->prepare($sSQL);
+		//Exécuter la requête
+		if ( $requete->execute() ) {
+			header("location:index.php");
+		} else {
+
+			throw new Exception("Erreur lors de la requete");
+			//$sMsg = array('type'=>'danger', 'msg'=>'Erreur lors de la requete.');
+		
+		}
+		
+	}//Fin adm_ajouterUtilisateur()
+	
+}	public static function adm_modifierUtilisateur(){
+		//ouverture de la connexion
+		$oPDO = new Connexion;
+
+		//Réaliser la requête de recherche par le idEtudiant
+		$sSQL = "
+			UPDATE utilisateurs
+			SET nom='".$this->getNom()."', prenom='".$this->getPrenom()."', courriel='".$this->getCourriel()."',telephone='".$this->getTel()."', motDePasse='".$this->getMotDePasse()."', type='".$this->getTypeUtilisateur()."', etat='".$this->getEtat()."'
+			WHERE id='".$this->getIdUtilisateur()."'
+		";
+		//préparer la requête
+		$requete = $oPDO->oPDO->prepare($sSQL);
+		//Exécuter la requête
+		if ( $requete->execute() ) {
+			if ( $requete->rowCount() ) {
+
+				return true;
+
+			}else{
+				return false;
+			}
+		} else {
+
+		throw new Exception("Erreur lors de la requete");
+		//$sMsg = array('type'=>'danger', 'msg'=>'Erreur lors de la requete.');
+
+		}
+
+	}//Fin adm_modifierUtilisateur()
+	
+}	public static function adm_desactiverUtilisateur(){
+		//ouverture de la connexion
+		$oPDO = new Connexion;
+
+		//Réaliser la requête de recherche par le idEtudiant
+		$sSQL = "
+			UPDATE utilisateurs
+			SET etat='inactif'
+			WHERE id='".$this->getIdUtilisateur."'
+		";
+		//préparer la requête
+		$requete = $oPDO->oPDO->prepare($sSQL);
+		//Exécuter la requête
+		if ( $requete->execute() ) {
+			return true;	
+
+		
+		} else {
+
+			throw new Exception("Erreur lors de la requete");
+		//$sMsg = array('type'=>'danger', 'msg'=>'Erreur lors de la requete.');
+			return false;
+		}
+	}//Fin adm_desactiverUtilisateur()
+	
+}	public static function adm_supprimerUtilisateur(){
+		//ouverture de la connexion
+		$oPDO = new Connexion;
+
+		//Réaliser la requête de recherche par le idEtudiant
+		$sSQL = "
+			DELETE FROM 'bd_encheres'.'utilisateurs' WHERE id='".$this->getIdUtilisateur."'
+		";
+		//préparer la requête
+		$requete = $oPDO->oPDO->prepare($sSQL);
+		//Exécuter la requête
+		if ( $requete->execute() ) {
+			return true;	
+
+		
+		} else {
+
+			throw new Exception("Erreur lors de la requete");
+		//$sMsg = array('type'=>'danger', 'msg'=>'Erreur lors de la requete.');
+			return false;
+		}
+	}//Fin adm_supprimerUtilisateur()
+	
+}	public static function adm_rechercherUtilisateurs($recherche){
+		//ouverture de la connexion
+		$oPDO = new Connexion;
+
+		//Réaliser la requête de recherche par le idEtudiant
+		$sSQL = "
+			SELECT * FROM utilisateurs WHERE 
+			id LIKE'".$Recherche."' OR
+			nom LIKE'".$Recherche."' OR
+			prenom LIKE'".$Recherche."' OR
+			courriel LIKE'".$Recherche."' OR
+			type LIKE'".$Recherche."' OR
+			etat LIKE'".$Recherche."'";
+		//préparer la requête
+		$requete = $oPDO->oPDO->prepare($sSQL);
+		//Exécuter la requête
+		if ( $requete->execute() ) {
+			//s'il y a un résultat
+			if ( $requete->rowCount() ) {
+
+				$aResultats = $requete->fetchAll();
+				for($i=0 ;$i<count($aResultats); $i++){
+					
+					$aoUtilisateur[$i] = new Utilisateur($aResultats['id'], $aResultats['nom'], $aResultats['prenom'], $aResultats['courriel'], $aResultats['motDePasse'], $aResultats['telephone'], $aResultats['type'], $aResultats['etat'],);
+					
+					return $aoUtilisateur;
+					
+				}
+
+			} else {
+
+				//$sMsg = array('type'=>'warning', 'msg'=>'Aucune aucun utilisateur n'a été trouvé);
+
+			}
+
+
+	}//Fin adm_rechercherUtilisateur()
+	
+	public function adm_connexion(){
+		//ouverture de la connexion
+		$oPDO = new Connexion;
+
+		//Réaliser la requête de recherche par le idEtudiant
+		$sSQL = "Select * FROM utilisateurs WHERE motDePasse='".$this->sMotDePasse."' AND courriel='".$this->sCourriel."' AND type='admin'";
+		//préparer la requête
+		$requete = $oPDO->oPDO->prepare($sSQL);
+		//Exécuter la requête
+		if ( $requete->execute() ) {
+			if ( $requete->rowCount() ) {
+				$aResultats = $requete->fetchAll();
+
+				$this->idUtilisateur=$aResultats[0]["id"];
+				return true;
+
+			}else{
+				return false;
+			}
+		} else {
+
+		throw new Exception("Erreur lors de la requete");
+		//$sMsg = array('type'=>'danger', 'msg'=>'Erreur lors de la requete.');
+
+		}
+
+	}//fin adm_connexion();
+}

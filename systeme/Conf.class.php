@@ -37,9 +37,9 @@ class Conf {
 		),
 		"martin" => array(
 			"hote"        => "localhost",
-			"bd"          => "pi2",
-			"utilisateur" => "e9581797",
-			"motDePasse"  => "hb193ss94",
+			"bd"          => "bd_artsencheres",
+			"utilisateur" => "root",
+			"motDePasse"  => "",
 		)
 	);
 

@@ -98,23 +98,28 @@ class Vue {
 								</ul>
 							</div>
 							<div class=\"col-md-7\">
-								<ul class=\"nav navbar-nav navbar-right\">
-									<!-- Si non connecte
-									<li><a href=\"?page=connexion\">Se connecter</a></li>
-									<li><a href=\"?page=inscription\">S'inscrire</a></li>
-									<!-- /Si non connecte -->
-									<!-- Lorsque connecte -->
+								<ul class=\"nav navbar-nav navbar-right\">";
+									//Si non connecte
+								if(!isset($_SESSION['idUser'])){
+									echo "
+									<li><a href=\"?page=utilisateur&action=connexion\">Se connecter</a></li>
+									<li><a href=\"?page=utilisateur&action=inscription\">S'inscrire</a></li>
+									";}//fin Si non connecte
+									//Lorsque connecte
+								else{
+									echo"
 									<li><a href=\"?page=commentaires\">Commentaires</a></li>
 									<li class=\"dropdown\">
 										<a href=\"?page=compte\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">Mon compte <b class=\"caret\"></b></a>
 										<ul class=\"dropdown-menu\">
 											<li><a href=\"?page=mes-encheres\">Mes enchères</a></li>
 											<li><a href=\"?page=mes-oeuvres\">Mes oeuvres</a></li>
-											<li><a href=\"?page=parametres\">Paramètres</a></li>
-											<li><a href=\"?action=deconnecter\">Déconnecter</a></li>
+											<li><a href=\"?page=utilisateur&action=parametres\">Paramètres</a></li>
+											<li><a href=\"?page=utilisateur&action=déconnexion\">Déconnecter</a></li>
 										</ul>
 									</li>
-									<!-- /Lorsque connecte -->
+									";}//Fin Lorsque connecte
+		echo"
 								</ul>
 							</div>
 						</div><!-- /.navbar-collapse -->
