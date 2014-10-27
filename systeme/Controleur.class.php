@@ -11,11 +11,8 @@ class Controleur{
 
 	public function gererErreurs(){
 
-<<<<<<< HEAD
-		echo "ex.: Page introuvable";
-=======
+
 		VueErreur::afficherErreur404();
->>>>>>> upstream/master
 
 	}
 

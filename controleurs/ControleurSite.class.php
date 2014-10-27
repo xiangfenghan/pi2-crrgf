@@ -30,9 +30,6 @@ class ControleurSite extends Controleur{
 				case 'accueil':
 					$this->gererAccueil();
 					break;
-<<<<<<< HEAD
-				
-=======
 
                 case 'encheres':
                     $this->gererLesEncheres();
@@ -61,25 +58,16 @@ class ControleurSite extends Controleur{
                     }
                     break;
 
->>>>>>> upstream/master
 				case 'utilisateur':
 					$this->gererUtilisateur();
 					break;
 
-<<<<<<< HEAD
-				case 'test':
-					$this->gererTest();
-					break;
-
-				default:
-=======
 				case 'mes-oeuvres':
 					$this->gererOeuvres();
 					break;
 
 				default:
 					header("HTTP/1.0 404 Not Found");
->>>>>>> upstream/master
 					$this->gererErreurs();
 
 			}
@@ -97,22 +85,6 @@ class ControleurSite extends Controleur{
 		VueAccueil::afficherAccueil();
 
 	}
-<<<<<<< HEAD
-	public function gererUtilisateur(){
-		switch ($_GET['action']){
-			case 'inscription':
-			$this->gererInscription();
-			break;
-			case 'connexion':
-			$this->gererConnexion();
-			break;
-			case 'parametres':
-			$this->gererParametres();
-			break;
-			case 'déconnexion':
-			unset($_SESSION['idUser']);
-			header('location:index.php');
-=======
 
 
 	public function gererTest(){
@@ -338,17 +310,11 @@ class ControleurSite extends Controleur{
 			break;
 			case 'parametres':
 			VueUtilisateur::afficherformModSup();
->>>>>>> upstream/master
 			break;
 			}
 	}
 
-<<<<<<< HEAD
-	public function gererTest(){
 
-		VueTest::afficherTest();
-
-	}
 	public function gererInscription(){
 		if(!isset($_POST['cmd'])){
 			VueUtilisateur::afficherFormInscription($sMsg="");
@@ -479,7 +445,6 @@ class ControleurSite extends Controleur{
 			//VueOeuvre::afficherLesOeuvres($aOeuvres);
 			//VueOeuvre::afficherLesOeuvres($e->getMessage());
 			echo "<p>".$e->getMessage()."</p>";
->>>>>>> upstream/master
 		}
 	}
 

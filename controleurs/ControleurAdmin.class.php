@@ -31,17 +31,12 @@ class ControleurAdmin extends Controleur{
 					self::gererAccueil();
 					break;
 
-<<<<<<< HEAD
-				default:
-					$this->gererErreurs();
-=======
                 case 'encheres':
                     ControleurAdmin::adm_GererEncheres();
                     break;
 
 				default:
 					ControleurAdmin::gererErreurs();
->>>>>>> upstream/master
 
 			}
 
@@ -59,8 +54,7 @@ class ControleurAdmin extends Controleur{
 
 	}
 
-<<<<<<< HEAD
-=======
+
 
     public function adm_GererEncheres()
     {
@@ -96,5 +90,4 @@ class ControleurAdmin extends Controleur{
 
     }
 
->>>>>>> upstream/master
 }

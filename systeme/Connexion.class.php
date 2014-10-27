@@ -10,13 +10,8 @@
 class Connexion{
 
 	// Les paramètres de connexion
-<<<<<<< HEAD
-	protected $sBDConf = 'martin'; // Parametre de connexion dans "configs/conf.class.php"
-=======
+	protected $sBDConf = 'defaut'; // Parametre de connexion dans "configs/conf.class.php"
 
-	protected $sBDConf = 'feng'; // Parametre de connexion dans "configs/conf.class.php"
-
->>>>>>> upstream/master
 	protected $oPDO; // L'objet PDO / la connexion
 
 	/**
