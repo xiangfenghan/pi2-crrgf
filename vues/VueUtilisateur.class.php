@@ -122,7 +122,7 @@ class VueUtilisateur {
 
 	}//Fin de la fonction afficherFormSup
 	
-	public static function afficherFormInscription($oUtilisateur,$sMsg){
+	public static function afficherFormInscription($sMsg){
 		
 		$nom=(isset($_POST['cmd']))? $_POST['nom'] : "";
 		$prenom=(isset($_POST['cmd']))? $_POST['prenom'] : "";
@@ -132,7 +132,7 @@ class VueUtilisateur {
 		$confCourriel=(isset($_POST['cmd']))? $_POST['confCourriel'] : "";
 		$password=(isset($_POST['cmd']))? $_POST['password'] : "";
 		
-		var_dump($_POST);
+		//var_dump($_POST);
 		
 		Vue::head('Achetez des oeuvres d\'art', 'Site de vente d\'oeuvres d\'art en ligne');
 		Vue::header('Ma recherche');

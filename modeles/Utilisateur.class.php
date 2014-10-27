@@ -404,7 +404,7 @@ class Utilisateur extends Modeles{
 		
 	}//Fin adm_ajouterUtilisateur()
 	
-}	public static function adm_modifierUtilisateur(){
+	public static function adm_modifierUtilisateur(){
 		//ouverture de la connexion
 		$oPDO = new Connexion;
 
@@ -434,7 +434,7 @@ class Utilisateur extends Modeles{
 
 	}//Fin adm_modifierUtilisateur()
 	
-}	public static function adm_desactiverUtilisateur(){
+	public static function adm_desactiverUtilisateur(){
 		//ouverture de la connexion
 		$oPDO = new Connexion;
 
@@ -459,7 +459,7 @@ class Utilisateur extends Modeles{
 		}
 	}//Fin adm_desactiverUtilisateur()
 	
-}	public static function adm_supprimerUtilisateur(){
+	public static function adm_supprimerUtilisateur(){
 		//ouverture de la connexion
 		$oPDO = new Connexion;
 
@@ -482,7 +482,7 @@ class Utilisateur extends Modeles{
 		}
 	}//Fin adm_supprimerUtilisateur()
 	
-}	public static function adm_rechercherUtilisateurs($recherche){
+	public static function adm_rechercherUtilisateurs($recherche){
 		//ouverture de la connexion
 		$oPDO = new Connexion;
 
@@ -505,7 +505,7 @@ class Utilisateur extends Modeles{
 				$aResultats = $requete->fetchAll();
 				for($i=0 ;$i<count($aResultats); $i++){
 					
-					$aoUtilisateur[$i] = new Utilisateur($aResultats['id'], $aResultats['nom'], $aResultats['prenom'], $aResultats['courriel'], $aResultats['motDePasse'], $aResultats['telephone'], $aResultats['type'], $aResultats['etat'],);
+					$aoUtilisateur[$i] = new Utilisateur($aResultats['id'], $aResultats['nom'], $aResultats['prenom'], $aResultats['courriel'], $aResultats['motDePasse'], $aResultats['telephone'], $aResultats['type'], $aResultats['etat']);
 					
 					return $aoUtilisateur;
 					
@@ -516,6 +516,7 @@ class Utilisateur extends Modeles{
 				//$sMsg = array('type'=>'warning', 'msg'=>'Aucune aucun utilisateur n'a été trouvé);
 
 			}
+		}
 
 
 	}//Fin adm_rechercherUtilisateur()
