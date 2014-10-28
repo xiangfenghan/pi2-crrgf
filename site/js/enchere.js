@@ -90,6 +90,7 @@ window.addEventListener("load", function(){
 
     function AjoutOffre()
     {
+        return false;
         if (window.XMLHttpRequest)
         {// code for IE7+, Firefox, Chrome, Opera, Safari
             xmlHttpOffre=new XMLHttpRequest();

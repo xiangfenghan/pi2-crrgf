@@ -21,7 +21,6 @@ class VueUtilisateur {
 		$courriel=(isset($_POST['cmd']))? $_POST['courriel'] : trim($oUtilisateur->getCourriel());
 
 		
-
 		// Inclu les morceaux de pages, dont les metas, l'entete, la navigation et le carousel
 		Vue::head('Achetez des oeuvres d\'art', 'Site de vente d\'oeuvres d\'art en ligne');
 		Vue::header('Ma recherche');
@@ -119,12 +118,10 @@ class VueUtilisateur {
 
 		";
 		
-
 		Vue::footer();
 
 	}//Fin de la fonction afficherFormSup
 	
-<<<<<<< HEAD
 	public static function afficherFormInscription($sMsg){
 		
 		$nom=(isset($_POST['cmd']))? $_POST['nom'] : "";
@@ -135,7 +132,7 @@ class VueUtilisateur {
 		$confCourriel=(isset($_POST['cmd']))? $_POST['confCourriel'] : "";
 		$password=(isset($_POST['cmd']))? $_POST['password'] : "";
 		
-		//var_dump($_POST);
+//		var_dump($_POST);
 		
 		Vue::head('Achetez des oeuvres d\'art', 'Site de vente d\'oeuvres d\'art en ligne');
 		Vue::header('Ma recherche');

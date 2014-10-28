@@ -15,7 +15,7 @@ class VueOffre
         Vue::nav();
 
         echo "<h1>Historique des offres</h1>".
-            "<a class='btn-default btn' href='index.php?page=detailEnchere'>retour</a>";
+            "<a class='btn-default btn' href='index.php?page=detailsEnchere&idEnchere=".$_GET['idEnchere']."'>retour</a>";
         echo "<table class='table'>";
 
         foreach($aOffres as $oOffre)

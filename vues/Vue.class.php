@@ -92,14 +92,14 @@ class Vue {
 						<div class=\"collapse navbar-collapse navbar-menu\">
 							<div class=\"col-md-5 \">
 								<ul class=\"nav navbar-nav\">
-									<li><a href=\"?page=encheres\">Enchères</a></li>
+									<li><a href=\"?page=oeuvres-encheres\">Enchères</a></li>
 									<li><a href=\"?page=artistes\">Artistes</a></li>
 									<li><a href=\"?page=contact\">Contact</a></li>
 								</ul>
 							</div>
 							<div class=\"col-md-7\">
 								<ul class=\"nav navbar-nav navbar-right\">";
-									
+
 								//Si non connecte
 								if( !isset($_SESSION['idUser']) ) {
 									echo "
@@ -113,11 +113,11 @@ class Vue {
 									<li class=\"dropdown\">
 										<a href=\"?page=compte\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">Mon compte <b class=\"caret\"></b></a>
 										<ul class=\"dropdown-menu\">
-											<li><a href=\"?page=mes-encheres\">Mes enchères</a></li>
+											<li><a href=\"?page=gestionEnchere\">Mes enchères</a></li>
 											<li><a href=\"?page=mes-oeuvres\">Mes oeuvres</a></li>
 											<li><a href=\"?page=utilisateur&action=parametres\">Paramètres</a></li>
 
-											<li><a href=\"?action=deconnecter\">Déconnecter</a></li>
+											<li><a href=\"?page=utilisateur&action=deconnecter\">Déconnecter</a></li>
 										</ul>
 									</li>
 									";
@@ -259,7 +259,7 @@ class Vue {
 		}
 
 	}
-	
+
 	public static function aside() {
 
 		echo "

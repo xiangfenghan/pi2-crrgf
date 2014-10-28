@@ -80,23 +80,22 @@ class Enchere extends XFHModeles
 
     public function setPrixDebut($prixDebut)
     {
-        $prixDebut = number_format($prixDebut,2);
-        TypeException::estFloat($prixDebut);
+        TypeException::estNumerique($prixDebut);
         $this->prixDebut = $prixDebut;
     }
 
     public function setMontantAugment($montantAugment)
     {
-        $montantAugment = number_format($montantAugment,2);
-        TypeException::estFloat($montantAugment);
+        TypeException::estNumerique($montantAugment);
         $this->montantAugment = $montantAugment;
     }
 
     public function setPrixAcheterMaintenant($prixAcheterMaintenant)
     {
-        $prixAcheterMaintenant = number_format($prixAcheterMaintenant,2);
-        TypeException::estFloat($prixAcheterMaintenant);
-        $this->prixAcheterMaintenant = $prixAcheterMaintenant;
+        if ( !is_null($prixAcheterMaintenant) ) {
+            TypeException::estNumerique($prixAcheterMaintenant);
+            $this->prixAcheterMaintenant = $prixAcheterMaintenant;
+        }
     }
 
     public function setDateDebut($date)
@@ -118,8 +117,7 @@ class Enchere extends XFHModeles
 
     public function setPrixFin($prix)
     {
-        $prix = number_format($prix,2);
-        TypeException::estFloat($prix);
+        TypeException::estNumerique($prix);
         if($prix>=($this->getPrixFin()+$this->getMontantAugment()) || !$this->getPrixFin())
         {
             $this->prixFin = $prix;
@@ -177,7 +175,6 @@ class Enchere extends XFHModeles
         TypeException::estString($etat);
         $this->etat = $etat;
     }
-
 
     /**
      *
@@ -244,7 +241,7 @@ class Enchere extends XFHModeles
     public static function rechercherIdEnchereParIdOeuvre($sIdOeuvre)
     {
 
-        $sCondition = 'WHERE idOeuvre = ' . $sIdOeuvre . ';';
+        $sCondition = 'WHERE oeuvre_id = ' . $sIdOeuvre . ';';
         $oXHFModele = new XFHModeles();
         $aEncheres = $oXHFModele->selectParCondition('pi2_encheres',$sCondition);
         if(count($aEncheres)>0)
@@ -281,6 +278,7 @@ class Enchere extends XFHModeles
         $oCreateur->rechercherUnUtilisateur();
 
         $oOeuvre = new Oeuvre($aEnchere['oeuvre_id']);
+        $oOeuvre->rechercherOeuvreParId();
 
         $this->setCreateurEnchere($oCreateur);
         $this->setDateFin($aEnchere['dateFin']);
@@ -293,7 +291,7 @@ class Enchere extends XFHModeles
         $this->setEtat($aEnchere['etat']);
         $this->setPrixFin($aEnchere['prixFin']);
 
-        $aOffres = $this->selectParCondition('offres', 'WHERE encheres_id=' . $this->getIdEnchere() . ' ORDER BY date ASC');
+        $aOffres = $this->selectParCondition('pi2_offres', 'WHERE enchere_id=' . $this->getIdEnchere() . ' ORDER BY date ASC');
 
         $this->setCollectionOffre(array());
 
@@ -316,7 +314,7 @@ class Enchere extends XFHModeles
     public static function chargerLesEncheres()
     {
         $oModele = new Modeles();
-        $aEncheres = $oModele->selectAllFrom("pi2_Encheres");
+        $aEncheres = $oModele->selectAllFrom("pi2_encheres");
         return $aEncheres;
     }
 

@@ -81,7 +81,7 @@ class Offre extends XFHModeles
     {
 
         $sCondition = "WHERE id = " . $this->getIdOffre() . ';';
-        $aOffres = $this->selectParCondition('Offres', $sCondition);
+        $aOffres = $this->selectParCondition('pi2_Offres', $sCondition);
 
         $aOffre = $aOffres[0];
 
@@ -99,7 +99,7 @@ class Offre extends XFHModeles
         {
             $oBidder = new Utilisateur($_SESSION['idUtilisateur']);
             $this->setBidder($oBidder);
-            $sRequete = "INSERT INTO Offres ('montant', 'date', 'enchere_id', 'utilisateur_id') VALUES (".$_GET['prixFin'].", now(), ".$_GET['idEnchere'].", ".$this->getBidder()->getIdUtilisateur().");";
+            $sRequete = "INSERT INTO pi2_Offres ('montant', 'date', 'enchere_id', 'utilisateur_id') VALUES (".$_GET['prixFin'].", now(), ".$_GET['idEnchere'].", ".$this->getBidder()->getIdUtilisateur().");";
             $idOffre = $this->insertInto($sRequete);
             $this->setIdOffre($idOffre);
             if($idOffre)
@@ -113,7 +113,7 @@ class Offre extends XFHModeles
     public static function chargerLesOffres()
     {
         $oModele = new Modeles();
-        $aEnreg = $oModele->selectAllFrom('Offres');
+        $aEnreg = $oModele->selectAllFrom('pi2_Offres');
         return $aEnreg;
 
     }

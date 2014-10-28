@@ -1,7 +1,4 @@
-﻿<link rel="stylesheet" href="../site/css/oeuvre.css">
-<script src="../site/js/jquery-2.1.1.min.js"></script>
-<script src="../site/js/oeuvre.js"></script>
-<!--<script src="../site/js/vendor/jquery-1.11.0.min.js"></script>-->
+﻿<!--<script src="../site/js/vendor/jquery-1.11.0.min.js"></script>-->
 <?php
 /**
  * @classe VueAccueil VueAccueil.class.php "classes/VueAccueil.class.php"
@@ -13,30 +10,22 @@
  */
 class VueOeuvre {
 
-	public static function afficherLesOeuvres($aOeuvres,$sMsg="&nbsp;"){
+	public static function afficherLesOeuvres($aOeuvres, array $aMsg = array()){
 
 		// Inclu les morceaux de pages, dont les metas, l'entete, la navigation et le carousel
-		Vue::head('Achetez des oeuvres d\'art', 'Site de vente d\'oeuvres d\'art en ligne');
+		Vue::head('Achetez des oeuvres d\'art', 'Site de vente d\'oeuvres d\'art en ligne','oeuvre.css');
 		Vue::header('Ma recherche');
 		Vue::nav();
 
 		echo '<button id="grille" >Grille</button>
 			<button  id="liste" >Liste</button>
 		';
-	/*	echo '<ul>
-			<li><a href="index.php?page=mes-oeuvres&mode=grille" id="grille">Grille</a></li>
-			<li><a href="index.php?page=mes-oeuvres&mode=liste" id="liste">Liste</a></li>
-			</ul>';*/
-
-
 
 		echo "<article id=\"aa\" class=\"col-md-12 affichage clearfix\">";
-
-
 			echo "<section class=\"col-sm-6 col-md-3 \">";
 				echo '
 
-					<form action="index.php?page=mes-oeuvres&mode=grille" method="post">
+					<form action="index.php?page=oeuvres-encheres&mode=grille" method="POST">
 							<fieldset>
 								<legend>Rechercher des oeuvres</legend>
 
@@ -47,20 +36,32 @@ class VueOeuvre {
 						</form>
 					';
 
-				echo '
-					<select name="theme">
-						<option>Classique</option>
-						<option>Moderne</option>
-						<option>Abstrait</option>
-					</select>
-				';
+				echo '<br/>';
+
+				echo '<h2>Theme</h2>';
+				echo '	<form action="index.php?page=oeuvres-encheres&mode=grille" method="POST">';
 
 				echo '
-					<select name="technique">
-						<option>Acrylique</option>
-						<option>Peinture à l\'huile</option>
-					</select>
-				';
+							<input type="radio" name="theme" value="1">classique<br/>
+							<input type="radio" name="theme" value="2">moderne<br/>
+							<input type="radio" name="theme" value="3">abstrait<br/>
+							<input type="radio" name="theme" value="4">mixte<br/>';
+				echo '<br/>';
+
+				echo '<h2>Technique</h2>';
+
+				echo'		<input type="radio" name="technique" value="1">acrylique<br/>
+							<input type="radio" name="technique" value="2">peinture a l\'huile<br/>
+							<input type="radio" name="technique" value="3">gouache<br/>
+							<input type="radio" name="technique" value="4">aquarelle<br/>
+							<input type="radio" name="technique" value="5">mixte<br/>';
+
+				echo '<br/>';
+
+				echo'		<input type="submit" name="rech" value="Rechercher">
+
+						</form>';
+
 			echo "</section>";
 
 	/**
@@ -69,7 +70,7 @@ class VueOeuvre {
 	 * @param Oeuvre $oOeuvre
 	 */
 		echo "<section class=\"col-sm-6 col-md-9 \">";
-		echo "<a href=\"index.php?page=mes-oeuvres\">Retour</a>";
+		echo "<a href=\"index.php?page=oeuvres-encheres\">Retour</a>";
 		echo"<article class=\"row grille text-center\">";
 
 		if($aOeuvres!=0)
@@ -81,7 +82,7 @@ class VueOeuvre {
 								<span class='apparent'>
 								<img class=\"\" src=\"".$oOeuvre->getUrlOeuvre()."\" alt=\"Photos des tableaux\" >
 								<h2>".$oOeuvre->getNomOeuvre()."</h2>
-								<button>Enchérir</button>
+								<a href=\"index.php?page=detailsEnchere&idOeuvre=".$oOeuvre->getIdOeuvre()."\"><button>Enchérir</button></a>
 
 								</span>
 
@@ -91,13 +92,14 @@ class VueOeuvre {
 										<td>
 											<img class=\"\" src=\"".$oOeuvre->getUrlOeuvre()."\" alt=\"Photos des tableaux\" >
 											<h2>".$oOeuvre->getNomOeuvre()."</h2>
-											<button>Enchérir</button>
+											<a href=\"index.php?page=detailsEnchere&idOeuvre=".$oOeuvre->getIdOeuvre()."\"><button>Enchérir</button></a>
 										</td>
 										<td>
 											Technique: ".$oOeuvre->getTechnique()."<br/>
 											Theme: ".$oOeuvre->getTheme()."<br/>
-											Dimension: ".$oOeuvre->getDimensionOeuvre()."pi <br/>
+											Dimension: ".$oOeuvre->getDimensionOeuvre()."po <br/>
 											Poids: ".$oOeuvre->getPoidsOeuvre()."lb
+
 										</td>
 									</tr>
 								</table>
@@ -105,10 +107,13 @@ class VueOeuvre {
 
 			}//fin du foreach
 
+
 		}else
 			{
 				echo "<div class=\"col-md-12\">
-				<p>".$sMsg."</p>
+				<div class=\"alert alert-".$aMsg['type']." alert-dismissible\">
+					<p>".$aMsg['msg']."</p>
+				</div>
 				</div>";
 			}
 
@@ -117,7 +122,7 @@ class VueOeuvre {
 		echo "</article>";
 
 
-		Vue::footer();
+		Vue::footer('js/oeuvre.js');
 
 	}//fin de la fonction afficherLesOeuvres()
 
