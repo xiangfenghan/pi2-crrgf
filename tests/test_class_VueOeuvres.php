@@ -38,8 +38,8 @@
 				try{
 					/*$aEtudiants = array(
 						new Etudiant(1, "Tremblay", "Bob", 45),
-						new Etudiant(2, "Côté", "Martin", 12),
-						new Etudiant(3, "Poulain", "Amélie", 38)
+						new Etudiant(2, "CÃ´tÃ©", "Martin", 12),
+						new Etudiant(3, "Poulain", "AmÃ©lie", 38)
 					);*/
 					$aOeuvres=Oeuvre::rechercherListeDesOeuvres();
 					VueOeuvre::afficherLesOeuvres($aOeuvres);
@@ -83,7 +83,7 @@
 				}*/
 				?>
 				
-				<h2>adm_afficherFormModificationEtudiant(Etudiant $oEtudiant) => avec un paramètre qui n'est pas un objet de la classe Etudiant</h2>
+				<h2>adm_afficherFormModificationEtudiant(Etudiant $oEtudiant) => avec un paramÃ¨tre qui n'est pas un objet de la classe Etudiant</h2>
 				<?php
 				/*
 				

@@ -2,3 +2,25 @@ input
 {
     display: block;
 }
+.tempRestant
+{
+    color: darkred;
+}
+#divCreerEnchere .form-group
+{
+    margin-top: 10px;
+    clear: both;
+}
+#divCreerEnchere .prixEnchere > div
+{
+    clear: both;
+    margin-bottom: 10px;
+}
+#divCreerEnchere .prixEnchere > div input
+{
+    float: left;
+}
+#divCreerEnchere .prixEnchere span
+{
+
+}

@@ -81,11 +81,12 @@ class Offre extends XFHModeles
     {
 
         $sCondition = "WHERE id = " . $this->getIdOffre() . ';';
-        $aOffres = $this->selectParCondition('Offres', $sCondition);
+        $aOffres = $this->selectParCondition('pi2_offres', $sCondition);
 
         $aOffre = $aOffres[0];
 
         $oBidder = new Utilisateur($aOffre['utilisateur_id']);
+        $oBidder->rechercherUnUtilisateur();
 
         $this->setBidder($oBidder);
         $this->setDateOffre($aOffre['date']);
@@ -95,16 +96,16 @@ class Offre extends XFHModeles
 
     public function creerUnOffre()
     {
-        if($_SESSION['idUtilisateur']!==$this->getBidder()->getIdUtilisateur())
+        $oEnchere = new Enchere($_GET['idEnchere']);
+        if($_SESSION['idUser']!==$oEnchere->getCreateurEnchere()->getIdUtilisateur())
         {
-            $oBidder = new Utilisateur($_SESSION['idUtilisateur']);
+            $oBidder = new Utilisateur($_SESSION['idUser']);
             $this->setBidder($oBidder);
-            $sRequete = "INSERT INTO Offres ('montant', 'date', 'enchere_id', 'utilisateur_id') VALUES (".$_GET['prixFin'].", now(), ".$_GET['idEnchere'].", ".$this->getBidder()->getIdUtilisateur().");";
+            $sRequete = "INSERT INTO pi2_offres (montant, date, enchere_id, utilisateur_id) VALUES (".$this->getMontant().", now(), ".$_GET['idEnchere'].", ".$this->getBidder()->getIdUtilisateur().");";
             $idOffre = $this->insertInto($sRequete);
             $this->setIdOffre($idOffre);
             if($idOffre)
             {
-                $oEnchere = new Enchere($_GET['idEnchere']);
                 $oEnchere->ajoutOffre($this);
             }
         }
@@ -112,10 +113,10 @@ class Offre extends XFHModeles
 
     public static function chargerLesOffres()
     {
-        $oModele = new Modeles();
-        $aEnreg = $oModele->selectAllFrom('Offres');
+        $oXHFModele = new XFHModeles();
+        $sCondition = "WHERE enchere_id=".$_GET['idEnchere'];
+        $aEnreg = $oXHFModele->selectParCondition('pi2_offres',$sCondition);
         return $aEnreg;
-
     }
 
 }

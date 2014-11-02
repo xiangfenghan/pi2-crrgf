@@ -31,9 +31,13 @@ class ControleurAdmin extends Controleur{
 					self::gererAccueil();
 					break;
 
-                case 'encheres':
-                    ControleurAdmin::adm_GererEncheres();
-                    break;
+				case 'encheres':
+					ControleurAdmin::adm_GererEncheres();
+					break;
+
+				case 'commentaires' :// Administrateur
+					$this->gererAdmiCommentairs_contact();
+					break;
 
 				default:
 					ControleurAdmin::gererErreurs();
@@ -56,38 +60,38 @@ class ControleurAdmin extends Controleur{
 
 
 
-    public function adm_GererEncheres()
-    {
-        $sSQL = "SELECT * FROM pi2_Encheres";
+	public function adm_GererEncheres()
+	{
+		$sSQL = "SELECT * FROM pi2_Encheres";
 
-        $requete = $this->oPDO->prepare($sSQL);
+		$requete = $this->oPDO->prepare($sSQL);
 
-        $aResultats=array();
+		$aResultats=array();
 
-        if ( $requete->execute() )
-        {
+		if ( $requete->execute() )
+		{
 
-            if ( $requete->rowCount() )
-            {
+			if ( $requete->rowCount() )
+			{
 
-                $aResultats = $requete->fetchAll();
+				$aResultats = $requete->fetchAll();
 
-            }
-            foreach($aResultats as $value)
-            {
-                $aEncheres[] = new Enchere($value['id']);
-            }
+			}
+			foreach($aResultats as $value)
+			{
+				$aEncheres[] = new Enchere($value['id']);
+			}
 
-            VueEnchere::admAfficherListeEncheres($aEncheres);
-        }
-        else
-        {
-            throw new Exception(ERR_REQUEST);
-        }
-
-
+			VueEnchere::admAfficherListeEncheres($aEncheres);
+		}
+		else
+		{
+			throw new Exception(ERR_REQUEST);
+		}
 
 
-    }
+
+
+	}
 
 }

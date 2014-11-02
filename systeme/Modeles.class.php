@@ -1,8 +1,8 @@
 <?php
 /**
  * @class Modeles Modeles.class.php "modeles/Modeles.class.php"
- * @version 0.0.1
- * @date 2014-10-17
+ * @version 0.0.2
+ * @date 2014-10-27
  * @author Eric Revelle
  * @brief Modèles de base
  * @details Modele contenant les fonctions communes a tout les modeles de l'application
@@ -25,8 +25,8 @@ class Modeles extends Connexion{
 
 		$requete = $this->oPDO->prepare($sSQL);
 
+		$aResultats=array();
 
-        $aResultats=array();
 		if ( $requete->execute() ) {
 
 			if ( $requete->rowCount() ) {
@@ -44,5 +44,72 @@ class Modeles extends Connexion{
 		}
 
 	}
+
+
+	/** Feng's methods **/
+
+	/*public function selectParCondition($sNomTable, $sCondition) {
+
+		$sSQL = "SELECT * FROM ".$sNomTable." ".$sCondition.";";
+
+		$requete = $this->oPDO->prepare($sSQL);
+
+		if( $requete->execute() ) {
+
+			if( $requete->rowCount() ) {
+
+				$aResultats = $requete->fetchAll();
+
+				return $aResultats;
+
+			} else {
+
+				return array();
+
+			}
+
+		}else{
+
+			throw new Exception("Erreur lors de la requete");
+
+		}
+
+	}
+
+	public function executerRequete($sRequete) {
+
+		$requete = $this->oPDO->prepare($sRequete);
+
+		if( $requete->execute() ) {
+
+			return true;
+
+		} else {
+
+			throw new Exception("Erreur lors de la requete");
+
+		}
+
+	}
+
+	public function insertInto($sRequete) {
+
+		$idInsert = $this->executerRequete($sRequete);
+
+		return $this->oPDO->lastInsertId();
+
+	}
+
+	public function deleteFrom($sRequete) {
+
+	   return $this->executerRequete($sRequete);
+
+	}
+
+	public function update($sRequete) {
+
+		return $this->executerRequete($sRequete);
+
+	}*/
 
 }

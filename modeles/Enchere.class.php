@@ -8,373 +8,414 @@
 
 class Enchere extends XFHModeles
 {
-    private $idEnchere;
-    private $nomEnchere;
-    private $prixDebut;
-    private $montantAugment;
-    private $prixAcheterMaintenant;
-    private $dateDebut;
-    private $dateFin;
-    private $aColletionOffres;
-    private $aColletionCommentaires;
-    private $oCreateurEnchere;
-    private $oOeuvre;
-    private $etat;
-    private $prixFin;
+	private $idEnchere;
+	private $nomEnchere;
+	private $prixDebut;
+	private $montantAugment;
+	private $prixAcheterMaintenant;
+	private $dateDebut;
+	private $dateFin;
+	private $aColletionOffres;
+	private $aColletionCommentaires;
+	private $oCreateurEnchere;
+	private $oOeuvre;
+	private $etat;
+	private $prixFin;
 
-    public function  __construct($idEnchere, $oCreateur=false, $oOeuvre=false, $nomEnchere=" ", $prixDebut=0, $montantAugment=0, $prixAcheterMaintenant=0, $dateDebut=" ", $dateFin=" ")
-    {
-        parent::__construct();
+	public function  __construct($idEnchere, $oCreateur=false, $oOeuvre=false, $nomEnchere=" ", $prixDebut=0, $prixFin=0, $montantAugment=0, $prixAcheterMaintenant=0, $dateDebut=" ", $dateFin=" ")
+	{
+		parent::__construct();
 
-        if($idEnchere==0)
+		if($idEnchere==0)
+		{
+			//Nouvelle enchère
+			$this->setCreateurEnchere($oCreateur);
+			$this->setOeuvreEnchere($oOeuvre);
+			$this->setNomEnchere($nomEnchere);
+			$this->setPrixDebut($prixDebut);
+			$this->setMontantAugment($montantAugment);
+			$this->setPrixAcheterMaintenant($prixAcheterMaintenant);
+			$this->setDateDebut($dateDebut);
+			$this->setDateFin($dateFin);
+			$this->setCollectionOffre(array());
+			$this->setCollectionCommentaire(array());
+			$this->setPrixFin($prixDebut);
+
+		}
+		else
+		{
+			//Enchere existante
+			$this->setIdEnchere($idEnchere);
+			$this->chargerUneEnchereParIdEnchere();
+		}
+
+	}
+
+	/**
+	 *
+	 */
+	public function setIdEnchere($idEnchere)
+	{
+		TypeException::estNumerique($idEnchere);
+		$this->idEnchere = $idEnchere;
+	}
+
+	public function setCreateurEnchere(Utilisateur $oUtilisateur)
+	{
+		TypeException::estObjet($oUtilisateur);
+		$this->oCreateurEnchere = $oUtilisateur;
+	}
+
+	public function setOeuvreEnchere(Oeuvre $oOeuvre)
+	{
+		TypeException::estObjet($oOeuvre);
+		$this->oOeuvre = $oOeuvre;
+	}
+
+	public function setNomEnchere($nomEnchere)
+	{
+		TypeException::estString($nomEnchere);
+		$this->nomEnchere = $nomEnchere;
+	}
+
+	public function setPrixDebut($prixDebut)
+	{
+		TypeException::estNumerique($prixDebut);
+		$this->prixDebut = $prixDebut;
+	}
+
+	public function setMontantAugment($montantAugment)
+	{
+		TypeException::estNumerique($montantAugment);
+        if($montantAugment<1)
         {
-            //Nouvelle enchère
-            $this->setCreateurEnchere($oCreateur);
-            $this->setOeuvreEnchere($oOeuvre);
-            $this->setNomEnchere($nomEnchere);
-            $this->setPrixDebut($prixDebut);
-            $this->setMontantAugment($montantAugment);
-            $this->setPrixAcheterMaintenant($prixAcheterMaintenant);
-            $this->setDateDebut($dateDebut);
-            $this->setDateFin($dateFin);
-            $this->setCollectionOffre(array());
-            $this->setCollectionCommentaire(array());
-            $this->setPrixFin($prixDebut);
-
+            $montantAugment = 1;
         }
-        else
+		$this->montantAugment = $montantAugment;
+	}
+
+	public function setPrixAcheterMaintenant($prixAcheterMaintenant)
+	{
+		if ( !is_null($prixAcheterMaintenant) ) {
+			TypeException::estNumerique($prixAcheterMaintenant);
+			$this->prixAcheterMaintenant = $prixAcheterMaintenant;
+		}
+	}
+
+	public function setDateDebut($date)
+	{
+		TypeException::estString($date);
+		$this->dateDebut = $date;
+	}
+
+	public function setDateFin($date)
+	{
+		TypeException::estString($date);
+		$this->dateFin = $date;
+	}
+
+	public function setPrixFin($prix)
+	{
+		TypeException::estNumerique($prix);
+		if($prix>=($this->getPrixFin()+$this->getMontantAugment()) || !$this->getPrixFin())
+		{
+			$this->prixFin = $prix;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+	public function ajoutOffre(Offre $oOffre, $updateBd=false)
+	{
+		TypeException::estObjet($oOffre);
+		$this->aColletionOffres[] = $oOffre;
+        $this->setPrixFin($oOffre->getMontant());
+
+        if($updateBd==true)
         {
-            //Enchere existante
-            $this->setIdEnchere($idEnchere);
-            $this->chargerUneEnchereParIdEnchere();
+            $this->updateUneEnchere();
         }
 
-    }
+	}
 
-    /**
-     *
-     */
-    public function setIdEnchere($idEnchere)
-    {
-        TypeException::estNumerique($idEnchere);
-        $this->idEnchere = $idEnchere;
-    }
+	public function setCollectionOffre($aCollectionOffre)
+	{
+		TypeException::estArray($aCollectionOffre);
 
-    public function setCreateurEnchere(Utilisateur $oUtilisateur)
-    {
-        TypeException::estObjet($oUtilisateur);
-        $this->oCreateurEnchere = $oUtilisateur;
-    }
+		foreach($aCollectionOffre as $index=>$offre)
+		{
+			if(!get_class($offre)=='Offre')
+			{
+				unset($aCollectionOffre[$index]);
+			}
+		}
 
-    public function setOeuvreEnchere(Oeuvre $oOeuvre)
-    {
-        TypeException::estObjet($oOeuvre);
-        $this->oOeuvre = $oOeuvre;
-    }
+		$this->aColletionOffres = $aCollectionOffre;
+	}
 
-    public function setNomEnchere($nomEnchere)
-    {
-        TypeException::estString($nomEnchere);
-        $this->nomEnchere = $nomEnchere;
-    }
+	public function ajoutCommentaire(Commentaire $oCommentaire)
+	{
+		TypeException::estObjet($oCommentaire);
+		$this->aColletionCommentaires[] = $oCommentaire;
+	}
 
-    public function setPrixDebut($prixDebut)
-    {
-        $prixDebut = number_format($prixDebut,2);
-        TypeException::estFloat($prixDebut);
-        $this->prixDebut = $prixDebut;
-    }
+	public function setCollectionCommentaire($aColletionCommentaire)
+	{
+		TypeException::estArray($aColletionCommentaire);
 
-    public function setMontantAugment($montantAugment)
-    {
-        $montantAugment = number_format($montantAugment,2);
-        TypeException::estFloat($montantAugment);
-        $this->montantAugment = $montantAugment;
-    }
+		foreach($aColletionCommentaire as $index=>$oCommentaire)
+		{
+			if(!get_class($oCommentaire)=='Commentaire')
+			{
+				unset($aColletionCommentaire[$index]);
+			}
+		}
 
-    public function setPrixAcheterMaintenant($prixAcheterMaintenant)
-    {
-        $prixAcheterMaintenant = number_format($prixAcheterMaintenant,2);
-        TypeException::estFloat($prixAcheterMaintenant);
-        $this->prixAcheterMaintenant = $prixAcheterMaintenant;
-    }
+		$this->aColletionCommentaires = $aColletionCommentaire;
+	}
 
-    public function setDateDebut($date)
-    {
-        TypeException::estString($date);
-        $this->dateDebut = $date;
-    }
+	public function setEtat($etat)
+	{
+		TypeException::estString($etat);
+		$this->etat = $etat;
+	}
 
-    public function setDateFin($date)
-    {
-        TypeException::estString($date);
-        $this->dateFin = $date;
-    }
+	/**
+	 *
+	 */
+	public function getIdEnchere()
+	{
+		return htmlentities($this->idEnchere);
+	}
+
+	public function getCreateurEnchere()
+	{
+		return $this->oCreateurEnchere;
+	}
+
+	public function getOeuvreEnchere()
+	{
+		return $this->oOeuvre;
+	}
+
+	public function getNomEnchere()
+	{
+		return htmlentities($this->nomEnchere);
+	}
+
+	public function getPrixDebut()
+	{
+		return htmlentities($this->prixDebut);
+	}
 
     public function getPrixFin()
     {
-        return $this->prixFin;
+        return htmlentities($this->prixFin);
     }
 
-    public function setPrixFin($prix)
-    {
-        $prix = number_format($prix,2);
-        TypeException::estFloat($prix);
-        if($prix>=($this->getPrixFin()+$this->getMontantAugment()) || !$this->getPrixFin())
-        {
-            $this->prixFin = $prix;
-        }
-        else
-        {
-            return false;
-        }
-    }
+	public function getMontantAugment()
+	{
+		return htmlentities($this->montantAugment);
+	}
 
-    public function ajoutOffre(Offre $oOffre)
-    {
-        TypeException::estObjet($oOffre);
-        $this->aColletionOffres[] = $oOffre;
-    }
+	public function getPrixAcheterMaintenant()
+	{
+		return htmlentities($this->prixAcheterMaintenant);
+	}
 
-    public function setCollectionOffre($aCollectionOffre)
-    {
-        TypeException::estArray($aCollectionOffre);
+	public function getDateDebut()
+	{
+		return htmlentities($this->dateDebut);
+	}
 
-        foreach($aCollectionOffre as $index=>$offre)
-        {
-            if(!get_class($offre)=='Offre')
-            {
-                unset($aCollectionOffre[$index]);
-            }
-        }
+	public function getDateFin()
+	{
+		return htmlentities($this->dateFin);
+	}
 
-        $this->aColletionOffres = $aCollectionOffre;
-    }
+	public function getCollectionOffre()
+	{
+		return $this->aColletionOffres;
+	}
 
-    public function ajoutCommentaire(Commentaire $oCommentaire)
-    {
-        TypeException::estObjet($oCommentaire);
-        $this->aColletionCommentaires[] = $oCommentaire;
-    }
+	public function getEtat()
+	{
+		return $this->etat;
+	}
 
-    public function setCollectionCommentaire($aColletionCommentaire)
-    {
-        TypeException::estArray($aColletionCommentaire);
+	/**
+	 * rechercher une enchere par id oeuvre
+	 * @return int
+	 */
+	public static function rechercherIdEnchereParIdOeuvre($sIdOeuvre)
+	{
 
-        foreach($aColletionCommentaire as $index=>$oCommentaire)
-        {
-            if(!get_class($oCommentaire)=='Commentaire')
-            {
-                unset($aColletionCommentaire[$index]);
-            }
-        }
+		$sCondition = 'WHERE oeuvre_id = ' . $sIdOeuvre . ' ORDER BY '. $sIdOeuvre .' DESC ;';
+		$oXHFModele = new XFHModeles();
+		$aEncheres = $oXHFModele->selectParCondition('pi2_encheres',$sCondition);
+		if(count($aEncheres)>0)
+		{
+			return $aEncheres[0]['id'];
+		}
+		else
+		{
+			return 0;
+		}
+	}
 
-        $this->aColletionCommentaires = $aColletionCommentaire;
-    }
+	/**
+	 * rechercher une enchere par id enchere
+	 */
+	public function chargerUneEnchereParIdEnchere()
+	{
 
-    public function setEtat($etat)
-    {
-        TypeException::estString($etat);
-        $this->etat = $etat;
-    }
+		$condition = 'WHERE id=' . $this->getIdEnchere() . ';';
 
+		$aEncheres = $this->selectParCondition('pi2_encheres', $condition);
 
-    /**
-     *
-     */
-    public function getIdEnchere()
-    {
-        return htmlentities($this->idEnchere);
-    }
+		if(count($aEncheres)>0)
+		{
+			$aEnchere = $aEncheres[0];
+		}
+		else
+		{
+			return false;
+		}
 
-    public function getCreateurEnchere()
-    {
-        return $this->oCreateurEnchere;
-    }
+		$oCreateur = new Utilisateur($aEnchere['utilisateur_id']);
 
-    public function getOeuvreEnchere()
-    {
-        return $this->oOeuvre;
-    }
+		$oCreateur->rechercherUnUtilisateur();
 
-    public function getNomEnchere()
-    {
-        return htmlentities($this->nomEnchere);
-    }
+		$oOeuvre = new Oeuvre($aEnchere['oeuvre_id']);
+		$oOeuvre->rechercherOeuvreParId();
 
-    public function getPrixDebut()
-    {
-        return htmlentities($this->prixDebut);
-    }
+		$this->setCreateurEnchere($oCreateur);
+		$this->setDateFin($aEnchere['dateFin']);
+		$this->setDateDebut($aEnchere['dateDebut']);
+		$this->setMontantAugment($aEnchere['prixIncrement']);
+		$this->setNomEnchere($aEnchere['titre']);
+		$this->setOeuvreEnchere($oOeuvre);
+		$this->setPrixAcheterMaintenant($aEnchere['prixDirecte']);
+		$this->setPrixDebut($aEnchere['prixDebut']);
+		$this->setEtat($aEnchere['etat']);
+		$this->setPrixFin($aEnchere['prixFin']);
 
-    public function getMontantAugment()
-    {
-        return htmlentities($this->montantAugment);
-    }
+		$aOffres = $this->selectParCondition('pi2_offres', 'WHERE enchere_id=' . $this->getIdEnchere() . ' ORDER BY date ASC');
 
-    public function getPrixAcheterMaintenant()
-    {
-        return htmlentities($this->prixAcheterMaintenant);
-    }
+		$this->setCollectionOffre(array());
 
-    public function getDateDebut()
-    {
-        return htmlentities($this->dateDebut);
-    }
+		if(is_array($aOffres) && count($aOffres)>0)
+		{
+			foreach($aOffres as $offre)
+			{
+				$oOffre = new Offre($offre["id"]);
 
-    public function getDateFin()
-    {
-        return htmlentities($this->dateFin);
-    }
+				$this->ajoutOffre($oOffre);
+			}
+		}
 
-    public function getCollectionOffre()
-    {
-        return $this->aColletionOffres;
-    }
+	}
 
-    public function getEtat()
-    {
-        return $this->etat;
-    }
+	/**
+	 * rechercher les encheres
+	 * @return array
+	 */
+	public static function chargerLesEncheres()
+	{
+		$oModele = new Modeles();
+		$aEncheres = $oModele->selectAllFrom("pi2_encheres");
+		return $aEncheres;
+	}
 
-    /**
-     * rechercher une enchere par id oeuvre
-     * @return int
-     */
-    public static function rechercherIdEnchereParIdOeuvre($sIdOeuvre)
-    {
+	/**
+	 * creer une enchere
+	 * @return $this
+	 */
+	public function creerUneEnchere()
+	{
+		$sRequete = "INSERT INTO pi2_encheres (titre, prixDebut, prixFin, prixIncrement, prixDirecte, dateDebut, dateFin, etat, utilisateur_id, oeuvre_id)
+		VALUES ('".$_POST['titreEnchere']."', ".$_POST['prixDebut'].", ".$_POST['prixDebut'].", ".$_POST['prixAug'].", ".$_POST['prixDirecte'].", now(), now()+INTERVAL ".$_POST['duree']." DAY, 'ouverte', ".$this->oCreateurEnchere->getIdUtilisateur().", ".$this->oOeuvre->getIdOeuvre().");";
 
-        $sCondition = 'WHERE idOeuvre = ' . $sIdOeuvre . ';';
-        $oXHFModele = new XFHModeles();
-        $aEncheres = $oXHFModele->selectParCondition('pi2_encheres',$sCondition);
-        if(count($aEncheres)>0)
-        {
-            return $aEncheres[0]['id'];
-        }
-        else
-        {
-            return 0;
-        }
-    }
-
-    /**
-     * rechercher une enchere par id enchere
-     */
-    public function chargerUneEnchereParIdEnchere()
-    {
-
-        $condition = 'WHERE id=' . $this->getIdEnchere() . ';';
-
-        $aEncheres = $this->selectParCondition('pi2_encheres', $condition);
-
-        if(count($aEncheres)>0)
-        {
-            $aEnchere = $aEncheres[0];
-        }
-        else
-        {
-            return false;
-        }
-
-        $oCreateur = new Utilisateur($aEnchere['utilisateur_id']);
-
-        $oCreateur->rechercherUnUtilisateur();
-
-        $oOeuvre = new Oeuvre($aEnchere['oeuvre_id']);
-
-        $this->setCreateurEnchere($oCreateur);
-        $this->setDateFin($aEnchere['dateFin']);
-        $this->setDateDebut($aEnchere['dateDebut']);
-        $this->setMontantAugment($aEnchere['prixIncrement']);
-        $this->setNomEnchere($aEnchere['titre']);
-        $this->setOeuvreEnchere($oOeuvre);
-        $this->setPrixAcheterMaintenant($aEnchere['prixDirecte']);
-        $this->setPrixDebut($aEnchere['prixDebut']);
-        $this->setEtat($aEnchere['etat']);
-        $this->setPrixFin($aEnchere['prixFin']);
-
-        $aOffres = $this->selectParCondition('offres', 'WHERE encheres_id=' . $this->getIdEnchere() . ' ORDER BY date ASC');
-
-        $this->setCollectionOffre(array());
-
-        if(is_array($aOffres) && count($aOffres)>0)
-        {
-            foreach($aOffres as $offre)
-            {
-                $oOffre = new Offre($offre["id"]);
-
-                $this->ajoutOffre($oOffre);
-            }
-        }
-
-    }
-
-    /**
-     * rechercher les encheres
-     * @return array
-     */
-    public static function chargerLesEncheres()
-    {
-        $oModele = new Modeles();
-        $aEncheres = $oModele->selectAllFrom("pi2_Encheres");
-        return $aEncheres;
-    }
-
-    /**
-     * creer une enchere
-     * @return $this
-     */
-    public function creerUneEnchere()
-    {
-        $sRequete = "INSERT INTO pi2_Encheres ('titre', 'prixDebut', 'prixFin', 'montantAug', 'prixDirecte', 'dateDebut', 'dateFin', 'etat', 'utilisateur_id', 'oeuvre_id')
-        VALUES ('".$_POST['titreEnchere']."', ".$_POST['prixDebut'].", ".$_POST['prixDebut'].", ".$_POST['prixAug'].", ".$_POST['prixDirecte'].", now(), now()+INTERVAL ".$_POST['duree']." DAY, 'ouverte', ".$this->oCreateurEnchere->getIdUtilisateur().", ".$this->oOeuvre->getIdOeuvre().");";
         $id = $this->insertInto($sRequete);
-        if($id)
+		if($id)
+		{
+			$this->setIdEnchere($id);
+            return true;
+		}
+	}
+
+    public function updateUneEnchere()
+    {
+        $sRequete = "UPDATE pi2_encheres SET prixFin=".$this->getPrixFin()." WHERE id=".$this->getIdEnchere().";";
+        $bRes = $this->update($sRequete);
+        if($bRes)
         {
-            $this->setIdEnchere($id);
-            return $this;
+            return true;
         }
-
-    }
-
-    /**
-     * supprimer une enchere
-     */
-    public function supprimerUnEnchere()
-    {
-        $sRequete = "DELETE FROM Encheres WHERE id=".$this->getIdEnchere().";";
-        $this->deleteFrom($sRequete);
-    }
-
-    /**
-     * charger le temps restant
-     * @return int
-     */
-    public function getTempsRestant()
-    {
-        $iTempsFin = strtotime($this->getDateFin());
-
-        $iTempsRestant = $iTempsFin - time();
-
-        return $iTempsRestant;
-
-    }
-
-    public function fermerEnchere()
-    {
-        $sRequete = "UPDATE pi2_Encheres SET etat='fermée'";
-        $this->update($sRequete);
-
-        if(count($this->getCollectionOffre())>0)
+        else
         {
-            $sRequete = "INSERT INTO pi2_EncheresGagnees ('utilisateur_id', 'enchere_id', 'date') VALUES (".$this->getCreateurEnchere()->getIdUtilisateur().", ".$this->getIdEnchere().", now();)";
-            $idGagnee = $this->insertInto($sRequete);
+            return "Impossible d'ajouter votre offre.";
+
         }
+    }
+
+	/**
+	 * supprimer une enchere
+	 */
+	public function supprimerUnEnchere()
+	{
+		$sRequete = "DELETE FROM pi2_encheres WHERE id=".$this->getIdEnchere().";";
+		$this->deleteFrom($sRequete);
+	}
+
+	/**
+	 * charger le temps restant
+	 * @return int
+	 */
+	public function getTempsRestant()
+	{
+		$iTempsFin = strtotime($this->getDateFin());
+
+		$iTempsRestant = $iTempsFin - time();
+
+		return $iTempsRestant;
+
+	}
+
+	public function fermerEnchere()
+	{
+
+		$sRequete = "UPDATE pi2_encheres SET etat='fermée' WHERE id=".$this->getIdEnchere().";";
+
+		$this->update($sRequete);
+
         $this->setEtat("fermée");
-    }
 
 
 
+		if(count($this->getCollectionOffre())>0)
+		{
+            $sRequete = "UPDATE pi2_oeuvres SET etat='vendue' WHERE id=".$this->getOeuvreEnchere()->getIdOeuvre().";";
+
+            $this->update($sRequete);
+
+            $this->getOeuvreEnchere()->setEtatOeuvre('vendue');
+
+			$sRequete = "INSERT INTO pi2_encheresgagnees (utilisateur_id, enchere_id, date) VALUES (".end($this->getCollectionOffre())->getBidder()->getIdUtilisateur().", ".$this->getIdEnchere().", now())";
+			$idGagnee = $this->insertInto($sRequete);
+		}
+        else
+        {
+            $sRequete = "UPDATE pi2_oeuvres SET etat='disponible' WHERE id=".$this->getOeuvreEnchere()->getIdOeuvre().";";
+
+            $this->update($sRequete);
+
+            $this->getOeuvreEnchere()->setEtatOeuvre('disponible');
+        }
+
+	}
 
 }
 

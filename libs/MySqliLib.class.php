@@ -5,7 +5,7 @@
     	const HOST ="127.0.0.1";
 		const USER ="root";
 		const PWD="26y6fasdf";
-		const BDD="codeEleve";
+		const BDD="bd_pi2";
 
 		/**
 		 * @var string

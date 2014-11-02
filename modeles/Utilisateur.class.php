@@ -9,11 +9,7 @@
  */
 
 class Utilisateur extends Modeles{
-<<<<<<< HEAD
-	
-=======
 
->>>>>>> upstream/master
 	/* Propriétés privées */
 	private $idUtilisateur;
 	private $sNom;
@@ -22,24 +18,13 @@ class Utilisateur extends Modeles{
 	private $sMotDePasse;
 	private $sTel;
 	private $sTypeUtilisateur;
-<<<<<<< HEAD
 	private $sEtat;
-	
-=======
-	private $sEtat
 
->>>>>>> upstream/master
+
 	/**
 	 * variable qui provient de la relation de composition
 	 * entre la classe Dossier et la classe Etudiant
 	 */
-<<<<<<< HEAD
-	
-	
-=======
-
-
->>>>>>> upstream/master
 	/**
 	 * Constructeur
 	 * @param integer $idEtudiant
@@ -48,11 +33,8 @@ class Utilisateur extends Modeles{
 	 * @param integer $iAge
 	 */
 	public function __construct($idUtilisateur=0, $sNom=" ", $sPrenom=" ", $sCourriel=" ", $MotDePasse=" ",$sTel=" ",$sTypeUtilisateur="membre",$sEtat="actif" ){
-<<<<<<< HEAD
+
 		$this->setIdUtilisateur($idUtilisateur);
-=======
-		$this->setIdEtudiant($idUtilisateur);
->>>>>>> upstream/master
 		$this->setNom($sNom);
 		$this->setPrenom($sPrenom);
 		$this->setCourriel($sCourriel);
@@ -60,15 +42,9 @@ class Utilisateur extends Modeles{
 		$this->setTel($sTel);
 		$this->setTypeUtilisateur($sTypeUtilisateur);
 		$this->setEtat($sEtat);
-<<<<<<< HEAD
-		
-	} //fin du constructeur
-	
-=======
 
 	} //fin du constructeur
 
->>>>>>> upstream/master
 	/* Affectation */
 	/**
 	 *  * @param string $sNom
@@ -76,11 +52,6 @@ class Utilisateur extends Modeles{
 	public function setNom($sNom){
 		TypeException::estString($sNom);
 		TypeException::estVide($sNom);
-<<<<<<< HEAD
-		
-=======
-
->>>>>>> upstream/master
 		$this->sNom = $sNom;
 	}
 	/**
@@ -89,11 +60,7 @@ class Utilisateur extends Modeles{
 	public function setPrenom($sPrenom){
 		TypeException::estString($sPrenom);
 		TypeException::estVide($sPrenom);
-<<<<<<< HEAD
-		
-=======
 
->>>>>>> upstream/master
 		$this->sPrenom = $sPrenom;
 	}
 	/**
@@ -101,26 +68,19 @@ class Utilisateur extends Modeles{
 	 */
 	public function setCourriel($sCourriel){
 		TypeException::eststring($sCourriel);
-<<<<<<< HEAD
+
 		TypeException::estVide($sCourriel);
-=======
-		TypeException::estVide($sPrenom);
->>>>>>> upstream/master
+
 
 		$this->sCourriel = $sCourriel;
 	}
 	/**
 	 * @param integer $idUtilisateur
 	 */
-<<<<<<< HEAD
+
 	public function setIdUtilisateur($idUtilisateur){
 		TypeException::estNumerique($idUtilisateur);
-		
-=======
-	public function setIdUtilisateurt($idUtilisateur){
-		TypeException::estNumerique($idUtilisateur);
 
->>>>>>> upstream/master
 		$this->idUtilisateur = $idUtilisateur;
 	}
 	/**
@@ -129,39 +89,32 @@ class Utilisateur extends Modeles{
 	public function setTel($sTel){
 		TypeException::estString($sTel);
 		TypeException::estVide($sTel);
-<<<<<<< HEAD
-		
+
 		$this->sTel = $sTel;
-=======
->>>>>>> upstream/master
+
 	}
 	/**
 	* @param string $sTypeUtilisateur
 	*/
 	public function setTypeUtilisateur($sTypeUtilisateur){
 		TypeException::estString($sTypeUtilisateur);
-<<<<<<< HEAD
+
 		TypeException::estVide($sTypeUtilisateur);
-		
+
 		$this->sTypeUtilisateur = $sTypeUtilisateur;
-=======
-		TypeException::estVide($sPrenom);
->>>>>>> upstream/master
+
 
 	}
 	/**
 	* @param string $sEtat
 	*/
 	public function setEtat($sEtat){
-<<<<<<< HEAD
-		TypeException::estString($sEtat);		
-		TypeException::estVide($sEtat);
-		
-		$this->sEtat = $sEtat;
-=======
+
 		TypeException::estString($sEtat);
-		TypeException::estVide($sPrenom);
->>>>>>> upstream/master
+		TypeException::estVide($sEtat);
+
+		$this->sEtat = $sEtat;
+
 
 	}
 	/**
@@ -169,30 +122,19 @@ class Utilisateur extends Modeles{
 	*/
 	public function setMotDePasse($sMotDePasse){
 
-<<<<<<< HEAD
+
 		TypeException::estVide($sMotDePasse);
-		
+
 		$this->sMotDePasse = $sMotDePasse;
 	}
 
-	
-=======
-		TypeException::estVide($sPrenom);
 
-	}
-
-
->>>>>>> upstream/master
 	/**
 	 * @param array $aDossiers
 	 */
 	/*public function setDossiers($aDossiers){
 		TypeException::estArray($aDossiers);
-<<<<<<< HEAD
-		
-=======
 
->>>>>>> upstream/master
 		$this->aDossiers = $aDossiers;
 	}*/
 	/**
@@ -217,21 +159,17 @@ class Utilisateur extends Modeles{
 	 * @return string $sMotDePasse
 	 */
 	public function getMotDePasse(){
-<<<<<<< HEAD
+
 		return $this->sMotDePasse;
-=======
-		return $this->sMotdePasse;
->>>>>>> upstream/master
+
 	}
 	/**
 	 * @return string $sTelRes
 	 */
 	public function getTel(){
-<<<<<<< HEAD
+
 		return $this->sTel;
-=======
-		return $this->sTelRes;
->>>>>>> upstream/master
+
 	}
 	/**
 	 * @return string $Etat
@@ -251,24 +189,18 @@ class Utilisateur extends Modeles{
 	public function getIdUtilisateur(){
 		return $this->idUtilisateur;
 	}
-<<<<<<< HEAD
-	
-	
-=======
 
-
->>>>>>> upstream/master
 	/**
 	 * Rechercher un utilisateur par son idUtilisateur
 	 * @return boolean true si l'enregistrement est trouvé dans la BDD
 	 * false dans tous les autres cas
 	 */
 	function rechercherUnUtilisateur(){
-<<<<<<< HEAD
-		$oPDO = new Connexion;
+
+		$oPDO = new Connexion();
 
 		//Réaliser la requête de recherche par le idEtudiant
-		$sSQL = "SELECT * FROM utilisateurs WHERE id=".$this->getIdUtilisateur();
+		$sSQL = "SELECT * FROM pi2_utilisateurs WHERE id=".$this->getIdUtilisateur();
 		//préparer la requête
 		$requete = $oPDO->oPDO->prepare($sSQL);
 		//Exécuter la requête
@@ -298,18 +230,17 @@ class Utilisateur extends Modeles{
 			//$sMsg = array('type'=>'danger', 'msg'=>'Erreur lors de la requete.');
 
 		}
-			
+
 	}//fin de rechercher un utilisateur()
-	
+
 	public function rechercherUtilisateurParEmail(){
+
 		//Réaliser la requête de recherche par le idEtudiant
-		$sSQL = "SELECT * FROM utilisateurs WHERE courriel=".$this->getCourriel();
-=======
-		//Réaliser la requête de recherche par le idEtudiant
-		$sSQL = "SELECT * FROM utilisateurs WHERE idUtilisateur=".$this->getIdUtilisateur();
->>>>>>> upstream/master
+		$sSQL = "SELECT * FROM pi2_utilisateurs WHERE courriel=".$this->getCourriel();
+
 		//préparer la requête
-		$requete = $oPDO->prepare($sSQL);
+        $oPDO = new Connexion();
+		$requete = $oPDO->oPDO->prepare($sSQL);
 		//Exécuter la requête
 		if ( $requete->execute() ) {
 			//s'il y a un résultat
@@ -337,14 +268,14 @@ class Utilisateur extends Modeles{
 			//$sMsg = array('type'=>'danger', 'msg'=>'Erreur lors de la requete.');
 
 		}
-<<<<<<< HEAD
+
 	}
 	public static function emailExiste($sCourriel){
 		//ouverture de la connexion
 		$oPDO = new Connexion;
-		
+
 		//Réaliser la requête de recherche par le idEtudiant
-		$sSQL = "SELECT * FROM utilisateurs WHERE courriel='".$sCourriel."' AND etat='actif'";
+		$sSQL = "SELECT * FROM pi2_utilisateurs WHERE courriel='".$sCourriel."' AND etat='actif'";
 		//préparer la requête
 		$requete = $oPDO->oPDO->prepare($sSQL);
 		//Exécuter la requête
@@ -369,29 +300,28 @@ class Utilisateur extends Modeles{
 		$oPDO = new Connexion;
 
 		//Réaliser la requête de recherche par le idEtudiant
-		$sSQL = "INSERT INTO utilisateurs VALUES('','".$this->sNom."','".$this->sPrenom."','".$this->sCourriel."','".$this->sMotDePasse."','".$this->sTel."','".$this->sTypeUtilisateur."','".$this->sEtat."') ";
+		$sSQL = "INSERT INTO pi2_utilisateurs VALUES(0,'".$this->sNom."','".$this->sPrenom."','".$this->sCourriel."','".$this->sMotDePasse."','".$this->sTel."','".$this->sTypeUtilisateur."','".$this->sEtat."') ";
 		//préparer la requête
 		$requete = $oPDO->oPDO->prepare($sSQL);
 		//Exécuter la requête
 		if ( $requete->execute() ) {
 			$_SESSION['idUser'] = $oPDO->oPDO->lastInsertId();
-			header("location:index.php");
 		} else {
 
 			throw new Exception("Erreur lors de la requete");
 			//$sMsg = array('type'=>'danger', 'msg'=>'Erreur lors de la requete.');
-		
+
 		}
-		
-		
+
+
 	}
-	
+
 	public function connexionUtilisateur(){
 		//ouverture de la connexion
 		$oPDO = new Connexion;
 
 		//Réaliser la requête de recherche par le idEtudiant
-		$sSQL = "Select * FROM utilisateurs WHERE motDePasse='".$this->sMotDePasse."' AND courriel='".$this->sCourriel."' AND etat='actif'";
+		$sSQL = "Select * FROM pi2_utilisateurs WHERE motDePasse='".$this->sMotDePasse."' AND courriel='".$this->sCourriel."' AND etat='actif'";
 		//préparer la requête
 		$requete = $oPDO->oPDO->prepare($sSQL);
 		//Exécuter la requête
@@ -412,14 +342,14 @@ class Utilisateur extends Modeles{
 
 		}
 	}
-	
+
 	public function modifierUtilisateur(){
 		//ouverture de la connexion
 		$oPDO = new Connexion;
 
 		//Réaliser la requête de recherche par le idEtudiant
 		$sSQL = "
-			UPDATE utilisateurs
+			UPDATE pi2_utilisateurs
 			SET nom='".$this->getNom()."', prenom='".$this->getPrenom()."', courriel='".$this->getCourriel()."',telephone='".$this->getTel()."', motDePasse='".$this->getMotDePasse()."'
 			WHERE id='".$_SESSION['idUser']."'
 		";
@@ -442,14 +372,14 @@ class Utilisateur extends Modeles{
 		}
 
 	}//Fin modifierUtilisateur
-	
+
 	public function desactiverUtilisateur(){
 		//ouverture de la connexion
 		$oPDO = new Connexion;
 
 		//Réaliser la requête de recherche par le idEtudiant
 		$sSQL = "
-			UPDATE utilisateurs
+			UPDATE pi2_utilisateurs
 			SET etat='inactif'
 			WHERE id='".$_SESSION['idUser']."'
 		";
@@ -459,7 +389,7 @@ class Utilisateur extends Modeles{
 		if ( $requete->execute() ) {
 				unset($_SESSION['idUser']);
 
-		
+
 		} else {
 
 		throw new Exception("Erreur lors de la requete");
@@ -468,13 +398,13 @@ class Utilisateur extends Modeles{
 		}
 
 	}
-	
-	public static function adm_ajouterUtilisateur(){
+
+	public function adm_ajouterUtilisateur(){
 		//ouverture de la connexion
 		$oPDO = new Connexion;
 
 		//Réaliser la requête de recherche par le idEtudiant
-		$sSQL = "INSERT INTO utilisateurs VALUES('','".$this->sNom."','".$this->sPrenom."','".$this->sCourriel."','".$this->sMotDePasse."','".$this->sTel."','".$this->sTypeUtilisateur."','".$this->sEtat."') ";
+		$sSQL = "INSERT INTO pi2_utilisateurs VALUES('','".$this->sNom."','".$this->sPrenom."','".$this->sCourriel."','".$this->sMotDePasse."','".$this->sTel."','".$this->sTypeUtilisateur."','".$this->sEtat."') ";
 		//préparer la requête
 		$requete = $oPDO->oPDO->prepare($sSQL);
 		//Exécuter la requête
@@ -484,18 +414,18 @@ class Utilisateur extends Modeles{
 
 			throw new Exception("Erreur lors de la requete");
 			//$sMsg = array('type'=>'danger', 'msg'=>'Erreur lors de la requete.');
-		
+
 		}
-		
+
 	}//Fin adm_ajouterUtilisateur()
-	
-	public static function adm_modifierUtilisateur(){
+
+	public function adm_modifierUtilisateur(){
 		//ouverture de la connexion
 		$oPDO = new Connexion;
 
 		//Réaliser la requête de recherche par le idEtudiant
 		$sSQL = "
-			UPDATE utilisateurs
+			UPDATE pi2_utilisateurs
 			SET nom='".$this->getNom()."', prenom='".$this->getPrenom()."', courriel='".$this->getCourriel()."',telephone='".$this->getTel()."', motDePasse='".$this->getMotDePasse()."', type='".$this->getTypeUtilisateur()."', etat='".$this->getEtat()."'
 			WHERE id='".$this->getIdUtilisateur()."'
 		";
@@ -518,14 +448,14 @@ class Utilisateur extends Modeles{
 		}
 
 	}//Fin adm_modifierUtilisateur()
-	
-	public static function adm_desactiverUtilisateur(){
+
+	public function adm_desactiverUtilisateur(){
 		//ouverture de la connexion
 		$oPDO = new Connexion;
 
 		//Réaliser la requête de recherche par le idEtudiant
 		$sSQL = "
-			UPDATE utilisateurs
+			UPDATE pi2_utilisateurs
 			SET etat='inactif'
 			WHERE id='".$this->getIdUtilisateur."'
 		";
@@ -533,9 +463,9 @@ class Utilisateur extends Modeles{
 		$requete = $oPDO->oPDO->prepare($sSQL);
 		//Exécuter la requête
 		if ( $requete->execute() ) {
-			return true;	
+			return true;
 
-		
+
 		} else {
 
 			throw new Exception("Erreur lors de la requete");
@@ -543,22 +473,22 @@ class Utilisateur extends Modeles{
 			return false;
 		}
 	}//Fin adm_desactiverUtilisateur()
-	
-	public static function adm_supprimerUtilisateur(){
+
+	public function adm_supprimerUtilisateur(){
 		//ouverture de la connexion
 		$oPDO = new Connexion;
 
 		//Réaliser la requête de recherche par le idEtudiant
 		$sSQL = "
-			DELETE FROM 'bd_encheres'.'utilisateurs' WHERE id='".$this->getIdUtilisateur."'
+			DELETE FROM 'pi2_encheres'.'pi2_utilisateurs' WHERE id='".$this->getIdUtilisateur."'
 		";
 		//préparer la requête
 		$requete = $oPDO->oPDO->prepare($sSQL);
 		//Exécuter la requête
 		if ( $requete->execute() ) {
-			return true;	
+			return true;
 
-		
+
 		} else {
 
 			throw new Exception("Erreur lors de la requete");
@@ -566,20 +496,20 @@ class Utilisateur extends Modeles{
 			return false;
 		}
 	}//Fin adm_supprimerUtilisateur()
-	
+
 	public static function adm_rechercherUtilisateurs($recherche){
 		//ouverture de la connexion
 		$oPDO = new Connexion;
 
 		//Réaliser la requête de recherche par le idEtudiant
 		$sSQL = "
-			SELECT * FROM utilisateurs WHERE 
-			id LIKE'".$Recherche."' OR
-			nom LIKE'".$Recherche."' OR
-			prenom LIKE'".$Recherche."' OR
-			courriel LIKE'".$Recherche."' OR
-			type LIKE'".$Recherche."' OR
-			etat LIKE'".$Recherche."'";
+			SELECT * FROM pi2_utilisateurs WHERE
+			id LIKE'".$recherche."' OR
+			nom LIKE'".$recherche."' OR
+			prenom LIKE'".$recherche."' OR
+			courriel LIKE'".$recherche."' OR
+			type LIKE'".$recherche."' OR
+			etat LIKE'".$recherche."'";
 		//préparer la requête
 		$requete = $oPDO->oPDO->prepare($sSQL);
 		//Exécuter la requête
@@ -589,11 +519,11 @@ class Utilisateur extends Modeles{
 
 				$aResultats = $requete->fetchAll();
 				for($i=0 ;$i<count($aResultats); $i++){
-					
+
 					$aoUtilisateur[$i] = new Utilisateur($aResultats['id'], $aResultats['nom'], $aResultats['prenom'], $aResultats['courriel'], $aResultats['motDePasse'], $aResultats['telephone'], $aResultats['type'], $aResultats['etat']);
-					
+
 					return $aoUtilisateur;
-					
+
 				}
 
 			} else {
@@ -605,13 +535,13 @@ class Utilisateur extends Modeles{
 
 
 	}//Fin adm_rechercherUtilisateur()
-	
+
 	public function adm_connexion(){
 		//ouverture de la connexion
 		$oPDO = new Connexion;
 
 		//Réaliser la requête de recherche par le idEtudiant
-		$sSQL = "Select * FROM utilisateurs WHERE motDePasse='".$this->sMotDePasse."' AND courriel='".$this->sCourriel."' AND type='admin'";
+		$sSQL = "Select * FROM pi2_utilisateurs WHERE motDePasse='".$this->sMotDePasse."' AND courriel='".$this->sCourriel."' AND type='admin'";
 		//préparer la requête
 		$requete = $oPDO->oPDO->prepare($sSQL);
 		//Exécuter la requête
@@ -634,10 +564,4 @@ class Utilisateur extends Modeles{
 
 	}//fin adm_connexion();
 }
-=======
 
-		}
-
-
-	}
->>>>>>> upstream/master

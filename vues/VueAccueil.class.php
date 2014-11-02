@@ -12,12 +12,20 @@ class VueAccueil {
 	/**
 	 * Affiche le contenu de la page d'accueil du site côté clients
 	 */
-	public static function afficherAccueil() {
+	public static function afficherAccueil(array $aMsg = array()) {
 
 		// Inclu les morceaux de pages, dont les metas, l'entete, la navigation et le carousel
 		Vue::head('Achetez des oeuvres d\'art', 'Site de vente d\'oeuvres d\'art en ligne');
 		Vue::header('Ma recherche');
 		Vue::nav();
+
+		// Si un message existe
+		if ( count($aMsg) && isset($aMsg['msg']) ) {
+
+			Vue::message($aMsg['type'], $aMsg['msg']);
+
+		}
+
 		Vue::carousel(array(array('src' => 'carousel5.jpg', 'alt' => 'Image 1'), array('src' => 'carousel7.jpg', 'alt' => 'Image 2'), array('src' => 'carousel8.jpg', 'alt' => 'Image 3'), array('src' => 'carousel9.jpg', 'alt' => 'Image 4'), array('src' => 'carousel10.jpg', 'alt' => 'Image 5'), array('src' => 'carousel11.jpg', 'alt' => 'Image 6'), array('src' => 'carousel12.jpg', 'alt' => 'Image 7')));
 
 		echo "

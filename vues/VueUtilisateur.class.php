@@ -10,23 +10,22 @@
 class VueUtilisateur {
 
 	/**
-	 * 
+	 *
 	 */
 	public static function afficherFormModSup($oUtilisateur, $sMsg) {
-		
+
 		$nom=(isset($_POST['cmd']))? $_POST['nom'] : trim($oUtilisateur->getNom());
 		$prenom=(isset($_POST['cmd']))? $_POST['prenom'] : trim($oUtilisateur->getPrenom());
 		$tel=(isset($_POST['cmd']))? $_POST['tel'] : trim($oUtilisateur->getTel());
 		$password=(isset($_POST['cmd']))? $_POST['password'] : trim($oUtilisateur->getMotDePasse());
 		$courriel=(isset($_POST['cmd']))? $_POST['courriel'] : trim($oUtilisateur->getCourriel());
 
-		
 
 		// Inclu les morceaux de pages, dont les metas, l'entete, la navigation et le carousel
 		Vue::head('Achetez des oeuvres d\'art', 'Site de vente d\'oeuvres d\'art en ligne');
 		Vue::header('Ma recherche');
 		Vue::nav();
-		
+
 
 		echo"
 			<main id=\"martin\">
@@ -118,15 +117,13 @@ class VueUtilisateur {
     <!-- -------------Fin Main------------------->
 
 		";
-		
 
 		Vue::footer();
 
 	}//Fin de la fonction afficherFormSup
-	
-<<<<<<< HEAD
+
 	public static function afficherFormInscription($sMsg){
-		
+
 		$nom=(isset($_POST['cmd']))? $_POST['nom'] : "";
 		$prenom=(isset($_POST['cmd']))? $_POST['prenom'] : "";
 		$tel=(isset($_POST['cmd']))? $_POST['tel'] : "";
@@ -134,9 +131,9 @@ class VueUtilisateur {
 		$courriel=(isset($_POST['cmd']))? $_POST['courriel'] : "";
 		$confCourriel=(isset($_POST['cmd']))? $_POST['confCourriel'] : "";
 		$password=(isset($_POST['cmd']))? $_POST['password'] : "";
-		
-		//var_dump($_POST);
-		
+
+//		var_dump($_POST);
+
 		Vue::head('Achetez des oeuvres d\'art', 'Site de vente d\'oeuvres d\'art en ligne');
 		Vue::header('Ma recherche');
 		Vue::nav();
@@ -152,7 +149,7 @@ class VueUtilisateur {
 								</div>
 								<div class=\"panel-body\">
 									<form class=\"form-horizontal\" role=\"form\" action=\"index.php?page=utilisateur&action=inscription\" method=\"post\">
-									
+
 									<div \"col-xs-12 col-sm-8 col-sm-offset-2\">
 										<p>$sMsg</p>
 									</div>
@@ -208,17 +205,17 @@ class VueUtilisateur {
 		</main>
 	";
 
-		
-		
+
+
 		Vue::footer();
 
 	}// fonction afficherFormInscription()
-	
+
 	public static function afficherFormConnexion($sMsg){
-		
+
 		$courriel=(isset($_POST['cmd']))? $_POST['courriel'] : "";
 
-		
+
 		Vue::head('Achetez des oeuvres d\'art', 'Site de vente d\'oeuvres d\'art en ligne');
 		Vue::header('Ma recherche');
 		Vue::nav();
@@ -275,5 +272,5 @@ class VueUtilisateur {
 		";
 		Vue::footer();
 	}
-	
+
 }
