@@ -52,9 +52,10 @@ class ControleurSite extends Controleur{
 					break;
 
 				case 'ajoutOffre':
-					if(isset($_SESSION['idUser']) && $_SESSION['idUser']!=0)
-					{
+					if( isset($_SESSION['idUser']) && $_SESSION['idUser'] !=0 )	{
+
 						$this->gererAjaxAjoutOffre();
+
 					}
 					break;
 
@@ -98,12 +99,6 @@ class ControleurSite extends Controleur{
 
 	}
 
-	public function gererTest(){
-
-		VueTest::afficherTest();
-
-	}
-
 	/**
 	 * afficher les encheres
 	 */
@@ -136,7 +131,6 @@ class ControleurSite extends Controleur{
 			$oEnchere = new Enchere($idEnchere);
 			$oEnchere->chargerUneEnchereParIdEnchere();
 		}
-
 		VueEnchere::afficherUneEnchere($oEnchere);
 	}
 
@@ -186,7 +180,7 @@ class ControleurSite extends Controleur{
 		{
 			$oCreateur = new Utilisateur($_SESSION['idUser']);
 
-			$oCreateur = $oCreateur->rechercherUnUtilisateur();//it doesn't work, constructor of Class Utilisateur has errors
+			$oCreateur->rechercherUnUtilisateur();
 		}
 		else
 		{
@@ -195,34 +189,57 @@ class ControleurSite extends Controleur{
 
 		$oModeleXHFModele = new XFHModeles();
 
-		$sCondition = "WHERE utilisateur_id=" . $_SESSION['idUser'] . " AND etat='disponible' ;";//it doesn't work, database table 'Oeuvres' doesn't have a foreign key connect to users.
+		$sCondition = "WHERE utilisateur_id=" . $_SESSION['idUser'] . " AND etat='disponible' ;";
 
 		$aEnregs = $oModeleXHFModele->selectParCondition('pi2_oeuvres', $sCondition);
 
 		$aOeuvres = array();
+        $sMsg = "";
 		if(count($aEnregs)>0)
 		{
 			foreach($aEnregs as $value)
 			{
-				$aOeuvres[] = new Oeuvre($value['id']);
+                $oOeuvre = new Oeuvre($value['id']);
+                $oOeuvre->rechercherOeuvreParId();
+				$aOeuvres[] = $oOeuvre;
 			}
 			if(!isset($_POST['enregistrerEnchere']))
 			{
-				VueEnchere::formCreerEnchere($aOeuvres);
+				VueEnchere::formCreerEnchere($aOeuvres,$sMsg);
 			}
 			else
 			{
 				$oOeuvre = new Oeuvre($_POST['oeuvre']);
+
+                $oOeuvre->rechercherOeuvreParId();
+
 				$oEnchere = new Enchere(0, $oCreateur, $oOeuvre);
-				$oEnchere = $oEnchere->creerUneEnchere();
-				VueEnchere::afficherUneEnchere($oEnchere);
+
+				$oEnchere->creerUneEnchere();
+
+                if($oEnchere->getIdEnchere()>0)
+                {
+                    $oOeuvre->setEtatOeuvre('en enchere');
+
+                    $oModeleXHFModele = new XFHModeles();
+
+                    $sRequete = "UPDATE pi2_oeuvres SET etat='".$oOeuvre->getEtatOeuvre()."' WHERE id=".$oOeuvre->getIdOeuvre().";";
+
+                    $oModeleXHFModele->update($sRequete);
+
+                    header("Location: index.php?page=detailsEnchere&idEnchere=" . $oEnchere->getIdEnchere());
+                }
+				else
+                {
+                    $sMsg = "Erreur de créer une enchère!";
+                    VueEnchere::formCreerEnchere($aOeuvres,$sMsg);
+                }
 			}
 		}
 		else
 		{
 			header("Location: index.php?page=gererOeuvre&action=ajoutOeuvre");//if the user doesn't have any oeuvre, send to page 'add un oeuvre'
 		}
-
 
 	}
 
@@ -236,6 +253,31 @@ class ControleurSite extends Controleur{
 		}
 		else
 		{
+
+            $XHFModele = new XFHModeles();
+            $sRequete = "INSERT INTO pi2_encheres (titre, prixDebut, prixFin, prixIncrement, prixDirecte, dateDebut, dateFin, etat, utilisateur_id, oeuvre_id)
+		VALUES ('".$_POST['titreEnchere']."', ".$_POST['prixDebut'].", ".$_POST['prixDebut'].", ".$_POST['prixAug'].", ".$_POST['prixDirecte'].", now(), now()+INTERVAL ".$_POST['duree']." DAY, 'ouverte', ".$oEnchere->getCreateurEnchere()->getIdUtilisateur().", ".$oEnchere->getOeuvreEnchere()->getIdOeuvre().");";
+
+            $id = $XHFModele->insertInto($sRequete);
+            if($id)
+            {
+                $oEnchere->supprimerUnEnchere();
+                $oEnchere = new Enchere($id);
+                $oEnchere->setIdEnchere($id);
+                $oEnchere->getOeuvreEnchere()->setEtatOeuvre('en enchere');
+                $sRequete = "UPDATE pi2_oeuvres SET etat='".$oEnchere->getOeuvreEnchere()->getEtatOeuvre()."' WHERE id=".$oEnchere->getOeuvreEnchere()->getIdOeuvre().";";
+                $XHFModele->update($sRequete);
+                header("Location: index.php?page=detailsEnchere&idEnchere=" . $oEnchere->getIdEnchere());
+            }
+            else
+            {
+                $sMsg = "Erreur de rouvrir une enchère!";
+                header("Location: index.php?page=gestionEnchere");
+            }
+
+
+
+
 			$sReqete = "UPDATE pi2_encheres SET titre='".$_POST['titreEnchere']."', prixDebut=".$_POST['prixDebut'].", prixIncrement=".$_POST['prixAug'].", prixDirecte=".$_POST['prixDirecte'].", dateFin=dateDebut+INTERVAL ".$_POST['duree']." DAY  WHERE id=".$_GET['idEnchere'].";";
 			if($oEnchere->executerRequete($sReqete))
 			{
@@ -250,7 +292,6 @@ class ControleurSite extends Controleur{
 
 	public function gererAjaxStatutEnchere()
 	{
-		die("GererAjaxStatus ".__LINE__);
 		//$oEnchere = new Enchere($_GET['idEnchere']);
 
 		VueEnchere::xmlAjaxDetailEnchere();
@@ -267,6 +308,7 @@ class ControleurSite extends Controleur{
 	{
 		$oEnchere = new Enchere($_GET['idEnchere']);
 		$oEnchere->supprimerUnEnchere();
+        header("Location: index.php?page=gestionEnchere");
 
 	}
 
@@ -276,12 +318,12 @@ class ControleurSite extends Controleur{
 
 		$sCondition='';
 
-		if(isset($_SESSION['idUtilisateur']))
+		if(isset($_SESSION['idUser']))
 		{
-			$sCondition = "WHERE Utilisateur_id=" . $_SESSION['idUtilisateur'];
+			$sCondition = "WHERE utilisateur_id=" . $_SESSION['idUser'];
 		}
 
-		$aEnregs = $oModeleXHFModele->selectParCondition("pi2_Encheres", $sCondition);
+		$aEnregs = $oModeleXHFModele->selectParCondition("pi2_encheres", $sCondition);
 
 		$aEncheres=array();
 
@@ -297,14 +339,24 @@ class ControleurSite extends Controleur{
 	{
 		$aEnregs = Offre::chargerLesOffres();
 
-		$aOffres = array();
+        $sMsg = "";
+        $aOffres = array();
 
-		foreach($aEnregs as $value)
-		{
-			$aOffres[] = new Offre($value['id']);
-		}
-		var_dump($aOffres);
-		VueOffre::afficherListeOffres($aOffres);
+        if(count($aEnregs)>0)
+        {
+
+            foreach($aEnregs as $value)
+            {
+                $aOffres[] = new Offre($value['id']);
+            }
+            VueOffre::afficherListeOffres($aOffres, $sMsg);
+        }
+        else
+        {
+            $sMsg = "No records";
+            VueOffre::afficherListeOffres($aOffres, $sMsg);
+        }
+
 
 	}
 
@@ -427,133 +479,133 @@ class ControleurSite extends Controleur{
 				$aOeuvres=Oeuvre::rechercherListeDesOeuvresEnVente();
 				VueOeuvre::afficherLesOeuvres($aOeuvres);
 			}else if(isset($_POST['cmd'])){
-					//Récupérer le texte saisi par l'internaute $_POST['txt']
-					$recherche=$_POST['txt'];
-					echo $recherche;
-					$aOeuvres =Oeuvre::rechercherDesOeuvresParMotCle($recherche);
+				//Récupérer le texte saisi par l'internaute $_POST['txt']
+				$recherche=$_POST['txt'];
+				//echo $recherche;
+				$aOeuvres =Oeuvre::rechercherDesOeuvresParMotCle($recherche);
+				$aMsg = array("type" =>"warning","msg"=>"Aucun produit ne correspond à votre recherche");
+				//Si l'oeuvre existe
+				if($aOeuvres  == true)
+				{
+					//echo "trouvé";
 
-					//Si l'oeuvre existe
-					if($aOeuvres  == true)
+					//afficher les oeuvres correspondant au mot clé
+					VueOeuvre::afficherLesOeuvres($aOeuvres);
+				}else
 					{
-						//echo "trouvé";
+						//echo "Aucun produit ne correspond à votre recherche";
+						VueOeuvre::afficherLesOeuvres(0,$aMsg);
+					}
 
-						//afficher les oeuvres correspondant au mot clé
-						VueOeuvre::afficherLesOeuvres($aOeuvres);
-					}else
-						{
-							//echo "Aucun produit ne correspond à votre recherche";
-							VueOeuvre::afficherLesOeuvres(0,"aucun produit ne correspond à votre recherche");
-						}
-
-				 } else if(isset($_POST['rech']))
+			 } else if(isset($_POST['rech']))
+				{
+					//effectue la recherche si l'internaute a selectionné à la fois: theme ET technique
+					if (isset($_POST['theme'])==true && isset($_POST['technique'])==true)
 					{
-						//effectue la recherche si l'internaute a selectionné à la fois: theme ET technique
-						if (isset($_POST['theme'])==true && isset($_POST['technique'])==true)
+						//Récupère le theme choisi par l'utilisateur
+						$Theme= $_POST['theme'];
+						//echo $Theme;
+						//Instancier un objet Theme avec le numéro de theme choisi par l'internaute $Theme
+						$oTheme = new Theme($Theme);
+						//Recherche le nom du theme associé à ce numéro
+						$bRechercherTheme=$oTheme->rechercherNomThemeParSonId();
+						//Récupère le résultat
+						$nomTheme= $oTheme->getNomTheme();
+
+						//Récupère la technique choisie par l'utilisateur
+						$Technique= $_POST['technique'];
+						//echo $Technique;
+						//Instancier un objet Technique avec le numéro de technique saisi par l'internaute $Technique
+						$oTechnique = new Technique($Technique);
+						//Recherche le nom de la technique associé à ce numéro
+						$bRechercherTechnique=$oTechnique->rechercherNomTechniqueParSonId();
+						//Récupère le résultat
+						$nomTechnique= $oTechnique->getNomTechnique();
+
+						if($bRechercherTheme == true && $bRechercherTechnique == true)
 						{
-							//Récupère le theme choisi par l'utilisateur
-							$Theme= $_POST['theme'];
-							//echo $Theme;
-							//Instancier un objet Theme avec le numéro de theme choisi par l'internaute $Theme
-							$oTheme = new Theme($Theme);
-							//Recherche le nom du theme associé à ce numéro
-							$bRechercherTheme=$oTheme->rechercherNomThemeParSonId();
-							//Récupère le résultat
-							$nomTheme= $oTheme->getNomTheme();
+							//echo 'trouvé';
 
-							//Récupère la technique choisie par l'utilisateur
-							$Technique= $_POST['technique'];
-							//echo $Technique;
-							//Instancier un objet Technique avec le numéro de technique saisi par l'internaute $Technique
-							$oTechnique = new Technique($Technique);
-							//Recherche le nom de la technique associé à ce numéro
-							$bRechercherTechnique=$oTechnique->rechercherNomTechniqueParSonId();
-							//Récupère le résultat
-							$nomTechnique= $oTechnique->getNomTechnique();
-
-							if($bRechercherTheme == true && $bRechercherTechnique == true)
-							{
-								//echo 'trouvé';
-
-								//Instancier un objet Oeuvre
-								$oOeuvre = new Oeuvre();
-								//Recherche les oeuvres correspondant aux noms du theme ET de la technique choisis par l'internaute
-								$aOeuvres=$oOeuvre->rechercherParThemeTechnique($nomTheme,$nomTechnique);
-
-								if($aOeuvres==true)
-								{
-									VueOeuvre::afficherLesOeuvres($aOeuvres);
-								} else
-									{
-										VueOeuvre::afficherLesOeuvres(0,"Aucun produit ne correspond à votre recherche");
-									}
-							} else
-
-								{
-								   VueOeuvre::afficherLesOeuvres($oOeuvre, array('type'=>'warning','msg'=>'Aucune oeuvre de disponible.'));
-								}
-
-						} else  //effectue la recherche si l'internaute a selectionné une des categories: theme OU technique
-
-							{   //si seulement theme est choisi
-								if (isset($_POST['theme']))
-								{
-									//Récupérer la valeur du theme choisi par l'utilisateur(classique,moderne....)
-									$Theme= $_POST['theme'];
-									//donne une categorie à la valeur récupérée
-									$categorie='theme';
-
-									//Instancier un objet Theme avec le numéro de theme saisi par l'internaute $Theme
-									$oTheme = new Theme($Theme);
-									//Recherche le nom du theme associé à ce numéro
-									$bRechercherTheme=$oTheme->rechercherNomThemeParSonId();
-									//Récupère le résultat
-									$nomTheme= $oTheme->getNomTheme();
-
-										if($bRechercherTheme == true)
-										{
-											//affecte la valeur du theme dans une variable critère
-											$critere=$nomTheme;
-										}
-
-								}   else    //si seulement technique est choisie
-
-									{
-										//Récupérer la valeur de la technique choisie par l'utilisateur(acrylique,peinture a l'huile....)
-										$Technique= $_POST['technique'];
-										//donne une categorie à la valeur récupérée
-										$categorie='technique'  ;
-
-										//Instancier un objet Technique avec le numéro de technique saisi par l'internaute $Technique
-										$oTechnique = new Technique($Technique);
-										//Recherche le nom de la technique associé à ce numéro
-										$bRechercherTechnique=$oTechnique->rechercherNomTechniqueParSonId();
-										//Récupère le résultat
-										$nomTechnique= $oTechnique->getNomTechnique();
-											if($bRechercherTechnique == true)
-											{
-												//affecte la valeur de la technique dans une variable critère
-												$critere=$nomTechnique;
-											}
-									}
-
-							//Récupération des oeuvres correspondants au theme OU à la technique
 							//Instancier un objet Oeuvre
-							$oOeuvre=new Oeuvre();
-							//Recherche les enregistrements en fonction du:
-							//critère récupéré:$nomTheme ou $nomTechnique
-							//et de la categorie (type) à qui il appartient:Theme ou Technique
-							$aOeuvres=$oOeuvre->rechercherParCritere($critere,$categorie);
-
+							$oOeuvre = new Oeuvre();
+							//Recherche les oeuvres correspondant aux noms du theme ET de la technique choisis par l'internaute
+							$aOeuvres=$oOeuvre->rechercherParThemeTechnique($nomTheme,$nomTechnique);
+							$aMsg = array("type" =>"warning","msg"=>"Aucun produit ne correspond à votre recherche");
 							if($aOeuvres==true)
 							{
 								VueOeuvre::afficherLesOeuvres($aOeuvres);
-							}
-							 else
+							} else
 								{
-									VueOeuvre::afficherLesOeuvres(0,"Aucun produit ne correspond à votre recherche");
+									VueOeuvre::afficherLesOeuvres(0,$aMsg);
 								}
+						} else
+
+							{
+							   VueOeuvre::afficherLesOeuvres($oOeuvre, array('type'=>'warning','msg'=>'Aucune oeuvre de disponible.'));
 							}
-					}
+
+					} else  //effectue la recherche si l'internaute a selectionné une des categories: theme OU technique
+
+						{	//si seulement theme est choisi
+							if (isset($_POST['theme']))
+							{
+								//Récupérer la valeur du theme choisi par l'utilisateur(classique,moderne....)
+								$Theme= $_POST['theme'];
+								//donne une categorie à la valeur récupérée
+								$categorie='theme';
+
+								//Instancier un objet Theme avec le numéro de theme saisi par l'internaute $Theme
+								$oTheme = new Theme($Theme);
+								//Recherche le nom du theme associé à ce numéro
+								$bRechercherTheme=$oTheme->rechercherNomThemeParSonId();
+								//Récupère le résultat
+								$nomTheme= $oTheme->getNomTheme();
+
+									if($bRechercherTheme == true)
+									{
+										//affecte la valeur du theme dans une variable critère
+										$critere=$nomTheme;
+									}
+
+							}   else    //si seulement technique est choisie
+
+								{
+									//Récupérer la valeur de la technique choisie par l'utilisateur(acrylique,peinture a l'huile....)
+									$Technique= $_POST['technique'];
+									//donne une categorie à la valeur récupérée
+									$categorie='technique'  ;
+
+									//Instancier un objet Technique avec le numéro de technique saisi par l'internaute $Technique
+									$oTechnique = new Technique($Technique);
+									//Recherche le nom de la technique associé à ce numéro
+									$bRechercherTechnique=$oTechnique->rechercherNomTechniqueParSonId();
+									//Récupère le résultat
+									$nomTechnique= $oTechnique->getNomTechnique();
+										if($bRechercherTechnique == true)
+										{
+											//affecte la valeur de la technique dans une variable critère
+											$critere=$nomTechnique;
+										}
+								}
+
+						//Récupération des oeuvres correspondants au theme OU à la technique
+						//Instancier un objet Oeuvre
+						$oOeuvre=new Oeuvre();
+						//Recherche les enregistrements en fonction du:
+						//critère récupéré:$nomTheme ou $nomTechnique
+						//et de la categorie (type) à qui il appartient:Theme ou Technique
+						$aOeuvres=$oOeuvre->rechercherParCritere($critere,$categorie);
+						$aMsg = array("type" =>"warning","msg"=>"Aucun produit ne correspond à votre recherche");
+						if($aOeuvres==true)
+						{
+							VueOeuvre::afficherLesOeuvres($aOeuvres);
+						}
+						 else
+							{
+								VueOeuvre::afficherLesOeuvres(0,$aMsg);
+							}
+						}
+				}
 
 		}catch(Exception $e){
 			echo "<p>".$e->getMessage()."</p>";
@@ -787,13 +839,13 @@ class ControleurSite extends Controleur{
 
 		try {
 
-			if ( !isset($_GET['action']) ) {
+			if ( !isset($_GET['etat']) ) {
 
-				$_GET['action'] = 'erreur';
+				$_GET['etat'] = 'erreur';
 
 			}
 
-			switch ( $_GET['action'] ) {
+			switch ( $_GET['etat'] ) {
 
 				case 'accepte':
 					VueTransaction::afficherSuccess(array('type'=>'success','msg'=>'Félicitation!'));

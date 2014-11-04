@@ -7,7 +7,6 @@
  * @brief Affiche des Commentaires.
  * @details Permet d'afficher le contenu des Commentaires pour un enchère.
  */
-
 class VueCommentaire {
 
 	public static function afficherFormPoserUnCommentaires($IdConnecte)
@@ -52,7 +51,8 @@ class VueCommentaire {
 	 */
 	public static function afficherListeCommentaires($aCmmentaires,$IdConnecte)
 	{
-		if (count($aCmmentaires) <= 0 && !empty($aMsg['sMsg'])) {
+		// if (count($aCmmentaires) <= 0 && !empty($aMsg['sMsg'])) {
+		if ( count($aCmmentaires) <= 0 ) {
 			echo "<p>Aucun Commentaire n'est disponible. Veuillez en ajouter un.</p>";
 			return;
 		}

@@ -217,3 +217,84 @@ footer .droits{
 .notre-engagement{
 	background-image: url('../img/fond-peinture3.jpg');
 }
+
+
+
+
+/************************* Xiang Feng CSS **********************/
+
+.tempRestant, .miseActuelle
+{
+    color: darkred;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+#formDetailEnchere
+{
+    padding: 0 10px;
+}
+#containerUneEnchere
+{
+    margin-top: 20px;
+}
+#briefDescription
+{
+    margin-top: 5px;
+    padding: 10px;
+}
+.tableListeEnchere, .tableListeOffre
+{
+    margin-top: 15px;
+    width: 100%;
+}
+.tableListeEnchere tr:first-child,
+.tableListeOffre tr:first-child
+{
+    background-color: #222;
+    font-size: 1.1em;
+    color: white;
+    height: 50px;
+}
+.tableListeEnchere td,
+.tableListeOffre td
+{
+    text-align: center;
+    font-size: 1em;
+    font-weight: 300;
+    border-bottom: 1px black solid;
+    padding: 5px 0;
+}
+#divCreerEnchere
+{
+    margin: 15px auto;
+    border: 1px black solid;
+    padding: 0 0 20px 0;
+}
+.titre
+{
+    padding: 5px;
+    background-color: #323b40;
+    margin-bottom: 15px;
+    color: white;
+}
+.titre h1
+{
+    margin-top: 10px;
+    color: white;
+}
+#containerUneEnchere .picEnchere
+{
+    width: 100%;
+    height: auto;
+    border: 5px #323b40 solid;
+    padding: 5px;
+}
+#containerUneEnchere .text-warning
+{
+    font-weight: bold;
+    font-size: 1em;
+}
+#formDetailEnchere
+{
+    padding-left: 0;
+}

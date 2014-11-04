@@ -5,10 +5,15 @@
 //Ajout d'event listeners au chargement de la page
 window.addEventListener("load", function(){
 
-    var timeLeft = document.querySelector(".tempRestant").innerText;
-    var timeZoneInnerHTML = document.querySelector(".tempRestant");
+    if(document.querySelector(".tempRestant")!=null)
+    {
+        var timeLeft = document.querySelector(".tempRestant").innerText;
+        var timeZoneInnerHTML = document.querySelector(".tempRestant");
+    }
+
     var tempsRestantTimeout, statutEnchereTimeout;
-    var xmlHttpStatut, xmlHttpOffre;
+    var xmlHttpStatut;
+
     if(typeof timeLeft != "undefined" && timeLeft != null)
     {
         // Création du décompte pour la fin de l'enchère
@@ -33,10 +38,11 @@ window.addEventListener("load", function(){
             else
             {
                 timeZoneInnerHTML.innerHTML = "Cette enchère est déjà fermée!";
-                var btnAcheMantenant = document.getElementById("btnAcheter");
-                var btnPlacerOffre = document.getElementById("btnOffre");
-                btnAcheMantenant.setAttribute("disabled", "disabled");
-                btnPlacerOffre.setAttribute("disabled", "disabled");
+                if(document.getElementById("btnOffre")!=null)
+                {
+                    var btnPlacerOffre = document.getElementById("btnOffre");
+                    btnPlacerOffre.setAttribute("disabled", "disabled");
+                }
             }
         }
     }
@@ -44,11 +50,13 @@ window.addEventListener("load", function(){
 
     // Changement de l'image du produit au changement du SELECT à la création de l'enchère
     var creerEncherePicBox = document.getElementById("creerEncherePicBox");
+
     if(creerEncherePicBox!=null)
     {
         var optChoisi = document.getElementById("optChoisi");
+
         optChoisi.addEventListener("change", function(){
-            creerEncherePicBox.innerHTML = "<img src='../images/peinture/"+ optChoisi.value +".JPG' alt='"+ optChoisi.value +".jpg'>";
+            creerEncherePicBox.innerHTML = "<img src='"+ nomPic[optChoisi.value] + "' alt='"+ nomPic[optChoisi.value] +"'>";
         })
     }
 
@@ -69,16 +77,33 @@ window.addEventListener("load", function(){
             {
                 var response = xmlHttpStatut.responseXML;
 
-                $('#miseActuelle').innerHTML = response.childNodes[0].childNodes[0].textContent + '$CAD';
-                $('#prixFin').value = response.childNodes[0].childNodes[1].textContent;
+                $('#miseActuelle').text(response.childNodes[0].childNodes[0].textContent + ' $CAD');
 
-                if(response.childNodes[0].childNodes[2].textContent!='ouverte')
+                if($('#prixFin').val()<response.childNodes[0].childNodes[1].textContent)
+                {
+                    if(!$('#prixFin').is(':focus') && $('#prixFin').css('background-color')!='rgb(255, 0, 0)')
+                    {
+                        $('#prixFin').val(response.childNodes[0].childNodes[1].textContent);
+//                        $('#prixFin').css('background-color', 'white');
+                    }
+
+                    $('#Prixconseil').text(response.childNodes[0].childNodes[1].textContent);
+                }
+                else
+                {
+                    $('#prixFin').css('background-color', 'white');
+                }
+
+
+                if(response.childNodes[0].childNodes[2].textContent=='fermée')
                 {
                     clearTimeout(tempsRestantTimeout);
                     decompte(0);
                 }
-
-                statutEnchereTimeout = setTimeout(function(){MiseAJourEtatEnchere();},1000);
+                else
+                {
+                    statutEnchereTimeout = setTimeout(function(){MiseAJourEtatEnchere();},1000);
+                }
             }
         }
 
@@ -87,10 +112,14 @@ window.addEventListener("load", function(){
         xmlHttpStatut.open("GET","index.php?page=statutEnchere&idEnchere=" + idEnchere,true);
         xmlHttpStatut.send();
     }
+});
 
-    function AjoutOffre()
+    function AjoutOffre(e)
     {
-        return false;
+        e.preventDefault();
+
+        var xmlHttpOffre;
+
         if (window.XMLHttpRequest)
         {// code for IE7+, Firefox, Chrome, Opera, Safari
             xmlHttpOffre=new XMLHttpRequest();
@@ -100,6 +129,20 @@ window.addEventListener("load", function(){
             xmlHttpOffre=new ActiveXObject("Microsoft.XMLHTTP");
         }
 
+        var idEnchere = document.getElementById('idEnchere').value;
+        var prixFin = document.getElementById('prixFin').value;
+        var miseActuelle =  document.getElementById('miseActuelle').innerHTML;
+        var aMiseActuelle = miseActuelle.split(" ");
+
+        if(prixFin<=parseFloat(aMiseActuelle[0]))
+        {
+            $('#prixFin').css('background-color', 'red');
+            return false;
+        }
+        else
+        {
+            $('#prixFin').css('background-color', 'white');
+        }
         xmlHttpOffre.onreadystatechange=function()
         {
             if (xmlHttpOffre.readyState==4 && xmlHttpOffre.status==200)
@@ -111,6 +154,8 @@ window.addEventListener("load", function(){
                     return false;
                 }
 
+                console.log(response);
+
                 $('#miseActuelle').innerHTML = response.childNodes[0].childNodes[0].textContent + '$CAD';
                 $('#prixFin').value = response.childNodes[0].childNodes[1].textContent;
 
@@ -122,12 +167,11 @@ window.addEventListener("load", function(){
             }
         }
 
-        var idEnchere = document.getElementById('idEnchere').value;
-        var prixFin = document.getElementById('prixFin').value;
+
 
         xmlHttpOffre.open("GET","index.php?page=ajoutOffre&idEnchere=" + idEnchere + "&montant=" + prixFin,true);
         xmlHttpOffre.send();
     }
 
 
-});
+//});

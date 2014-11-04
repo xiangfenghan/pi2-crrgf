@@ -62,7 +62,7 @@ class ControleurAdmin extends Controleur{
 
 	public function adm_GererEncheres()
 	{
-		$sSQL = "SELECT * FROM pi2_Encheres";
+		$sSQL = "SELECT * FROM pi2_encheres";
 
 		$requete = $this->oPDO->prepare($sSQL);
 

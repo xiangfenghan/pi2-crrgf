@@ -43,7 +43,7 @@ class Vue {
 
 	}
 
-	public static function header($sRecherche = "") {
+	public static function header() {
 
 		echo "
 			<!-- Entete du document -->
@@ -64,9 +64,9 @@ class Vue {
 								</div><!-- /Logo & menu burger -->
 								<!-- Zone de recherche -->
 								<div class=\"col-xs-8 col-xs-offset-2 col-sm-6 col-md-6 col-md-offset-1\">
-									<form class=\"navbar-form\" action=\"?page=encheres\" method=\"GET\" role=\"search\">
+									<form class=\"navbar-form\" action=\"?page=oeuvres-encheres\" method=\"POST\" role=\"search\">
 										<div class=\"input-group\">
-											<input type=\"search\" name=\"q\" class=\"form-control\" value=\"".$q = ( isset($_GET['q']) && $_GET['q'] != '' ) ? $_GET['q'] : '' ; echo "\" placeholder=\"Je cherche\" autofocus=\"autofocus\">
+											<input type=\"search\" name=\"txt\" class=\"form-control\" value=\"".$q = ( isset($_POST['txt']) && $_POST['txt'] != '' ) ? $_POST['txt'] : '' ; echo "\" placeholder=\"Je cherche\" autofocus=\"autofocus\">
 											<span class=\"input-group-btn\">
 												<input class=\"btn btn-default\" type=\"submit\" name=\"cmd\" value=\"Rechercher\">
 											</span>
@@ -111,7 +111,7 @@ class Vue {
 									echo"
 									<li><a href=\"?page=commentaires\">Commentaires</a></li>
 									<li class=\"dropdown\">
-										<a href=\"?page=compte\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">Mon compte <b class=\"caret\"></b></a>
+										<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">Mon compte <b class=\"caret\"></b></a>
 										<ul class=\"dropdown-menu\">
 											<li><a href=\"?page=gestionEnchere\">Mes enchères</a></li>
 											<li><a href=\"?page=mes-oeuvres\">Mes oeuvres</a></li>
@@ -134,7 +134,6 @@ class Vue {
 				<div class=\"row\">
 		";
 
-
 	}
 
 	public static function footer($sNomScript = "") {
@@ -156,7 +155,7 @@ class Vue {
 						<ul class=\"list-unstyled\">
 							<li><a href=\"?page=confidentialite\">Politique de confidentialité </a></li>
 							<li><a href=\"?page=non-responsabilite\">Avis de non-responsabilité </a></li>
-							<li><a href=\"?page=connexion\">Connexion</a></li>
+							<li><a href=\"?page=utilisateur&action=connexion\">Connexion</a></li>
 						</ul>
 					</section>
 					<!-- Reseaux sociaux -->
@@ -272,6 +271,22 @@ class Vue {
 				<li><a href=\"?page=oeuvres&id=4\"><img class=\"img-responsive\" src=\"img/oeuvres/oeuvre4-224x263.jpg\" height=\"263\" width=\"224\" alt=\"Oeuvre 4\"></a></li>
 			</ul>
 		</aside>";
+
+	}
+
+	public static function alerte($aMsg) {
+
+		if ( count($aMsg) && isset($aMsg['msg']) ) {
+
+			echo "
+				<div class=\"alert alert-".$aMsg['type']." alert-dismissible\" role=\"alert\">
+					<button type=\"button\" class=\"close\" data-dismiss=\"alert\">
+						<span aria-hidden=\"true\">&times;</span><span class=\"sr-only\">Fermer</span>
+					</button>
+					<p>".$aMsg['msg']."</p>
+				</div>";
+
+		}
 
 	}
 

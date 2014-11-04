@@ -190,13 +190,13 @@ class Oeuvre extends Modeles{
 
 	 	$oResult = $oConnexion->executer($sRequete);
 
-		if($oResult)
+		/*if($oResult)
 		{
 			echo "connexion reusssie";
 		}else
 			{
-				echo "pas de connexion";
-			}
+			echo "pas de connexion";
+		}*/
 		//Récupérer le tableau des enregistrements
 	 	$aEnreg = $oConnexion->recupererTableau($oResult);
 		/*echo "<pre>";
@@ -224,8 +224,7 @@ class Oeuvre extends Modeles{
 	 * @return boolean true si on trouve des oeuvres et @return un tableau des oeuvres
 	 * soit false s'il n'y a aucune oeuvre
 	 */
-
-	public static function rechercherDesOeuvresParMotCle($resultat){
+	public static function rechercherDesOeuvresParMotCle($resultat) {
 		//Connecter à la base de données
 		$oConnexion = new MySqliLib();
 		//Réaliser la requête de recherche des oeuvres par mot clé
@@ -237,11 +236,10 @@ class Oeuvre extends Modeles{
 					OR description LIKE '%". $resultat."%'
 					OR pi2_themes.nom LIKE '%". $resultat."%'
 					OR pi2_techniques.nom LIKE '%". $resultat."%')
-					AND etat=\"en enchere\";
+					AND etat='en enchere';
 		";
 
-
-		echo $sRequete;
+		//echo $sRequete;
 
 		$bRechercher = false;
 		//Exécuter la requête
@@ -267,8 +265,6 @@ class Oeuvre extends Modeles{
 		}
 			return $bRechercher;
 	 }//fin de la fonction rechercherDesOeuvresParMotCle()
-
-
 
 	/**
 	* Permet de rechercher des oeuvres par NomTheme ET NomTechnique (avec un Etat="En vente")
@@ -346,18 +342,19 @@ class Oeuvre extends Modeles{
 
 	public function rechercherOeuvreParId() {
 		$oPDO = new Connexion();
-	 	$sSQL = "SELECT * FROM pi2_Oeuvres WHERE id='".$this->getIdOeuvre()."';";
+	 	$sSQL = "SELECT * FROM pi2_oeuvres WHERE id='".$this->getIdOeuvre()."';";
 	 	$requete = $oPDO->oPDO->prepare($sSQL);
 	 	$requete->execute();
 	 	$res = $requete->fetchAll();
-	 	if(count($res)>0)
+
+        if(count($res)>0)
 	 	{
 	 		$this->setNomOeuvre($res[0]['titre']);
 	 		$this->setDescriptionOeuvre($res[0]['description']);
 	 		$this->setDimensionOeuvre($res[0]['dimension']);
 	 		$this->setUrlOeuvre($res[0]['mediaUrl']);
 	 		$this->setEtatOeuvre($res[0]['etat']);
-	 	}
+        }
 	 	// die(var_dump($res));
 
 	 }

@@ -7,10 +7,9 @@
  * @brief Controleur principal
  * @details Gère les sections du site relative a tout le site
  */
-class Controleur{
+class Controleur {
 
-	public function gererErreurs(){
-
+	public function gererErreurs() {
 
 		VueErreur::afficherErreur404();
 

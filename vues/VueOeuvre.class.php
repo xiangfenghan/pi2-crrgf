@@ -1,4 +1,4 @@
-﻿<!--<script src="../site/js/vendor/jquery-1.11.0.min.js"></script>-->
+<!--<script src="../site/js/vendor/jquery-1.11.0.min.js"></script>-->
 <?php
 /**
  * @classe VueAccueil VueAccueil.class.php "classes/VueAccueil.class.php"
@@ -18,20 +18,18 @@ class VueOeuvre {
 		Vue::nav();
 
 		echo '<button id="grille" >Grille</button>
-			<button  id="liste" >Liste</button>
+			<button id="liste">Liste</button>
 		';
 
 		echo "<article id=\"aa\" class=\"col-md-12 affichage clearfix\">";
 			echo "<section class=\"col-sm-6 col-md-3 \">";
 				echo '
-
-					<form action="index.php?page=oeuvres-encheres&mode=grille" method="POST">
+					<form action="index.php?page=oeuvres-encheres" method="POST">
 							<fieldset>
 								<legend>Rechercher des oeuvres</legend>
 
 								<input type="text" name="txt" id="txt" value="">
 								<input type="submit" name="cmd" value="Rechercher">
-								<input type="reset" name="cmd" value="RAZ">
 							</fieldset>
 						</form>
 					';
@@ -39,7 +37,7 @@ class VueOeuvre {
 				echo '<br/>';
 
 				echo '<h2>Theme</h2>';
-				echo '	<form action="index.php?page=oeuvres-encheres&mode=grille" method="POST">';
+				echo '	<form action="index.php?page=oeuvres-encheres" method="POST">';
 
 				echo '
 							<input type="radio" name="theme" value="1">classique<br/>

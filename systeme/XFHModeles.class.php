@@ -56,8 +56,15 @@ class XFHModeles extends Modeles
     public function insertInto($sRequete)
     {
 
-        $idInsert = $this->executerRequete($sRequete);
-        return $this->oPDO->lastInsertId();
+        $res = $this->executerRequete($sRequete);
+        if($res)
+        {
+            return $this->oPDO->lastInsertId();
+        }
+        else
+        {
+            return false;
+        }
     }
 
     public function deleteFrom($sRequete)
