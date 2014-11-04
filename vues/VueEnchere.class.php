@@ -9,21 +9,14 @@ class VueEnchere {
 
 	public static function afficherLesEnchere($aEncheres)
 	{
-<<<<<<< HEAD
-		Vue::head('Liste des enchères','Arts aux enchères');
-=======
 		Vue::head('Liste des enchères','Arts aux enchères', 'enchere.css');
->>>>>>> Integration_beta3
 		Vue::header();
 		Vue::nav();
 
 		if(count($aEncheres)>0)
 		{
 			$i = 0;
-<<<<<<< HEAD
-=======
             echo "<div class='container'>";
->>>>>>> Integration_beta3
 			foreach($aEncheres as $oEnchere)
 			{
 				if($i==4)
@@ -32,17 +25,6 @@ class VueEnchere {
 					$i=0;
 				}
 
-<<<<<<< HEAD
-				echo "<article class='col-md-6 col-md-offset-3'>";
-				echo "<img src='".$oEnchere->getOeuvreEnchere()->getUrlOeuvre()."' class='img-responsive' alt='Responsive image'>";
-				echo "<a href='index.php?page=detailsEnchere&idEnchere=" . $oEnchere->getIdEnchere() . "'><h1>".$oEnchere->getOeuvreEnchere()->getNomOeuvre()."</h1></a>";
-				echo "<p>".$oEnchere->getOeuvreEnchere()->getDescriptionOeuvre()."</p>";
-				echo "<span>".$oEnchere->getPrixDebut()."</span>";
-				echo "<span>".$oEnchere->getPrixAcheterMaintenant()."</span>";
-				echo "<article>";
-				$i++;
-			}
-=======
 				echo "<article class='col-md-3 apercuEnchere'>";
 				echo "<div class='picBox'><a href='index.php?page=detailsEnchere&idEnchere=" . $oEnchere->getIdEnchere() . "'><img src='".$oEnchere->getOeuvreEnchere()->getUrlOeuvre()."' alt='Responsive image'></a></div>";
 				echo "<div class='textBox'><a href='index.php?page=detailsEnchere&idEnchere=" . $oEnchere->getIdEnchere() . "'><h2>".$oEnchere->getOeuvreEnchere()->getNomOeuvre()."</h2></a>";
@@ -53,7 +35,6 @@ class VueEnchere {
 				$i++;
 			}
             echo "</div>";
->>>>>>> Integration_beta3
 		}
 		else
 		{
@@ -81,13 +62,8 @@ class VueEnchere {
 			foreach($aEncheres as $index=>$oEnchere)
 			{
 
-<<<<<<< HEAD
-				echo "<tr><td>".$oEnchere->getNomEnchere()."</td>".
-					 "<td class='col-md-3'><img src='".$oEnchere->getOeuvreEnchere()->getUrlOeuvre()."' class='img-responsive' alt='Responsive image' class='col-md-2'></td>".
-=======
 				echo "<tr><td><a href='index.php?page=detailsEnchere&idEnchere=".$oEnchere->getIdEnchere()."'>".$oEnchere->getNomEnchere()."</a></td>".
 					 "<td class='col-md-3'><a href='index.php?page=detailsEnchere&idEnchere=".$oEnchere->getIdEnchere()."'><img src='".$oEnchere->getOeuvreEnchere()->getUrlOeuvre()."' class='img-responsive' alt='Responsive image' class='col-md-2'></a></td>".
->>>>>>> Integration_beta3
 					 "<td>".$oEnchere->getEtat()."</td>";
                 $etat = '';
                 if($oEnchere->getEtat()=='ouverte')
@@ -143,13 +119,8 @@ class VueEnchere {
 		echo "<div class=\"container\" id=\"containerUneEnchere\">
 			<article class=\"col-md-5\">
 			    <span class=\"titre\">".$oEnchere->getOeuvreEnchere()->getNomOeuvre()."</span>
-<<<<<<< HEAD
-				<img src=\"".$oEnchere->getOeuvreEnchere()->getUrlOeuvre()."\" class=\"img-responsive\" alt=\"Responsive image\">
-				<div class=\"briefDescription\"><p>".$oEnchere->getOeuvreEnchere()->getDescriptionOeuvre()."</p></div>
-=======
 				<img src=\"".$oEnchere->getOeuvreEnchere()->getUrlOeuvre()."\" class=\"img-responsive picEnchere\" alt=\"Responsive image\">
 				<div class=\"briefDescription\"><h2>À propos de:</h2><p>".$oEnchere->getOeuvreEnchere()->getDescriptionOeuvre()."</p></div>
->>>>>>> Integration_beta3
 			 </article>";
 		echo "
 			<article class=\"col-md-7\">
@@ -175,48 +146,6 @@ class VueEnchere {
 						<a href=\"index.php?page=listeOffre&idEnchere=".$oEnchere->getIdEnchere()."\">[Historique des offres]</a>
 					</div>";
         if(isset($_SESSION['idUser']) && $_SESSION['idUser']!=$oEnchere->getCreateurEnchere()->getIdUtilisateur())
-<<<<<<< HEAD
-        {
-            echo "<div class=\"form-group\">
-						<input type=\"text\" name=\"prixFin\" id=\"prixFin\">
-						<button id=\"btnOffre\" onclick=\"AjoutOffre(event)\" class=\"btn btn-primary\">Placer un offre</button>
-						<span>(Entrer <span id=\"Prixconseil\"></span> \$CAD ou plus)</span>
-					</div>
-					<div class=\"form-group\">
-						<span>Prix acheter maintenant: ".$oEnchere->getPrixAcheterMaintenant()." \$CAD</span>
-					</div>
-				</form>";
-
-
-			/* PAYPAL */
-            echo "
-			<form action=\"https://www.sandbox.paypal.com/cgi-bin/webscr\" method=\"post\">
-				<input type=\"hidden\" name=\"cmd\" value=\"_xclick\"><!-- Achat instantané -->
-				<input type=\"hidden\" name=\"charset\" value=\"utf-8\">
-				<input type=\"hidden\" name=\"return\" value=\"http://e1195921.webdev.cmaisonneuve.qc.ca/pi2/site/index.php?page=paiement&etat=accepte\"><!-- Url de retour -->
-				<input type=\"hidden\" name=\"cancel_return\" value=\"http://e1195921.webdev.cmaisonneuve.qc.ca/pi2/site/index.php?page=paiement&etat=annule\">
-				<input type=\"hidden\" name=\"notify_url\" value=\"http://e1195921.webdev.cmaisonneuve.qc.ca/pi2/site/paypal-ipn.php\"><!-- Url pour le traitement du IPN -->
-				<input type=\"hidden\" name=\"business\" value=\"E7NW5SXHXN9JS\"><!-- Idntifiant/courriel du vendeur -->
-				<input type=\"hidden\" name=\"item_name\" value=\"".$oEnchere->getOeuvreEnchere()->getNomOeuvre()."\">
-				<input type=\"hidden\" name=\"item_number\" value=\"".$oEnchere->getOeuvreEnchere()->getIdOeuvre()."\">
-				<input type=\"hidden\" name=\"amount\" value=\"".$oEnchere->getPrixAcheterMaintenant()."\">
-				<input type=\"hidden\" name=\"shipping\" value=\"32.46\"><!-- Prix du transport.. provient de la bdd -->
-				<input type=\"hidden\" name=\"currency_code\" value=\"CAD\"><!-- Devise du paiement -->
-				<input type=\"hidden\" name=\"custom\" value=\"userId="; echo isset($_SESSION['UserId']) ? $_SESSION['UserId'] : 'Aucun'; echo " productId=".$oEnchere->getOeuvreEnchere()->getIdOeuvre()."\"><!-- Mes attributs personnalise -->
-				<input type=\"hidden\" name=\"state\" value=\"QC\">
-				<input type=\"hidden\" name=\"zip\" value=\"H1M2G6\">
-				<input type=\"hidden\" name=\"country\" value=\"CA\">
-				<input type=\"hidden\" name=\"lc\" value=\"CA\">
-				<input type=\"image\" name=\"submit\" border=\"0\"
-				src=\"https://www.paypalobjects.com/fr_FR/i/btn/x-click-but01.gif\"
-				alt=\"PayPal - La manière sure et facile d'acheter en ligne\">
-			</form>
-		</article></div>";
-        }
-        else
-        {
-            echo "<p>Ceci est votre enchère, vous ne pouvez pas ajouter d'offre.</p>";
-=======
         {
             echo "<div class=\"form-group\">
 						<input type=\"text\" name=\"prixFin\" id=\"prixFin\">
@@ -262,7 +191,6 @@ class VueEnchere {
         else
         {
             echo "<p class='text-warning'>Ceci est votre enchère, vous ne pouvez pas ajouter d'offre.</p>";
->>>>>>> Integration_beta3
             echo "</form></article></div>";
         }
 
@@ -271,21 +199,12 @@ class VueEnchere {
 
 		echo"<div class=\"container\"><div class=\"row\">
 				<article class=\"col-md-10 col-md-offset-1\">
-<<<<<<< HEAD
 
 					<h1>Les commentaires</h1>";
 
 				VueCommentaire::afficherListeCommentaires($oCommentaires, 0);
 		echo "</article></div></div>";
 
-=======
-
-					<h1>Les commentaires</h1>";
-
-				VueCommentaire::afficherListeCommentaires($oCommentaires, 0);
-		echo "</article></div></div>";
-
->>>>>>> Integration_beta3
 		Vue::footer();
 
 	}
@@ -302,11 +221,7 @@ class VueEnchere {
             echo "nomPic[".$oOeuvre->getIdOeuvre()."] = '".$oOeuvre->getUrlOeuvre()."';";
         }
         echo "</script>";
-<<<<<<< HEAD
-		echo "<div class='container' id='divCreerEnchere'><div clas='row' class='titre'>Créer une enchère</div><p>".$sMsg."</p>";
-=======
 		echo "<div class='container' id='divCreerEnchere'><div class='titre'>Créer une enchère</div><p>".$sMsg."</p>";
->>>>>>> Integration_beta3
         echo "<div clas='row'>";
 		echo "<article class='col-md-5' id='creerEncherePicBox'></article>";
 		echo "<article class='col-md-7'>".
@@ -348,11 +263,7 @@ class VueEnchere {
 		Vue::header();
 		Vue::nav();
 
-<<<<<<< HEAD
-		echo "<div class='container' id='divCreerEnchere'><article class='col-md-5'>".
-=======
 		echo "<div class='container' id='divCreerEnchere'><div class='titre'>Rouvrir une enchère</div><article class='col-md-5'>".
->>>>>>> Integration_beta3
 			"<img src='".$oEnchere->getOeuvreEnchere()->getUrlOeuvre()."'>".
 			"</article>";
 
@@ -384,13 +295,8 @@ class VueEnchere {
 					<label>Les condition d'utilisation</label>
 					<input type=\"checkbox\" name=\"usageCondition\">J'accepte les conditions d'utilisation.
 				</div>
-<<<<<<< HEAD
-				<input type=\"submit\" name=\"enregistrerEnchere\" value=\"Rouvrir\" class='btn btn-default'>
-				<a href=\"index.php?page=gestionEnchere\" class='btn btn-default'>Retour</a>
-=======
 				<input type=\"submit\" name=\"enregistrerEnchere\" value=\"Rouvrir\" class='btn btn-success'>
 				<a href=\"index.php?page=gestionEnchere\" class='btn btn-danger'>Retour</a>
->>>>>>> Integration_beta3
 			</form>
 		</article></div>";
 
@@ -470,11 +376,7 @@ class VueEnchere {
 
 			foreach($aEncheres as $oEnchere)
 			{
-<<<<<<< HEAD
-				echo "<tr><td>".$oEnchere->getNomEnchere()."</td>".
-=======
 				echo "<tr><td><a href=index.php?page=detailsEnchere&idEnchere='".$oEnchere->getIdEnchere()."'>".$oEnchere->getNomEnchere()."</a></td>".
->>>>>>> Integration_beta3
 					"<td><img src='".$oEnchere->getOeuvreEnchere()->getUrlOeuvre()."' class='img-responsive' alt='Responsive image' class='col-md-2'></td>".
 					"<td>".$oEnchere->getEtat()."</td>".
 					"<td><a href='index.php?page=gestionEnchere&action=mod&idEnchere=".$oEnchere->getIdEnchere()."'>Modifier</a></td>".

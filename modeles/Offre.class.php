@@ -97,10 +97,7 @@ class Offre extends XFHModeles
     public function creerUnOffre()
     {
         $oEnchere = new Enchere($_GET['idEnchere']);
-<<<<<<< HEAD
-=======
 
->>>>>>> Integration_beta3
         if($_SESSION['idUser']!==$oEnchere->getCreateurEnchere()->getIdUtilisateur())
         {
             $oBidder = new Utilisateur($_SESSION['idUser']);

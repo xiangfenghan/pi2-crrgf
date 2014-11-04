@@ -81,11 +81,6 @@ window.addEventListener("load", function(){
 
                 if($('#prixFin').val()<response.childNodes[0].childNodes[1].textContent)
                 {
-<<<<<<< HEAD
-                    $('#prixFin').val(response.childNodes[0].childNodes[1].textContent);
-                    $('#Prixconseil').text(response.childNodes[0].childNodes[1].textContent);
-                }
-=======
                     if(!$('#prixFin').is(':focus') && $('#prixFin').css('background-color')!='rgb(255, 0, 0)')
                     {
                         $('#prixFin').val(response.childNodes[0].childNodes[1].textContent);
@@ -98,7 +93,6 @@ window.addEventListener("load", function(){
                 {
                     $('#prixFin').css('background-color', 'white');
                 }
->>>>>>> Integration_beta3
 
 
                 if(response.childNodes[0].childNodes[2].textContent=='fermée')
