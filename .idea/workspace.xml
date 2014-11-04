@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="9e693d71-4154-43e0-8890-c65837a22f17" name="Default" comment="" />
+=======
+    <list default="true" id="9e693d71-4154-43e0-8890-c65837a22f17" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/systeme/Connexion.class.php" afterPath="$PROJECT_DIR$/systeme/Connexion.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controleurs/ControleurSite.class.php" afterPath="$PROJECT_DIR$/controleurs/ControleurSite.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/MySqliLib.class.php" afterPath="$PROJECT_DIR$/libs/MySqliLib.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vues/VueEnchere.class.php" afterPath="$PROJECT_DIR$/vues/VueEnchere.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/site/js/enchere.js" afterPath="$PROJECT_DIR$/site/js/enchere.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
+>>>>>>> Integration_beta3
     <ignored path="pi2-crrgf.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,15 +37,20 @@
       <file leaf-file-name="ControleurSite.class.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controleurs/ControleurSite.class.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state line="212" column="42" selection-start="5118" selection-end="5118" vertical-scroll-proportion="0.0" vertical-offset="3180" max-vertical-offset="5490">
+=======
+            <state line="254" column="0" selection-start="4851" selection-end="4851" vertical-scroll-proportion="-8.125" vertical-offset="3615" max-vertical-offset="12465">
+>>>>>>> Integration_beta3
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Enchere.class.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modeles/Enchere.class.php">
+      <file leaf-file-name="enchere.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/site/js/enchere.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state line="317" column="25" selection-start="7960" selection-end="7960" vertical-scroll-proportion="0.0" vertical-offset="4755" max-vertical-offset="5790">
               <folding />
             </state>
@@ -45,6 +61,9 @@
         <entry file="file://$PROJECT_DIR$/modeles/Offre.class.php">
           <provider selected="true" editor-type-id="text-editor">
             <state line="115" column="52" selection-start="2789" selection-end="2789" vertical-scroll-proportion="0.0" vertical-offset="1725" max-vertical-offset="1935">
+=======
+            <state line="66" column="25" selection-start="2699" selection-end="2699" vertical-scroll-proportion="0.0" vertical-offset="781" max-vertical-offset="2085">
+>>>>>>> Integration_beta3
               <folding />
             </state>
           </provider>
@@ -53,61 +72,47 @@
       <file leaf-file-name="VueEnchere.class.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vues/VueEnchere.class.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state line="68" column="80" selection-start="2469" selection-end="2469" vertical-scroll-proportion="0.0" vertical-offset="1020" max-vertical-offset="4440">
               <folding />
+=======
+            <state line="255" column="53" selection-start="9215" selection-end="9215" vertical-scroll-proportion="-16.541666" vertical-offset="3353" max-vertical-offset="4545">
+              <folding>
+                <marker date="1414509925000" expanded="true" signature="7288:7500" placeholder="..." />
+                <marker date="1414509925000" expanded="true" signature="7343:7489" placeholder="..." />
+                <marker date="1414509925000" expanded="true" signature="7531:7684" placeholder="..." />
+              </folding>
+>>>>>>> Integration_beta3
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Utilisateur.class.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Enchere.class.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modeles/Enchere.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state line="80" column="0" selection-start="1868" selection-end="1868" vertical-scroll-proportion="0.34351146" vertical-offset="825" max-vertical-offset="3210">
+=======
+            <state line="318" column="5" selection-start="7969" selection-end="7969" vertical-scroll-proportion="-158.125" vertical-offset="900" max-vertical-offset="5685">
+>>>>>>> Integration_beta3
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Utilisateur.class.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modeles/Utilisateur.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="80" column="0" selection-start="1868" selection-end="1868" vertical-scroll-proportion="0.34351146" vertical-offset="825" max-vertical-offset="3210">
+            <state line="85" column="7" selection-start="1924" selection-end="1924" vertical-scroll-proportion="68.125" vertical-offset="2805" max-vertical-offset="8490">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/site/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="0" selection-start="380" selection-end="380" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="285">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Conf.class.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Conf.class.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/systeme/Conf.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="825">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Connexion.class.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/systeme/Connexion.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="900">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Modeles.class.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/systeme/Modeles.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="30" selection-start="469" selection-end="469" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="780">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="XFHModeles.class.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/systeme/XFHModeles.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="28" selection-start="640" selection-end="645" vertical-scroll-proportion="0.0" vertical-offset="465" max-vertical-offset="1245">
+            <state line="21" column="38" selection-start="582" selection-end="590" vertical-scroll-proportion="0.47218046" vertical-offset="1" max-vertical-offset="690">
               <folding />
             </state>
           </provider>
@@ -131,31 +136,30 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/modeles/Oeuvre.class.php" />
-        <option value="$PROJECT_DIR$/site/css/enchere.css" />
-        <option value="$PROJECT_DIR$/site/js/enchere.js" />
-        <option value="$PROJECT_DIR$/vues/VueOffre.class.php" />
         <option value="$PROJECT_DIR$/controleurs/ControleurAdmin.class.php" />
-        <option value="$PROJECT_DIR$/libs/MySqliLib.class.php" />
-        <option value="$PROJECT_DIR$/systeme/Conf.class.php" />
-        <option value="$PROJECT_DIR$/systeme/Connexion.class.php" />
-        <option value="$PROJECT_DIR$/libs/TypeException.class.php" />
-        <option value="$PROJECT_DIR$/site/index.php" />
-        <option value="$PROJECT_DIR$/systeme/Modeles.class.php" />
         <option value="$PROJECT_DIR$/systeme/XFHModeles.class.php" />
-        <option value="$PROJECT_DIR$/controleurs/ControleurSite.class.php" />
-        <option value="$PROJECT_DIR$/modeles/Enchere.class.php" />
-        <option value="$PROJECT_DIR$/vues/VueEnchere.class.php" />
         <option value="$PROJECT_DIR$/modeles/Offre.class.php" />
+        <option value="$PROJECT_DIR$/systeme/Modeles.class.php" />
+        <option value="$PROJECT_DIR$/site/index.php" />
+        <option value="$PROJECT_DIR$/libs/TypeException.class.php" />
+        <option value="$PROJECT_DIR$/systeme/Conf.class.php" />
+        <option value="$PROJECT_DIR$/vues/VueUtilisateur.class.php" />
+        <option value="$PROJECT_DIR$/vues/Vue.class.php" />
+        <option value="$PROJECT_DIR$/modeles/Enchere.class.php" />
+        <option value="$PROJECT_DIR$/modeles/Utilisateur.class.php" />
+        <option value="$PROJECT_DIR$/systeme/Connexion.class.php" />
+        <option value="$PROJECT_DIR$/libs/MySqliLib.class.php" />
+        <option value="$PROJECT_DIR$/controleurs/ControleurSite.class.php" />
+        <option value="$PROJECT_DIR$/vues/VueEnchere.class.php" />
+        <option value="$PROJECT_DIR$/site/js/enchere.js" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="40" />
     <option name="y" value="23" />
-    <option name="width" value="1602" />
-    <option name="height" value="979" />
+    <option name="width" value="1440" />
+    <option name="height" value="835" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -205,7 +209,7 @@
   </component>
   <component name="PublishConfig">
     <servers>
-      <server id="457e831f-2294-435d-b0e4-b1bcba97a656">
+      <server id="38b489e3-eb43-47b9-a4c8-3f4b206ddefe">
         <serverdata />
       </server>
     </servers>
@@ -253,8 +257,13 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
     <frame x="40" y="23" width="1602" height="979" extended-state="0" />
     <editor active="false" />
+=======
+    <frame x="0" y="23" width="1440" height="835" extended-state="0" />
+    <editor active="true" />
+>>>>>>> Integration_beta3
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -262,7 +271,11 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20437019" sideWeight="0.67081445" order="0" side_tool="false" content_ui="combo" />
+=======
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21018651" sideWeight="0.67081445" order="0" side_tool="false" content_ui="combo" />
+>>>>>>> Integration_beta3
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -289,110 +302,227 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/modeles/Theme.class.php">
+    <entry file="file://$PROJECT_DIR$/systeme/Controleur.class.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1560" />
+=======
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="666" />
+>>>>>>> Integration_beta3
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vues/VueOeuvre.class.php">
+    <entry file="file://$PROJECT_DIR$/vues/Vue.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.4845488" vertical-offset="1201" max-vertical-offset="2010">
-          <folding />
+        <state line="115" column="72" selection-start="4869" selection-end="4869" vertical-scroll-proportion="0.4054054" vertical-offset="1470" max-vertical-offset="4245">
+          <folding>
+            <marker date="1414454484000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414454484000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414454484000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414454484000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414454484000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414454484000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414454484000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414454484000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414454484000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414454484000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414454484000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414454484000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414454484000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414454484000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414454484000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414454484000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414454484000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vues/VueOffre.class.php">
+    <entry file="file://$PROJECT_DIR$/vues/VueUtilisateur.class.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state line="23" column="56" selection-start="601" selection-end="601" vertical-scroll-proportion="0.33374536" vertical-offset="0" max-vertical-offset="809" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modeles/Oeuvre.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="127" column="32" selection-start="3884" selection-end="3896" vertical-scroll-proportion="-11.666667" vertical-offset="1625" max-vertical-offset="4500">
-          <folding />
+=======
+        <state line="135" column="8" selection-start="5279" selection-end="5279" vertical-scroll-proportion="-1.5516694" vertical-offset="3001" max-vertical-offset="4215">
+          <folding>
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1414442816000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controleurs/ControleurAdmin.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="870">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controleurs/ControleurSite.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="212" column="42" selection-start="5118" selection-end="5118" vertical-scroll-proportion="0.0" vertical-offset="3180" max-vertical-offset="5490">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modeles/Enchere.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="317" column="25" selection-start="7960" selection-end="7960" vertical-scroll-proportion="0.0" vertical-offset="4755" max-vertical-offset="5790">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modeles/Offre.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="115" column="52" selection-start="2789" selection-end="2789" vertical-scroll-proportion="0.0" vertical-offset="1725" max-vertical-offset="1935">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/site/js/enchere.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="108" column="17" selection-start="4137" selection-end="4137" vertical-scroll-proportion="0.0" vertical-offset="1184" max-vertical-offset="2040">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/site/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="380" selection-end="380" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="285">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/systeme/Conf.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="833">
-          <folding />
-        </state>
+>>>>>>> Integration_beta3
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/systeme/Connexion.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="900">
+        <state line="12" column="30" selection-start="349" selection-end="349" vertical-scroll-proportion="0.1380368" vertical-offset="90" max-vertical-offset="885">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/systeme/Modeles.class.php">
+    <entry file="file://$PROJECT_DIR$/libs/MySqliException.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="30" selection-start="469" selection-end="469" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="780">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="689">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/systeme/XFHModeles.class.php">
+    <entry file="file://$PROJECT_DIR$/libs/TypeException.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="28" selection-start="640" selection-end="645" vertical-scroll-proportion="0.0" vertical-offset="465" max-vertical-offset="1245">
+<<<<<<< HEAD
+        <state line="212" column="42" selection-start="5118" selection-end="5118" vertical-scroll-proportion="0.0" vertical-offset="3180" max-vertical-offset="5490">
+=======
+        <state line="76" column="0" selection-start="2427" selection-end="2427" vertical-scroll-proportion="1.7142857" vertical-offset="0" max-vertical-offset="2130">
+>>>>>>> Integration_beta3
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vues/VueEnchere.class.php">
+    <entry file="file://$PROJECT_DIR$/libs/MySqliLib.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="80" selection-start="2469" selection-end="2469" vertical-scroll-proportion="0.0" vertical-offset="1020" max-vertical-offset="4440">
+<<<<<<< HEAD
+        <state line="317" column="25" selection-start="7960" selection-end="7960" vertical-scroll-proportion="0.0" vertical-offset="4755" max-vertical-offset="5790">
+=======
+        <state line="4" column="30" selection-start="190" selection-end="190" vertical-scroll-proportion="0.09022556" vertical-offset="0" max-vertical-offset="2700">
+>>>>>>> Integration_beta3
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modeles/Utilisateur.class.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state line="85" column="7" selection-start="1924" selection-end="1924" vertical-scroll-proportion="68.125" vertical-offset="2805" max-vertical-offset="8490">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modeles/Enchere.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="318" column="5" selection-start="7969" selection-end="7969" vertical-scroll-proportion="-158.125" vertical-offset="900" max-vertical-offset="5685">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modeles/Commentaire.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="304" column="62" selection-start="9531" selection-end="9566" vertical-scroll-proportion="-12.5" vertical-offset="4230" max-vertical-offset="5610">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vues/VueCommentaire.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.8404908" vertical-offset="548" max-vertical-offset="1605">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site/js/oeuvre.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="689">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controleurs/ControleurSite.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="254" column="0" selection-start="4851" selection-end="4851" vertical-scroll-proportion="-8.125" vertical-offset="3615" max-vertical-offset="12465">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vues/VueEnchere.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="255" column="53" selection-start="9215" selection-end="9215" vertical-scroll-proportion="-16.541666" vertical-offset="3353" max-vertical-offset="4545">
+          <folding>
+            <marker date="1414509925000" expanded="true" signature="7288:7500" placeholder="..." />
+            <marker date="1414509925000" expanded="true" signature="7343:7489" placeholder="..." />
+            <marker date="1414509925000" expanded="true" signature="7531:7684" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site/js/enchere.js">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state line="68" column="80" selection-start="2469" selection-end="2469" vertical-scroll-proportion="0.0" vertical-offset="1020" max-vertical-offset="4440">
+=======
+        <state line="66" column="25" selection-start="2699" selection-end="2699" vertical-scroll-proportion="0.0" vertical-offset="781" max-vertical-offset="2085">
+>>>>>>> Integration_beta3
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/systeme/Conf.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state line="80" column="0" selection-start="1868" selection-end="1868" vertical-scroll-proportion="0.34351146" vertical-offset="825" max-vertical-offset="3210">
+=======
+        <state line="21" column="38" selection-start="582" selection-end="590" vertical-scroll-proportion="0.47218046" vertical-offset="1" max-vertical-offset="690">
+>>>>>>> Integration_beta3
           <folding />
         </state>
       </provider>

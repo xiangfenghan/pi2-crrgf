@@ -282,10 +282,24 @@ footer .droits{
     margin-top: 10px;
     color: white;
 }
+<<<<<<< HEAD
 img
 {
     width: 100%;
     height: auto;
+=======
+#containerUneEnchere .picEnchere
+{
+    width: 100%;
+    height: auto;
+    border: 5px #323b40 solid;
+    padding: 5px;
+}
+#containerUneEnchere .text-warning
+{
+    font-weight: bold;
+    font-size: 1em;
+>>>>>>> Integration_beta3
 }
 #formDetailEnchere
 {

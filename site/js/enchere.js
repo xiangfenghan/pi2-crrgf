@@ -81,9 +81,24 @@ window.addEventListener("load", function(){
 
                 if($('#prixFin').val()<response.childNodes[0].childNodes[1].textContent)
                 {
+<<<<<<< HEAD
                     $('#prixFin').val(response.childNodes[0].childNodes[1].textContent);
                     $('#Prixconseil').text(response.childNodes[0].childNodes[1].textContent);
                 }
+=======
+                    if(!$('#prixFin').is(':focus') && $('#prixFin').css('background-color')!='rgb(255, 0, 0)')
+                    {
+                        $('#prixFin').val(response.childNodes[0].childNodes[1].textContent);
+//                        $('#prixFin').css('background-color', 'white');
+                    }
+
+                    $('#Prixconseil').text(response.childNodes[0].childNodes[1].textContent);
+                }
+                else
+                {
+                    $('#prixFin').css('background-color', 'white');
+                }
+>>>>>>> Integration_beta3
 
 
                 if(response.childNodes[0].childNodes[2].textContent=='fermée')
@@ -120,6 +135,20 @@ window.addEventListener("load", function(){
             xmlHttpOffre=new ActiveXObject("Microsoft.XMLHTTP");
         }
 
+        var idEnchere = document.getElementById('idEnchere').value;
+        var prixFin = document.getElementById('prixFin').value;
+        var miseActuelle =  document.getElementById('miseActuelle').innerHTML;
+        var aMiseActuelle = miseActuelle.split(" ");
+
+        if(prixFin<=parseFloat(aMiseActuelle[0]))
+        {
+            $('#prixFin').css('background-color', 'red');
+            return false;
+        }
+        else
+        {
+            $('#prixFin').css('background-color', 'white');
+        }
         xmlHttpOffre.onreadystatechange=function()
         {
             if (xmlHttpOffre.readyState==4 && xmlHttpOffre.status==200)
@@ -144,8 +173,7 @@ window.addEventListener("load", function(){
             }
         }
 
-        var idEnchere = document.getElementById('idEnchere').value;
-        var prixFin = document.getElementById('prixFin').value;
+
 
         xmlHttpOffre.open("GET","index.php?page=ajoutOffre&idEnchere=" + idEnchere + "&montant=" + prixFin,true);
         xmlHttpOffre.send();

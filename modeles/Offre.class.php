@@ -97,6 +97,10 @@ class Offre extends XFHModeles
     public function creerUnOffre()
     {
         $oEnchere = new Enchere($_GET['idEnchere']);
+<<<<<<< HEAD
+=======
+
+>>>>>>> Integration_beta3
         if($_SESSION['idUser']!==$oEnchere->getCreateurEnchere()->getIdUtilisateur())
         {
             $oBidder = new Utilisateur($_SESSION['idUser']);
@@ -104,6 +108,7 @@ class Offre extends XFHModeles
             $sRequete = "INSERT INTO pi2_offres (montant, date, enchere_id, utilisateur_id) VALUES (".$this->getMontant().", now(), ".$_GET['idEnchere'].", ".$this->getBidder()->getIdUtilisateur().");";
             $idOffre = $this->insertInto($sRequete);
             $this->setIdOffre($idOffre);
+
             if($idOffre)
             {
                 $oEnchere->ajoutOffre($this);
